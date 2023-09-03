@@ -1,0 +1,19 @@
+{
+  "name": "discord.css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"If it looks pretty it must be fine\" && exit 1"
+  },
+  "keywords": [],
+  "author": "EdwinShdw <contact@edwin-shdw.de>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edwin-shdw/discord.css"
+  },
+  "dependencies": {
+    "sass": "^1.66.1"
+  }
+}
