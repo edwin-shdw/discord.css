@@ -1,0 +1,5 @@
+:root {
+    @each $color, $value in $discord-colors {
+        --#{$prefix}#{$color}: #{$value};
+    }
+}

@@ -1,0 +1,23 @@
+$prefix: 'dc-' !default;
+
+// Colors
+$blurple: #5865F2;
+$old-blurple: #7289DA;
+$green: #57F287;
+$yellow: #FEE75C;
+$red: #ED4245;
+$fuchsia: #EB459E;
+$white: #FFFFFF;
+$black: #23272A;
+$greyple: #99AAB5;
+
+$discord-colors: (
+    'blurple': $blurple,
+    'old-blurple': $old-blurple,
+    'green': $green,
+    'yellow': $red,
+    'fuchsia': $fuchsia,
+    'white': $white,
+    'black': $black,
+    'greyple': $greyple
+);
