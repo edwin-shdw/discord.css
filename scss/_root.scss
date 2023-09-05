@@ -1,5 +1,11 @@
+@use 'sass:color';
+
 :root {
     @each $color, $value in $discord-colors {
         --#{$prefix}#{$color}: #{$value};
+    }
+
+    @each $color, $value in $discord-colors {
+        --#{$prefix}#{$color}-rgb: #{color.red($value), color.green($value), color.blue($value)};
     }
 }
