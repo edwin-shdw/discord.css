@@ -1,4 +1,4 @@
-.mention {
+.#{$prefix}mention {
     --#{$prefix}mention-bg: var(--#{$prefix}blurple-rgb);
     --#{$prefix}mention-bg-opacity: 0.5;
     --#{$prefix}mention-color: var(--#{$prefix}white-rgb);
@@ -11,8 +11,9 @@
     border-radius: 3px;
     color: rgba(var(--#{$prefix}mention-color), var(--#{$prefix}mention-color-opacity));
     cursor: pointer;
+    font-weight: 500;
     padding-inline: 2px;
-    transition: color 50ms ease-out, background 50ms ease-out;
+    transition: color 50ms ease-out, background-color 50ms ease-out;
 
     &:hover {
         background: rgba(var(--#{$prefix}mention-bg), var(--#{$prefix}mention-bg-opacity-hover));
