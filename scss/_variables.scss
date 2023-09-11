@@ -10,6 +10,10 @@ $fuchsia: #EB459E;
 $white: #FFFFFF;
 $black: #23272A;
 $greyple: #99AAB5;
+$light-grey: #313338;
+$grey: #2b2d31;
+$dark-grey: #1e1f22;
+$link: #00a8fc;
 
 $discord-colors: (
     'blurple': $blurple,
@@ -19,5 +23,9 @@ $discord-colors: (
     'fuchsia': $fuchsia,
     'white': $white,
     'black': $black,
-    'greyple': $greyple
+    'greyple': $greyple,
+    'light-grey': $light-grey,
+    'grey': $grey,
+    'dark-grey': $dark-grey,
+    'link': $link
 );
