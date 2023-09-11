@@ -1,0 +1,8 @@
+.#{$prefix}link {
+    color: var(--#{$prefix}link);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
