@@ -10,12 +10,18 @@
     "watch": "sass ./scss/discord.scss ./dist/css/discord.css --watch",
     "test": "echo \"If it looks pretty it must be fine\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "discord",
+    "css",
+    "scss",
+    "styles",
+    "theme"
+  ],
   "author": "EdwinShdw <contact@edwin-shdw.de>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/edwin-shdw/discord.css"
+    "url": "https://github.com/edwin-shdw/discord.css.git"
   },
   "devDependencies": {
     "sass": "^1.66.1"
