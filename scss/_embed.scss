@@ -4,6 +4,7 @@
     border-inline-start: 4px solid var(--#{$prefix}embed-color);
     border-radius: 4px;
     display: grid;
+    grid-template-columns: auto min-content;
     max-inline-size: 516px;
     padding-block: 8px 16px;
     padding-inline: 12px 16px;
