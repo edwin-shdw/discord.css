@@ -1,6 +1,7 @@
 @use 'sass:color';
 
 :root {
+    --discord-css-prefix: #{$prefix};
     @each $color, $value in $discord-colors {
         --#{$prefix}#{$color}: #{$value};
     }
