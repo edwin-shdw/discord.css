@@ -1,0 +1,10 @@
+@use '../variables' as vars;
+
+@mixin button-outline($color) {
+    --#{vars.$prefix}background: transparent;
+    --#{vars.$prefix}background-hover: #{$color};
+    border-color: $color;
+    border-style: solid;
+    border-width: 1px;
+    padding: 7px 15px;
+}

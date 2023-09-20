@@ -15,6 +15,21 @@ $grey: #2b2d31;
 $dark-grey: #1e1f22;
 $link: #00a8fc;
 
+$button-colors: (
+    'blurple': (
+        'default': $blurple,
+        'hover': #4752c4,
+    ),
+    'danger': (
+        'default': #da373c,
+        'hover': #a12828,
+    ),
+    'success': (
+        'default': #248046,
+        'hover': #1a6334,
+    )
+);
+
 $discord-colors: (
     'blurple': $blurple,
     'old-blurple': $old-blurple,
