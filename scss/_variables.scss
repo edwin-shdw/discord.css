@@ -14,6 +14,8 @@ $light-grey: #313338;
 $grey: #2b2d31;
 $dark-grey: #1e1f22;
 $link: #00a8fc;
+$muted: #949BA4;
+$mention: #F0B132;
 
 $button-colors: (
     'blurple': (
@@ -43,5 +45,7 @@ $discord-colors: (
     'light-grey': $light-grey,
     'grey': $grey,
     'dark-grey': $dark-grey,
-    'link': $link
+    'link': $link,
+    'muted': $muted,
+    'mention': $mention,
 );
