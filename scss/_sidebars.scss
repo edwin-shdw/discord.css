@@ -9,14 +9,14 @@
 
     background: var(--#{$prefix}dark-grey);
     box-sizing: border-box;
-    height: 100%;
-    inline-size: 72px;
-    padding-block-start: 12px;
+    block-size: 100%;
+    min-inline-size: 4.5rem;
+    padding-block-start: 0.75rem;
 
     &-item {
         display: flex;
         justify-content: center;
-        margin-block-end: 8px;
+        margin-block-end: 0.5rem;
         position: relative;
 
         &:hover {
@@ -27,22 +27,22 @@
         }
 
         &-img {
+            block-size: 3rem;
             border-radius: var(--#{$prefix}sidebar-item-border-radius);
-            height: 48px;
+            inline-size: 3rem;
             object-fit: cover;
             transition: border-radius $transition-time $transition-curve;
-            width: 48px;
         }
 
         &::before {
             align-self: center;
             background: var(--#{$prefix}white);
-            border-radius: 4px;
+            block-size: var(--#{$prefix}sidebar-pill-height);
+            border-radius: 0.25rem;
             content: '';
-            height: var(--#{$prefix}sidebar-pill-height);
             inline-size: var(--#{$prefix}sidebar-pill-width);
             inset-inline-start: 0;
-            margin-inline: -4px;
+            margin-inline: -0.25rem;
             opacity: var(--#{$prefix}sidebar-pill-opacity);
             position: absolute;
             transition: height $transition-time $transition-curve,
@@ -60,10 +60,10 @@
 
     &-seperator {
         background: var(--#{$prefix}light-grey);
-        border-radius: 1px;
-        height: 2px;
-        margin-block-end: 8px;
+        border-radius: 0.0625rem;
+        height: 0.125rem;
+        margin-block-end: 0.5rem;
         margin-inline: auto;
-        width: 32px;
+        width: 2rem ;
     }
 }

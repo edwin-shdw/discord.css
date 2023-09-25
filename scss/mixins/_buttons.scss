@@ -5,6 +5,6 @@
     --#{vars.$prefix}background-hover: #{$color};
     border-color: $color;
     border-style: solid;
-    border-width: 1px;
-    padding: 7px 15px;
+    border-width: 0.0625rem;
+    padding: 0.4375rem 0.9375rem;
 }

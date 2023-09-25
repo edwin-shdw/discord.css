@@ -5,22 +5,22 @@
     scrollbar-color: $scrollbar-color var(--#{$prefix}grey);
 
     &::-webkit-scrollbar {
-        width: 16px;
+        inline-size: 1rem;
     }
 
     &::-webkit-scrollbar-track {
         background: var(--#{$prefix}grey);
         background-clip: padding-box;
-        border: 4px solid transparent;
+        border: 0.25rem solid transparent;
         border-radius: 8px;
     }
 
     &::-webkit-scrollbar-thumb {
         background: $scrollbar-color;
         background-clip: padding-box;
-        border: 4px solid transparent;
-        border-radius: 8px;
-        min-height: 40px;
+        border: 0.25rem solid transparent;
+        border-radius: 0.5rem;
+        min-block-size: 2.5rem;
     }
 
     &-thin {
@@ -28,22 +28,22 @@
         scrollbar-width: none;
 
         &::-webkit-scrollbar {
-            width: 0;
+            inline-size: 0;
         }
 
         &::-webkit-scrollbar-track {
-            border: 2px solid transparent;
+            border: 0.125rem solid transparent;
         }
 
         &::-webkit-scrollbar-thumb {
-            border: 2px solid transparent;
+            border: 0.125rem solid transparent;
         }
 
         &:hover {
             scrollbar-width: thin;
 
             &::-webkit-scrollbar {
-                width: 8px;
+                inline-size: 0.5rem;
             }
         }
     }

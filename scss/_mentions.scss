@@ -8,11 +8,11 @@
     --#{$prefix}mention-color-opacity-hover: 1;
 
     background: rgba(var(--#{$prefix}mention-bg), var(--#{$prefix}mention-bg-opacity));
-    border-radius: 3px;
+    border-radius: 0.1875rem;
     color: rgba(var(--#{$prefix}mention-color), var(--#{$prefix}mention-color-opacity));
     cursor: pointer;
     font-weight: 500;
-    padding-inline: 2px;
+    padding-inline: 0.125rem;
     text-decoration: none;
     transition: color 50ms ease-out, background-color 50ms ease-out;
 

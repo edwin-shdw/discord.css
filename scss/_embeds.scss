@@ -1,45 +1,45 @@
 .#{$prefix}embed {
     --#{$prefix}embed-color: #{$dark-grey};
     background: $grey;
-    border-inline-start: 4px solid var(--#{$prefix}embed-color);
-    border-radius: 4px;
+    border-inline-start: 0.25rem solid var(--#{$prefix}embed-color);
+    border-radius: 0.25rem;
     display: grid;
     grid-template-columns: auto min-content;
-    max-inline-size: 516px;
-    padding-block: 8px 16px;
-    padding-inline: 12px 16px;
+    max-inline-size: 32.25rem;
+    padding-block: 0.5rem 1rem;
+    padding-inline: 0.75rem 1rem;
 
     &-author {
         align-items: center;
         display: flex;
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 600;
         gap: 8px;
         grid-column: 1;
         grid-row: 1;
         justify-content: start;
-        margin-block-start: 8px;
+        margin-block-start: 0.5rem;
 
         & > img {
             border-radius: 50%;
-            max-height: 24px;
-            max-width: 24px;
+            max-height: 1.5rem;
+            max-width: 1.5rem;
         }
     }
 
     &-thumbnail {
         grid-column: 2;
         grid-row: 1 / span 6;
-        margin-block-start: 8px;
-        margin-inline-start: 16px;
-        min-block-size: 80px;
-        min-inline-size: 80px;
+        margin-block-start: 0.5rem;
+        margin-inline-start: 1rem;
+        min-block-size: 5rem;
+        min-inline-size: 5rem;
         position: relative;
 
         & > img {
-            max-block-size: 80px;
-            max-inline-size: 80px;
-            border-radius: 4px;
+            max-block-size: 5rem;
+            max-inline-size: 5rem;
+            border-radius: 0.25rem;
             inset-inline-end: 0;
             object-fit: contain;
             position: absolute;
@@ -50,7 +50,7 @@
         font-weight: 600;
         grid-column: 1;
         grid-row: 2;
-        margin-block-start: 8px;
+        margin-block-start: 0.5rem;
 
         & > a {
             color: $link;
@@ -63,19 +63,19 @@
     }
 
     &-description {
-        font-size: 14px;
+        font-size: 0.875rem;
         grid-column: 1;
         grid-row: 3;
-        margin-block-start: 8px;
+        margin-block-start: 0.5rem;
     }
 
     &-fields {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 0.5rem;
         grid-column: 1;
         grid-row: 4;
-        margin-block-start: 8px;
+        margin-block-start: 0.5rem;
 
         .#{$prefix}embed-field {
             min-width: 100%;
@@ -89,7 +89,7 @@
             }
 
             &-value {
-                font-size: 14px;
+                font-size: 0.875rem;
             }
         }
     }
@@ -97,11 +97,11 @@
     &-image {
         grid-column: 1 / span 2;
         grid-row: 5;
-        margin-block-start: 16px;
+        margin-block-start: 1rem;
 
         & > img {
-            border-radius: 4px;
-            max-block-size: 300px;
+            border-radius: 0.25rem;
+            max-block-size: 18.75rem;
             max-inline-size: 100%;
         }
     }
@@ -109,21 +109,21 @@
     &-footer {
         align-items: center;
         display: flex;
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 500;
-        gap: 8px;
+        gap: 0.5rem;
         grid-column: 1 / span 2;
         grid-row: 6;
-        margin-block-start: 8px;
+        margin-block-start: 0.5rem;
 
         & > img {
             border-radius: 50%;
-            max-height: 24px;
-            max-width: 24px;
+            max-height: 1.5rem;
+            max-width: 1.5rem;
         }
 
         &-seperator {
-            margin-inline: 4px;
+            margin-inline: 0.25rem;
         }
     }
 }
