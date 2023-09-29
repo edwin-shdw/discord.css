@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .#{$prefix}link {
     color: var(--#{$prefix}link);
     text-decoration: none;

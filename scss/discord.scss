@@ -1,11 +1,11 @@
-@import 'variables';
-@import 'root';
+@forward 'variables';
+@forward 'root';
 
-@import 'buttons';
-@import 'embeds';
-@import 'links';
-@import 'mentions';
-@import 'messages';
-@import 'scrollbars';
-@import 'sidebars';
-@import 'tags';
+@forward 'buttons';
+@forward 'embeds';
+@forward 'links';
+@forward 'mentions';
+@forward 'messages';
+@forward 'scrollbars';
+@forward 'sidebars';
+@forward 'tags';

@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .#{$prefix}scrollbar {
     $scrollbar-color: #1a1b1e;
 

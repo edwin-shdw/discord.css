@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'links';
+
 .#{$prefix}msg {
     --#{$prefix}msg-bg: inherit;
     --#{$prefix}msg-bg-hover: #{mix(black, $light-grey, 7%)};

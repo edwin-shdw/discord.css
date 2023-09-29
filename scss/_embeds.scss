@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .#{$prefix}embed {
     --#{$prefix}embed-color: #{$dark-grey};
     --#{$prefix}embed-span: span 1;

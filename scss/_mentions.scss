@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .#{$prefix}mention {
     --#{$prefix}mention-bg: var(--#{$prefix}blurple-rgb);
     --#{$prefix}mention-bg-opacity: 0.5;

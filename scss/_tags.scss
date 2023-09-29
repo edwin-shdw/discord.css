@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @mixin tag-verified {
     inline-size: 0.9375rem;
     block-size: 0.9375rem;

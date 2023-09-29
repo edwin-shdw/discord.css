@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .#{$prefix}sidebar {
     $transition-time: 200ms;
     $transition-curve: ease-out;
