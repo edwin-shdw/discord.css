@@ -1,8 +1,8 @@
 @use '../variables' as vars;
 
 @mixin button-outline($color) {
-    --#{vars.$prefix}background: transparent;
-    --#{vars.$prefix}background-hover: #{$color};
+    --#{vars.$prefix}btn-background: transparent;
+    --#{vars.$prefix}btn-background-hover: #{$color};
     border-color: $color;
     border-style: solid;
     border-width: 0.0625rem;

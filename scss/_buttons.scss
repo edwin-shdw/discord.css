@@ -2,10 +2,10 @@
 @use 'mixins/buttons' as *;
 
 .#{$prefix}btn {
-    --#{$prefix}background: #4E5058;
-    --#{$prefix}background-hover: #6D6F78;
+    --#{$prefix}btn-background: #4E5058;
+    --#{$prefix}btn-background-hover: #6D6F78;
 
-    background: var(--#{$prefix}background);
+    background: var(--#{$prefix}btn-background);
     border: none;
     border-radius: 0.1875rem;
     color: var(--#{$prefix}white);
@@ -21,7 +21,7 @@
     transition: background-color 170ms ease, color 170ms ease;
 
     &:hover {
-        background: var(--#{$prefix}background-hover);
+        background: var(--#{$prefix}btn-background-hover);
     }
 
     &-outline {
@@ -30,8 +30,8 @@
 
     @each $color, $states in $button-colors {
         &-#{$color} {
-            --#{$prefix}background: #{map-get($states, 'default')};
-            --#{$prefix}background-hover: #{map-get($states, 'hover')};
+            --#{$prefix}btn-background: #{map-get($states, 'default')};
+            --#{$prefix}btn-background-hover: #{map-get($states, 'hover')};
         }
 
         &-outline-#{$color} {
@@ -52,7 +52,7 @@
 
     &:disabled,
     &-disabled {
-        --#{$prefix}background-hover: var(--#{$prefix}background);
+        --#{$prefix}btn-background-hover: var(--#{$prefix}btn-background);
         cursor: not-allowed;
         opacity: 0.5;
     }
