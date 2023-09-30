@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+.#{$prefix}alert {
+    --#{$prefix}alert-bg: #111214;
+
+    inset-block-end: 0;
+    inset-inline-start: 50%;
+    padding-block-end: 1.25rem;
+    padding-inline: 1.25rem;
+    position: fixed;
+    transition: translate 500ms cubic-bezier(0.69, -2, 0.20, 2);
+    translate: -50% 100%;
+    z-index: 2;
+
+    &.#{$prefix}show {
+        translate: -50%;
+    }
+
+    &-content {
+        align-items: center;
+        background: var(--#{$prefix}alert-bg);
+        border-radius: 0.3125rem;
+        display: flex;
+        inline-size: 46.375rem;
+        justify-content: space-between;
+        padding-block: 0.625rem;
+        padding-inline: 1rem 0.625rem;
+        transition: background-color 500ms;
+    }
+
+    &-msg {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &-actions {
+        align-items: center;
+        display: flex;
+        font-size: 14px;
+        gap: 0.625rem;
+        min-inline-size: fit-content;
+    }
+
+    &-warn {
+        --#{$prefix}alert-bg: var(--#{$prefix}red);
+    }
+}

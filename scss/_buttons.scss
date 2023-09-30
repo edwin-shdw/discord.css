@@ -50,6 +50,15 @@
         }
     }
 
+    &-cancel {
+        --#{$prefix}btn-background: transparent;
+
+        &:hover {
+            --#{$prefix}btn-background-hover: transparent;
+            text-decoration: underline;
+        }
+    }
+
     &:disabled,
     &-disabled {
         --#{$prefix}btn-background-hover: var(--#{$prefix}btn-background);
