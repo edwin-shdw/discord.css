@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run css && npm run css:minify",
-    "css": "sass ./scss/discord.scss ./dist/css/discord.css",
-    "css:minify": "sass ./scss/discord.scss ./dist/css/discord.min.css --style=compressed",
-    "watch": "sass ./scss/discord.scss ./dist/css/discord.css --watch",
+    "css": "sass scss/_index.scss ./dist/css/discord.css",
+    "css:minify": "sass scss/_index.scss ./dist/css/discord.min.css --style=compressed",
+    "watch": "sass scss/_index.scss ./dist/css/discord.css --watch",
     "test": "echo \"If it looks pretty it must be fine\" && exit 1"
   },
   "keywords": [
