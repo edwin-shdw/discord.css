@@ -1,7 +1,7 @@
 {
   "name": "discord.css",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "A stylesheet library containing the styling for Discord components",
   "main": "index.js",
   "scripts": {
     "build": "npm run css && npm run css:minify",
@@ -23,6 +23,10 @@
     "type": "git",
     "url": "https://github.com/edwin-shdw/discord.css.git"
   },
+  "files": [
+    "dist/css/*.{css,map}",
+    "scss/**/*.scss"
+  ],
   "devDependencies": {
     "sass": "^1.66.1"
   }
