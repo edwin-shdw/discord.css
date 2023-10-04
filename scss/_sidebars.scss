@@ -22,9 +22,9 @@
         position: relative;
 
         &:hover {
-            --#{$prefix}sidebar-item-border-radius: 16px;
-            --#{$prefix}sidebar-pill-height: 20px;
-            --#{$prefix}sidebar-pill-width: 8px;
+            --#{$prefix}sidebar-item-border-radius: 1rem;
+            --#{$prefix}sidebar-pill-height: 1.25rem;
+            --#{$prefix}sidebar-pill-width: 0.5rem;
             --#{$prefix}sidebar-pill-opacity: 1;
         }
 
@@ -53,9 +53,9 @@
         }
 
         &.#{$prefix}active {
-            --#{$prefix}sidebar-item-border-radius: 16px;
-            --#{$prefix}sidebar-pill-height: 40px;
-            --#{$prefix}sidebar-pill-width: 8px;
+            --#{$prefix}sidebar-item-border-radius: 1rem;
+            --#{$prefix}sidebar-pill-height: 2.5rem;
+            --#{$prefix}sidebar-pill-width: 0.5rem;
             --#{$prefix}sidebar-pill-opacity: 1;
         }
     }

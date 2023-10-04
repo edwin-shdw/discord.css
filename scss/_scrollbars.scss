@@ -14,7 +14,7 @@
         background: var(--#{$prefix}grey);
         background-clip: padding-box;
         border: 0.25rem solid transparent;
-        border-radius: 8px;
+        border-radius: 0.5rem;
     }
 
     &::-webkit-scrollbar-thumb {
