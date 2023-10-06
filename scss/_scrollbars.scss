@@ -1,10 +1,10 @@
 @use 'variables' as *;
 
 .#{$prefix}scrollbar {
-    $scrollbar-color: #1a1b1e;
+    --#{$prefix}scrollbar-color: #1a1b1e;
 
     overflow-y: scroll;
-    scrollbar-color: $scrollbar-color var(--#{$prefix}grey);
+    scrollbar-color: var(--#{$prefix}scrollbar-color) var(--#{$prefix}grey);
 
     &::-webkit-scrollbar {
         inline-size: 1rem;
@@ -18,7 +18,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background: $scrollbar-color;
+        background: var(--#{$prefix}scrollbar-color);
         background-clip: padding-box;
         border: 0.25rem solid transparent;
         border-radius: 0.5rem;
