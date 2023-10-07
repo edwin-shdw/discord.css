@@ -1,0 +1,54 @@
+@use '../variables' as *;
+@use '../scrollbars';
+
+%input {
+    background: var(--#{$prefix}dark-grey);
+    border: none;
+    border-radius: 0.1875rem;
+    box-sizing: border-box;
+    color: var(--#{$prefix}white);
+    display: block;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    inline-size: 100%;
+    padding: 0.625rem;
+
+    &::placeholder {
+        color: #87898C;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+input.#{$prefix}input {
+    @extend %input;
+    block-size: 2.5rem;
+}
+
+textarea.#{$prefix}input {
+    @extend %input;
+    @extend .#{$prefix}scrollbar-thin;
+
+    --#{$prefix}scrollbar-color: #151619;
+
+    block-size: 8.5rem;
+    overflow-y: auto;
+    resize: none;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        inline-size: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
