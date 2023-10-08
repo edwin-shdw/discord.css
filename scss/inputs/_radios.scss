@@ -1,0 +1,70 @@
+@use '../variables' as *;
+
+.#{$prefix}radio {
+    --#{$prefix}radio-bg: var(--#{$prefix}grey);
+    --#{$prefix}radio-bg-hover: hsl(228 6% 32.5% /0.3);
+    --#{$prefix}radio-bg-selected: hsl(228 6% 32.5% /06);
+
+    align-items: center;
+    background: var(--#{$prefix}radio-bg);
+    border-radius: 0.1875rem;
+    color: #b5bac1;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    gap: 0.5rem;
+    line-height: 1.25rem;
+    margin-block-end: 0.5rem;
+    padding: 0.625rem;
+
+    &:hover {
+        background: var(--#{$prefix}radio-bg-hover);
+    }
+
+    &:has(input:checked) {
+        --#{$prefix}radio-bg: var(--#{$prefix}radio-bg-selected);
+
+        color: var(--#{$prefix}white);
+    }
+
+    &:has(input:disabled) {
+        --#{$prefix}radio-bg-hover: var(--#{$prefix}radio-bg);
+
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    // Firefox does not support :has()
+    // https://caniuse.com/css-has
+    // TODO: drop classes as soon as firefox ships support for :has()
+    &-disabled {
+        --#{$prefix}radio-bg-hover: var(--#{$prefix}radio-bg);
+
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &-checked {
+        --#{$prefix}radio-bg: var(--#{$prefix}radio-bg-selected);
+        --#{$prefix}radio-bg-hover: var(--#{$prefix}radio-bg-selected);
+
+        color: var(--#{$prefix}white);
+    }
+
+    input {
+        --#{$prefix}radio-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='%23b5bac1'%3E%3C/path%3E%3C/svg%3E");
+        --#{$prefix}radio-icon-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='white'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='5' fill='white'%3E%3C/circle%3E%3C/svg%3E");
+
+        appearance: none;
+        margin: 0;
+
+        &::before {
+            content: var(--#{$prefix}radio-icon);
+        }
+
+        &:checked {
+            --#{$prefix}radio-icon: var(--#{$prefix}radio-icon-checked);
+        }
+    }
+}
