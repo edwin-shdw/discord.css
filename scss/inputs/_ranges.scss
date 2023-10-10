@@ -1,0 +1,34 @@
+@use '../variables' as *;
+
+@mixin thumb {
+    appearance: none;
+    background: var(--#{$prefix}white);
+    block-size: 1.5rem;
+    border: none;
+    border-radius: 0.1875rem;
+    box-shadow: var(--#{$prefix}range-thumb-box-shadow);
+    cursor: ew-resize;
+    inline-size: 0.675rem;
+}
+
+.#{$prefix}range {
+    appearance: none;
+    background: #4e5058;
+    block-size: 0.5rem;
+    border-radius: 0.25rem;
+    inline-size: 100%;
+
+    &:focus-visible {
+        --#{$prefix}range-thumb-box-shadow: 0 0 0 0.25rem var(--dc-link);
+
+        outline: none;
+    }
+
+    &::-webkit-slider-thumb {
+        @include thumb;
+    }
+
+    &::-moz-range-thumb {
+        @include thumb;
+    }
+}
