@@ -1,14 +1,14 @@
 @forward 'variables';
 @forward 'root';
 
-@forward 'alerts';
-@forward 'buttons';
-@forward 'embeds';
+@forward 'alert';
+@forward 'button';
+@forward 'embed';
 @forward 'focus-ring';
-@forward 'inputs';
-@forward 'links';
-@forward 'mentions';
-@forward 'messages';
-@forward 'scrollbars';
-@forward 'sidebars';
-@forward 'tags';
+@forward 'input';
+@forward 'link';
+@forward 'mention';
+@forward 'message';
+@forward 'scrollbar';
+@forward 'sidebar';
+@forward 'tag';

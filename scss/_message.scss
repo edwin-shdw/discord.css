@@ -1,5 +1,5 @@
 @use 'variables' as *;
-@use 'links';
+@use 'link';
 
 .#{$prefix}msg {
     --#{$prefix}msg-bg: inherit;

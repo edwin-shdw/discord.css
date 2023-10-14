@@ -34,9 +34,9 @@ You have two options for importing Discord.css's files: include all of Discord.c
 @use "/node_modules/discord.css/scss/root";
 
 // 2. Include the parts you need
-@use "/node_modules/discord.css/scss/buttons";
-@use "/node_modules/discord.css/scss/embeds";
-@use "/node_modules/discord.css/scss/messages";
+@use "/node_modules/discord.css/scss/button";
+@use "/node_modules/discord.css/scss/embed";
+@use "/node_modules/discord.css/scss/message";
 // ...
 
 // 3. Then add additional custom code here

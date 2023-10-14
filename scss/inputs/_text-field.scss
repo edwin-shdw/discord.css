@@ -1,5 +1,5 @@
 @use '../variables' as *;
-@use '../scrollbars';
+@use '../scrollbar';
 
 %input {
     background: var(--#{$prefix}dark-grey);
