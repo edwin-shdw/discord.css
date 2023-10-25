@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Discord.css',
+  tagline: 'Imagine a style',
+  favicon: 'img/dcs.webp',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'edwin-shdw', // Usually your GitHub org/user name.
+  projectName: 'discord.css', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -41,18 +41,13 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/edwin-shdw/discord.css/tree/main/site',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [
+              require.resolve('./src/css/custom.css'),
+              require.resolve('../dist/css/discord.min.css'),
+          ],
         },
       }),
     ],
@@ -62,23 +57,27 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/dcs.webp',
       navbar: {
-        title: 'My Site',
+        title: 'Discord.css',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Discord Styles',
+          src: 'img/dcs.webp',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            to: '/preview',
+            label: 'Preview',
+            position: 'left',
+          },
+          {
+            href: 'https://github.com/edwin-shdw/discord.css',
             label: 'GitHub',
             position: 'right',
           },
@@ -88,28 +87,23 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Links',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Home',
+                to: '/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Introduction',
+                to: '/docs/getting-started/intro',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Changelog',
+                to: 'changelog',
+              },
+              {
+                label: 'Preview',
+                to: '/preview',
               },
             ],
           },
@@ -117,17 +111,17 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'GitHub',
+                href: 'https://github.com/edwin-shdw/discord.css',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Issues',
+                href: 'https://github.com/edwin-shdw/discord.css/issues',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Discord.css<br>Code licensed <a href="https://github.com/edwin-shdw/discord.css/blob/main/LICENSE" target="_blank">MIT</a>`,
       },
       prism: {
         theme: lightCodeTheme,

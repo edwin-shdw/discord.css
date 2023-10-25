@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
 
@@ -17,8 +16,13 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/getting-started/intro">
+            Get started
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/preview">
+            Get a preview
           </Link>
         </div>
       </div>
@@ -30,11 +34,11 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Discord.css is a easy to handle stylesheet based on Discord's style. It's ideal for creating previews."
+    >
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+
       </main>
     </Layout>
   );
