@@ -1,0 +1,38 @@
+---
+title: Introduction
+description: Learn how to include Discord.css in your project.
+sidebar_position: 1
+---
+
+import { version } from '../../../package.json';
+
+# Introduction
+
+Learn how to include Discord.css in your project.
+
+## Compiled CSS
+
+Download ready-to-use compiled code for Discord.css to easily drop it into your project, which includes:
+
+- Compiled CSS
+- Compiled and minified CSS
+
+Each version comes with a CSS source map.
+
+
+<a class="dc-btn dc-btn-blurple" href={`https://github.com/edwin-shdw/discord.css/releases/tag/v${version}`}>
+    Download
+</a>
+
+
+## Package managers
+
+Using Discord.css with a package manager brings some advantages like customizing the prefix or only including needed
+components which will reduce the compiled CSS file.
+
+Discord.css uses [SASS](https://sass-lang.com/) as it's preprocessor so make sure to install it as well.
+
+```
+npm i discord.css
+npm i --save-dev sass
+```
