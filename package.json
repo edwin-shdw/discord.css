@@ -8,6 +8,8 @@
     "css": "sass scss/_index.scss ./dist/css/discord.css",
     "css:minify": "sass scss/_index.scss ./dist/css/discord.min.css --style=compressed",
     "watch": "sass scss/_index.scss ./dist/css/discord.css --watch",
+    "docs": "npm --prefix ./site run start",
+    "docs-build": "npm --prefix ./site run build",
     "test": "echo \"If it looks pretty it must be fine\" && exit 1"
   },
   "keywords": [
