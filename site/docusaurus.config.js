@@ -95,7 +95,7 @@ const config = {
               },
               {
                 label: 'Introduction',
-                to: '/docs/getting-started/intro',
+                to: '/docs/getting-started/introduction',
               },
               {
                 label: 'Changelog',
