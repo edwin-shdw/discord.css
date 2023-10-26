@@ -1,0 +1,99 @@
+---
+title: Button
+description: Discord styled buttons commonly used in the settings and as interaction component under embeds.
+---
+
+import Button from '@site/src/components/Button';
+import CodePreview from '@site/src/components/CodePreview';
+import Row from '@site/src/components/Row';
+
+
+## Examples
+
+The base class for buttons is `dc-btn` that sets up basic styles such as padding and content alignment. By default,
+`dc-btn` has a grey background color. To apply a variant/color to the button you will need to add `dc-btn-<variant>` to
+the base class.
+
+<CodePreview>
+    <Row>
+      <Button>Default</Button>
+      <Button variant={'blurple'}>Blurple</Button>
+      <Button variant={'danger'}>Danger</Button>
+      <Button variant={'success'}>Success</Button>
+      <Button variant={'link'} as='a' href="https://edwin-shdw.de">Link</Button>
+      <Button variant={'cancel'}>Cancel</Button>
+    </Row>
+</CodePreview>
+
+```html
+<button class="dc-btn">Default</button>
+<button class="dc-btn dc-btn-blurple">Blurple</button>
+<button class="dc-btn dc-btn-danger">Danger</button>
+<button class="dc-btn dc-btn-success">Success</button>
+<button class="dc-btn dc-btn-link">Link</button>
+<button class="dc-btn dc-btn-cancel">Cancel</button>
+```
+
+## Outline buttons
+
+If you need the outlined variant of the buttons just use the `dc-btn-outline` class for the default variant or
+`dc-btn-outline-<variant>` for the colored variant.
+
+<CodePreview>
+    <Row>
+      <Button variant={'outline'}>Default</Button>
+      <Button variant={'outline-blurple'}>Blurple</Button>
+      <Button variant={'outline-danger'}>Danger</Button>
+      <Button variant={'outline-success'}>Success</Button>
+    </Row>
+</CodePreview>
+
+```html
+<button class="dc-btn dc-btn-outline">Default</button>
+<button class="dc-btn dc-btn-outline-blurple">Blurple</button>
+<button class="dc-btn dc-btn-outline-danger">Danger</button>
+<button class="dc-btn dc-btn-outline-success">Success</button>
+```
+
+:::note
+Keep in mind that the outline class will **not** work on `link` or `cancel`.
+:::
+
+## Disabled state
+
+Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element.
+
+<CodePreview>
+    <Row>
+      <Button disabled>Default</Button>
+      <Button variant={'blurple'} disabled>Blurple</Button>
+      <Button variant={'danger'} disabled>Danger</Button>
+      <Button variant={'success'} disabled>Success</Button>
+    </Row>
+</CodePreview>
+
+```html
+<button class="dc-btn">Default</button>
+<button class="dc-btn dc-btn-blurple" disabled>Blurple</button>
+<button class="dc-btn dc-btn-danger" disabled>Danger</button>
+<button class="dc-btn dc-btn-success" disabled>Success</button>
+```
+
+`<a>` elements don’t support the disabled attribute, so you must add the `.dc-btn-disabled` class to
+make it visually appear disabled.
+
+<CodePreview>
+  <Button variant={'link'} as={'a'} disabled>Disabled link</Button>
+</CodePreview>
+
+```html
+<a class="dc-btn dc-btn-link dc-btn-disabled">Disabled link</a>
+```
+
+:::danger
+Neither the `disabled` attribute nor the `dc-btn-disabled` class will actually disable the button, so make sure to
+handle it accordingly by:
+
+- Checking for the `disabled` state in JS
+- Removing the `href` from `<a>` tags
+:::
