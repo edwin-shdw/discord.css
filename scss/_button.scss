@@ -22,6 +22,8 @@
 
     &:hover {
         background: var(--#{$prefix}btn-background-hover);
+        color: var(--#{$prefix}white);
+        text-decoration: none;
     }
 
     &-outline {
