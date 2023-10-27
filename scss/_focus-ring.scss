@@ -3,6 +3,7 @@
 $box-shadow: 0 0 0 0.25rem var(--dc-link);
 
 .#{$prefix}focus-ring {
+    border-radius: 0.25rem;
     box-shadow: $box-shadow;
     outline: none;
 }
