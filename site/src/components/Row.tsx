@@ -3,7 +3,7 @@ import * as React from 'react';
 export default function Row({
   children,
 }: {
-  children: React.ReactElement,
+  children: React.ReactNode,
 }): React.ReactElement {
   return(
     <div

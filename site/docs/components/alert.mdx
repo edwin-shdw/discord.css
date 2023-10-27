@@ -1,0 +1,67 @@
+---
+title: Alert
+description: Use Discords alert to show a notification.
+---
+
+import AlertExample from '@site/src/examples/AlertExample';
+import AlertExampleTwo from '@site/src/examples/AlertExampleTwo';
+import CodePreview from '@site/src/components/CodePreview';
+
+Click the button below to reveal the alert which will pop up from the bottom. Click the button again to trigger warning
+style. Clicking one of the buttons inside the alert will hide the alert.
+
+<AlertExample />
+
+```html
+<div class="dc-alert dc-show">
+    <div class="dc-alert-content">
+        <span class="dc-alert-msg">Look Wumpus! It's an alert!</span>
+        <span class="dc-alert-actions">
+            <button class="dc-btn dc-btn-cancel">Cancel</button>
+            <button class="dc-btn dc-btn-success">Save changes</button>
+        </span>
+    </div>
+</div>
+```
+
+Alerts are hidden by default. To reveal them you will need to add the `dc-show` class to the base class `dc-alert`.
+Add the `dc-alert-warn` class to display the warning style.
+
+:::info
+Discord (and this example) shows the warning style for 1.25 seconds before hiding it again.
+:::
+
+## Overflow ellipses
+
+Discord will display an ellipses if the content overflows. Discord.css will stick to that design but if you don't want
+the content to be hidden on overflow you can simply not apply the `dc-alert-msg` class.
+
+<AlertExampleTwo />
+
+```html
+<!-- Will display an ellipses -->
+<div class="dc-alert dc-show">
+    <div class="dc-alert-content">
+        <div class="dc-alert-msg">
+            Look Wumpus! The text is wayyy to long to fit all the way in this alert! Maybe we should shorten the text?
+        </div>
+        <div class="dc-alert-actions">
+            <button class="dc-btn dc-btn-cancel">Cancel</button>
+            <button class="dc-btn dc-btn-success">Save changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- Will not display an ellipses -->
+<div class="dc-alert dc-show">
+    <div class="dc-alert-content">
+        <div>
+            Look Wumpus! The text can now be as long as we want! Should we tell a story inside here or leave it to the professionals?
+        </div>
+        <div class="dc-alert-actions">
+            <button class="dc-btn dc-btn-cancel">Cancel</button>
+            <button class="dc-btn dc-btn-success">Save changes</button>
+        </div>
+    </div>
+</div>
+```

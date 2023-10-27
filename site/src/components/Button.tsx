@@ -6,15 +6,16 @@ export default function Button({
   variant,
   disabled,
   as = 'button',
+  onClick,
   ...props
 }: {
-  children: React.ReactElement,
-  className: string,
+  children: React.ReactNode,
+  className?: string,
   variant?: string,
   disabled?: boolean,
   as?: React.ElementType,
-  href?: string,
-  props: React.HTMLProps<any>
+  onClick?: Function,
+  props?: React.HTMLProps<any>,
 }): React.ReactElement {
   const Tag = as;
   const btnVariant = variant ? `dc-btn-${variant}` : null;
@@ -26,6 +27,7 @@ export default function Button({
     <Tag
       className={classString}
       disabled={disabled}
+      onClick={onClick}
       {...props}
     >
       {children}
