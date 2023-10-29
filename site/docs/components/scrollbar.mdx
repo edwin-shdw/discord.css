@@ -1,0 +1,73 @@
+---
+title: Scrollbar
+description: Change the styling of the boring default HTML scrollbar.
+---
+
+import ScrollbarExample from '@site/src/examples/ScrollbarExample';
+import CodePreview from '@site/src/components/CodePreview';
+
+
+There are three variants of scrollbars used by Discord. Discord.css uses `::-webkit-scrollbar` for the styling of
+scrollbars as it is currently the only way to achieve this styling. Firefox does
+[not support](https://caniuse.com/mdn-css_selectors_-webkit-scrollbar) `::-webkit-scrollbar` so it won't appear as
+intended. You can view this page with Firefox to check how scrollbars will behave there.
+
+
+## Default scrollbar
+
+The default scrollbar uses the `dc-scrollbar` class and will be visible even if the content is not overflowing. Discord
+uses this scrollbar for main content e.g. a chat.
+
+<CodePreview>
+  <ScrollbarExample>
+    This is the standard scroll-bar
+  </ScrollbarExample>
+</CodePreview>
+
+```html
+<div class="dc-scrollbar" style="block-size: 35vh;">
+     <div style="background: linear-gradient(black, var(--dc-blurple)); height: 100vh; padding: 0.5rem;">
+        This is the standard scroll-bar
+    </div>
+</div>
+```
+
+
+## Thin scrollbar
+
+The thin scrollbar will only appear if you hover the element which has the `dc-scrollbar-thin` class applied. Discord
+uses this scrollbar for sidebars e.g. chat lists, member lists
+
+<CodePreview>
+  <ScrollbarExample variant='thin'>
+    This is the thin scroll-bar. It will only appear if the element is hovered
+  </ScrollbarExample>
+</CodePreview>
+
+```html
+<div class="dc-scrollbar-thin" style="block-size: 35vh;">
+    <div style="background: linear-gradient(black, var(--dc-blurple)); height: 100vh; padding: 0.5rem;">
+        This is the thin scroll-bar. It will only appear if the element is hovered
+    </div>
+</div>
+```
+
+
+## Invisible scrollbar
+
+The `dc-scrollbar-none` class makes the scrollbar invisible but the content will still be scrollable. Discord uses this
+scrollbar for the sidebar containing your servers.
+
+<CodePreview>
+  <ScrollbarExample variant='none'>
+    This is the invisible scroll-bar. The scrollbar is hidden but it is still scrollable
+  </ScrollbarExample>
+</CodePreview>
+
+```html
+<div class="dc-scrollbar-none" style="block-size: 35vh;">
+    <div style="background: linear-gradient(black, var(--dc-blurple)); height: 100vh; padding: 0.5rem;">
+        This is the invisible scroll-bar. The scrollbar is hidden but it is still scrollable
+    </div>
+</div>
+```
