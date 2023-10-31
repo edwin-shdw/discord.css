@@ -55,3 +55,9 @@ html[data-theme='dark'] {
   background-color: var(--dc-grey);
   padding: 1rem;
 }
+
+.code-preview-content--bordered {
+  background-color: transparent;
+  padding: 1rem;
+  border: 0.25rem solid var(--dc-dark-grey);
+}
