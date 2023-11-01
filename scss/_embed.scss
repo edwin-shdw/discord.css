@@ -7,8 +7,11 @@
     background: $grey;
     border-inline-start: 0.25rem solid var(--#{$prefix}embed-color);
     border-radius: 0.25rem;
+    color: var(--dc-white);
     display: grid;
     grid-template-columns: auto min-content;
+    inline-size: fit-content;
+    line-height: normal;
     max-inline-size: 32.25rem;
     padding-block: 0.5rem 1rem;
     padding-inline: 0.75rem 1rem;
@@ -29,9 +32,20 @@
         margin-block-start: 0.5rem;
 
         & > img {
+            aspect-ratio: 1;
             border-radius: 50%;
             max-height: 1.5rem;
             max-width: 1.5rem;
+            object-fit: cover;
+        }
+
+        & > a {
+            color: var(--dc-white);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -125,9 +139,11 @@
         margin-block-start: 0.5rem;
 
         & > img {
+            aspect-ratio: 1;
             border-radius: 50%;
             max-height: 1.5rem;
             max-width: 1.5rem;
+            object-fit: cover;
         }
 
         &-seperator {
