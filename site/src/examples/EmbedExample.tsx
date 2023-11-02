@@ -1,54 +1,42 @@
 import * as React from 'react';
-import {
-  Embed,
-  EmbedDescription,
-  EmbedFields,
-  EmbedField,
-  EmbedTitle,
-  EmbedFieldName, EmbedFieldValue, EmbedImage, EmbedFooter, EmbedAuthor, EmbedThumbnail
-} from '@site/src/components/Embed';
-
-function getCurrentDateTime(): string {
-  const now = new Date();
-  return `${now.toLocaleDateString()} ${now.toLocaleTimeString().slice(0, -3)}`;
-}
+import Embed from '@site/src/components/Embed';
 
 export default function EmbedExample(): React.ReactElement {
   return(
     <Embed color='#a00'>
-      <EmbedAuthor>
+      <Embed.Author>
         <img src="/img/dcs.webp" alt="Author image"/>
         <span>discord.css</span>
-      </EmbedAuthor>
-      <EmbedThumbnail>
+      </Embed.Author>
+      <Embed.Thumbnail>
         <img src="/img/dcs.webp" alt="Thumbnail"/>
-      </EmbedThumbnail>
-      <EmbedTitle>Embeds</EmbedTitle>
-      <EmbedDescription>
+      </Embed.Thumbnail>
+      <Embed.Title>Embeds</Embed.Title>
+      <Embed.Description>
         If you create a bot you will probably using embeds, so this class is ideal if you want to build previews for the
         dashboard of your bot!
-      </EmbedDescription>
-      <EmbedFields>
-        <EmbedField inline={true}>
-          <EmbedFieldName>Inline field name</EmbedFieldName>
-          <EmbedFieldValue>Some field value</EmbedFieldValue>
-        </EmbedField>
-        <EmbedField inline={true}>
-          <EmbedFieldName>Inline field name</EmbedFieldName>
-          <EmbedFieldValue>Some other field value</EmbedFieldValue>
-        </EmbedField>
-        <EmbedField>
-          <EmbedFieldName>Field name</EmbedFieldName>
-          <EmbedFieldValue>No longer inline field</EmbedFieldValue>
-        </EmbedField>
-      </EmbedFields>
-      <EmbedImage>
+      </Embed.Description>
+      <Embed.Fields>
+        <Embed.Field inline={true}>
+          <Embed.Field.Name>Inline field name</Embed.Field.Name>
+          <Embed.Field.Value>Some field value</Embed.Field.Value>
+        </Embed.Field>
+        <Embed.Field inline={true}>
+          <Embed.Field.Name>Inline field name</Embed.Field.Name>
+          <Embed.Field.Value>Some other field value</Embed.Field.Value>
+        </Embed.Field>
+        <Embed.Field>
+          <Embed.Field.Name>Field name</Embed.Field.Name>
+          <Embed.Field.Value>No longer inline field</Embed.Field.Value>
+        </Embed.Field>
+      </Embed.Fields>
+      <Embed.Image>
         <img src="/img/shadow-logo.png" alt="Shadow" />
-      </EmbedImage>
-      <EmbedFooter>
+      </Embed.Image>
+      <Embed.Footer>
         <img src="/img/dcs.webp" alt="Author Profile Image" />
         <span>discord.css docs<span className="dc-embed-footer-seperator">•</span>30.10.2023 22:13</span>
-      </EmbedFooter>
+      </Embed.Footer>
     </Embed>
   )
 }

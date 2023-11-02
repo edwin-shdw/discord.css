@@ -4,19 +4,7 @@ description: Use the embed class to build realistic Discord embeds.
 ---
 
 import CodePreview from '@site/src/components/CodePreview';
-import {
-    Embed,
-    EmbedAuthor,
-    EmbedDescription,
-    EmbedField,
-    EmbedFieldName,
-    EmbedFields,
-    EmbedFieldValue,
-    EmbedFooter,
-    EmbedImage,
-    EmbedThumbnail,
-    EmbedTitle
-} from '@site/src/components/Embed';
+import Embed from '@site/src/components/Embed';
 import EmbedExample from '@site/src/examples/EmbedExample';
 
 Embeds have a colored border, an author field, thumbnail, title, description, embedded images, text fields and a footer.
@@ -74,7 +62,7 @@ It's up to you which one you use both will result in the same embed.
 
 <CodePreview bordered={true}>
   <Embed color="#f0f">
-    <EmbedTitle>Setting colors</EmbedTitle>
+    <Embed.Title>Setting colors</Embed.Title>
   </Embed>
 </CodePreview>
 
@@ -97,10 +85,10 @@ Author fields contain an author image and name.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedAuthor>
+    <Embed.Author>
       <img src="/img/dcs.webp" />
       <span>Some name</span>
-    </EmbedAuthor>
+    </Embed.Author>
   </Embed>
 </CodePreview>
 
@@ -117,10 +105,10 @@ Author fields can also contain links inside them.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedAuthor>
+    <Embed.Author>
       <img src="/img/dcs.webp" />
       <a href="#author">Some name</a>
-    </EmbedAuthor>
+    </Embed.Author>
   </Embed>
 </CodePreview>
 
@@ -138,12 +126,12 @@ Author fields can also contain links inside them.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedTitle>
+    <Embed.Title>
       Some title
-    </EmbedTitle>
-    <EmbedThumbnail>
+    </Embed.Title>
+    <Embed.Thumbnail>
       <img src='/img/dcs.webp' />
-    </EmbedThumbnail>
+    </Embed.Thumbnail>
   </Embed>
 </CodePreview>
 
@@ -168,9 +156,9 @@ Title behave almost like the author field except they don't have an image.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedTitle>
+    <Embed.Title>
       Some title
-    </EmbedTitle>
+    </Embed.Title>
   </Embed>
 </CodePreview>
 
@@ -186,9 +174,9 @@ They can also be displayed as a link.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedTitle>
+    <Embed.Title>
       <a href="#title">Some title with a link</a>
-    </EmbedTitle>
+    </Embed.Title>
   </Embed>
 </CodePreview>
 
@@ -207,9 +195,9 @@ Descriptions are straight forward as it is just text.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedDescription>
+    <Embed.Description>
       Description are the longest part of embeds and can contain up to 4096 characters (at least at discords API).
-    </EmbedDescription>
+    </Embed.Description>
   </Embed>
 </CodePreview>
 
@@ -230,32 +218,32 @@ result in a row of fields.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedFields>
-      <EmbedField>
-        <EmbedFieldName>
+    <Embed.Fields>
+      <Embed.Field>
+        <Embed.Field.Name>
           Field 1
-        </EmbedFieldName>
-        <EmbedFieldValue>
+        </Embed.Field.Name>
+        <Embed.Field.Value>
           Will be displayed as a block
-        </EmbedFieldValue>
-      </EmbedField>
-      <EmbedField inline={true}>
-        <EmbedFieldName>
+        </Embed.Field.Value>
+      </Embed.Field>
+      <Embed.Field inline={true}>
+        <Embed.Field.Name>
           Field 2
-        </EmbedFieldName>
-        <EmbedFieldValue>
+        </Embed.Field.Name>
+        <Embed.Field.Value>
           Will be displayed inline next to field 3
-        </EmbedFieldValue>
-      </EmbedField>
-      <EmbedField inline={true}>
-        <EmbedFieldName>
+        </Embed.Field.Value>
+      </Embed.Field>
+      <Embed.Field inline={true}>
+        <Embed.Field.Name>
           Field 3
-        </EmbedFieldName>
-        <EmbedFieldValue>
+        </Embed.Field.Name>
+        <Embed.Field.Value>
           Will be displayed inline next to field 2
-        </EmbedFieldValue>
-      </EmbedField>
-    </EmbedFields>
+        </Embed.Field.Value>
+      </Embed.Field>
+    </Embed.Fields>
   </Embed>
 </CodePreview>
 
@@ -289,9 +277,9 @@ Images can be either static or animated.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedImage>
+    <Embed.Image>
       <img src="https://media.tenor.com/YhA5nO9jiCkAAAAd/ika-musume.gif" />
-    </EmbedImage>
+    </Embed.Image>
   </Embed>
 </CodePreview>
 
@@ -311,14 +299,14 @@ a `<span>` with the `dc-embed-footer-seperator` class.
 
 <CodePreview bordered={true}>
   <Embed>
-    <EmbedFooter>
+    <Embed.Footer>
       <img src="/img/dcs.webp" />
       <span>
         DCS Docs
         <span className="dc-embed-footer-seperator">•</span>
         30.10.2023 22:13
       </span>
-    </EmbedFooter>
+    </Embed.Footer>
   </Embed>
 </CodePreview>
 

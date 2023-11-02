@@ -1,4 +1,12 @@
 import * as React from 'react';
+import EmbedAuthor from './Embed/EmbedAuthor';
+import EmbedTitle from './Embed/EmbedTitle';
+import EmbedThumbnail from './Embed/EmbedThumbnail';
+import EmbedDescription from './Embed/EmbedDescription';
+import EmbedField from './Embed/EmbedField';
+import EmbedFields from './Embed/EmbedFields';
+import EmbedFooter from './Embed/EmbedFooter';
+import EmbedImage from './Embed/EmbedImage';
 
 interface EmbedProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: React.ReactNode,
@@ -23,124 +31,13 @@ export function Embed({
   )
 }
 
-export function EmbedAuthor({
-  children,
-}: {
-  children: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-author">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedThumbnail({
-  children,
-}: {
-  children?: React.ReactNode
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-thumbnail">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedTitle({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-title">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedDescription({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-description">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedFields({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-fields">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedField({
-  children,
-  inline = false,
-}: {
-  children?: React.ReactNode,
-  inline?: boolean,
-}): React.ReactElement {
-  return(
-    <div className={`dc-embed-field${inline ? '-inline' : ''}`}>
-      {children}
-    </div>
-  )
-}
-
-export function EmbedFieldName({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-field-name">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedFieldValue({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-field-value">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedImage({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-image">
-      {children}
-    </div>
-  )
-}
-
-export function EmbedFooter({
-  children,
-}: {
-  children?: React.ReactNode,
-}): React.ReactElement {
-  return(
-    <div className="dc-embed-footer">
-      {children}
-    </div>
-  )
-}
+export default Object.assign(Embed, {
+  Author: EmbedAuthor,
+  Description: EmbedDescription,
+  Field: EmbedField,
+  Fields: EmbedFields,
+  Footer: EmbedFooter,
+  Image: EmbedImage,
+  Thumbnail: EmbedThumbnail,
+  Title: EmbedTitle,
+});
