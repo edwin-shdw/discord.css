@@ -1,5 +1,19 @@
 import * as React from 'react';
 
+interface ButtonProps extends React.ComponentPropsWithoutRef<any> {
+  as?: React.ElementType,
+  variant?: 'blurple'
+    | 'danger'
+    | 'success'
+    | 'outline'
+    | 'outline-blurple'
+    | 'outline-danger'
+    | 'outline-success'
+    | 'link'
+    | 'cancel',
+  disabled?: boolean,
+}
+
 export default function Button({
   children,
   className,
@@ -8,15 +22,7 @@ export default function Button({
   as = 'button',
   onClick,
   ...props
-}: {
-  children: React.ReactNode,
-  className?: string,
-  variant?: string,
-  disabled?: boolean,
-  as?: React.ElementType,
-  onClick?: Function,
-  props?: React.HTMLProps<any>,
-}): React.ReactElement {
+}: ButtonProps): React.ReactElement {
   const Tag = as;
   const btnVariant = variant ? `dc-btn-${variant}` : null;
   let classString = btnVariant ? `dc-btn ${btnVariant}` : 'dc-btn';

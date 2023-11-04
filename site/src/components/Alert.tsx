@@ -41,3 +41,8 @@ export function AlertActions({
     </div>
   )
 }
+
+export default Object.assign(Alert, {
+  Message: AlertMessage,
+  Actions: AlertActions,
+});
