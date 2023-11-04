@@ -1,0 +1,23 @@
+---
+title: Focus ring
+description: Show what element is focused with the focus ring helper class.
+---
+
+import Button from '@site/src/components/Button';
+import CodePreview from '@site/src/components/CodePreview';
+import Row from '@site/src/components/Row';
+
+
+You can show what element is currently focused with the `.dc-focus-ring` helper class.
+
+<CodePreview>
+    <Row gapWidth='1rem'>
+        <span className="dc-focus-ring">Focus ring on some text</span>
+        <Button className="dc-focus-ring">On a button</Button>
+    </Row>
+</CodePreview>
+
+```html
+<span class="dc-focus-ring">Focus ring on some text</span>
+<button class="dc-btn dc-focus-ring">Focus ring</button>
+```
