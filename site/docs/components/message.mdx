@@ -1,0 +1,420 @@
+---
+title: Message
+description: Build preview dialogs with the message class
+---
+
+import Button from '@site/src/components/Button';
+import CodePreview from '@site/src/components/CodePreview';
+import Embed from '@site/src/components/Embed';
+import Mention from '@site/src/components/Mention';
+import Msg from '@site/src/components/Msg';
+import MsgExample from '@site/src/examples/MsgExample';
+import Tag from '@site/src/components/Tag';
+
+
+Message classes are designed in such a way that they will natively fit in a collection of messages. That's why messages
+got a margin at the top. You can get rid of it by simply setting `margin: 0` on the element with the `dc-msg` class.
+
+<CodePreview bordered>
+  <MsgExample />
+</CodePreview>
+
+```html
+// highlight-next-line
+<div class="dc-msg" style="margin: 0px;">
+    <div class="dc-msg-reply">
+        <img class="dc-msg-reply-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+        <span class="dc-msg-reply-name">EdwinShdw</span>
+        <span>used</span>
+        <span class="dc-msg-reply-cmd">/discord-css</span>
+    </div>
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-tag">Bot</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">Here you go!</div>
+    <div class="dc-msg-components">
+        <div class="dc-embed" style="--dc-embed-color: #a00;">
+            <div class="dc-embed-title">Any form of embed</div>
+        </div>
+        <div class="dc-msg-components-btn-row">
+            <button class="dc-btn dc-btn-blurple">Primary</button>
+            <button class="dc-btn dc-btn-success">Default</button>
+            <a class="dc-btn dc-btn-link" href="https://github.com/edwin-shdw/discord.css">GitHub Repo</a>
+        </div>
+    </div>
+</div>
+```
+
+## Message author
+
+To show who sent a message you will need the profile picture, the name and the time when the message got sent.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>Hello!</Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">Hello!</div>
+</div>
+```
+
+:::info
+The timestamp should be converted to the users local time zone. You can use the
+[`toLocaleDateString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+and
+[`toLocaleTimeString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString)
+methods to handle the conversion easier.
+
+The browser support is decent as well.
+- [toLocaleDateString()](https://caniuse.com/date-tolocaledatestring)
+- [toLocaleTimeString()](https://caniuse.com/mdn-javascript_builtins_date_tolocaletimestring)
+:::
+
+### Colored names
+
+If a user got a role the username usually will be displayed in the color of that role (or the highest role). To color
+the username you will need to apply the `--dc-author-color` variable to the `dc-msg-author` class or the `color`
+property to the `dc-msg-author-name` class. It's up to you which one you use both will result in the same author name.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author nameColor="#0aa">
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <Tag>Bot</Tag>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>Hello!</Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    // highlight-next-line
+    <div class="dc-msg-author" style="--dc-author-color: #0aa;">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-tag">Bot</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">Hello!</div>
+</div>
+```
+
+```html
+<div class="dc-msg">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        // highlight-next-line
+        <span class="dc-msg-author-name" style="color: #0aa">Shabotto</span>
+        <span class="dc-tag">Bot</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">Hello!</div>
+</div>
+```
+
+### Tags
+If the author is a bot you can use the [tag](/docs/components/tag) class.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <Tag>Bot</Tag>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>Hello!</Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-tag">Bot</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">Hello!</div>
+</div>
+```
+
+
+## Content
+
+Messages in form of text or media can be displayed with the `dc-msg-content` class.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>
+      <div>Here is my message!</div>
+      <img src="/img/redforest.jpg" />
+    </Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">
+      <div>Here is my message!</div>
+      <img src="/img/redforest.jpg">
+    </div>
+</div>
+```
+
+### Components
+
+Message components like embeds or button rows should be wrapped by the `dc-msg-components` class. If you got more than a
+single button you can wrap the buttons with the `dc-msg-components-btn-row` class to get a row with the right gaps.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <Tag>Bot</Tag>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Components>
+      <Embed color='#a0a'>
+        <Embed.Title>Any form of embed</Embed.Title>
+      </Embed>
+      <Msg.ButtonRow>
+        <Button variant="blurple">Primary</Button>
+        <Button variant="success">Default</Button>
+        <Button
+          as='a'
+          variant="link"
+          href="https://github.com/edwin-shdw/discord.css"
+          target="_blank"
+        >
+          GitHub Repo
+        </Button>
+      </Msg.ButtonRow>
+    </Msg.Components>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg" style="margin: 0px;">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-tag">Bot</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-components">
+        <div class="dc-embed" style="--dc-embed-color: #a0a;">
+            <div class="dc-embed-title">Any form of embed</div>
+        </div>
+        <div class="dc-msg-components-btn-row">
+            <button class="dc-btn dc-btn-blurple">Primary</button>
+            <button class="dc-btn dc-btn-success">Default</button>
+            <a class="dc-btn dc-btn-link" href="https://github.com/edwin-shdw/discord.css">
+                GitHub Repo
+            </a>
+        </div>
+    </div>
+</div>
+```
+
+## Mention
+
+Add the `dc-msg-mentioned` class to the `dc-msg` class to apply the mentioned style of a message.
+
+<CodePreview bordered>
+  <Msg mentioned style={{ margin: 0 }}>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>
+      <div>
+        <Mention>@everyone</Mention>
+      </div>
+    </Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg dc-msg-mentioned">
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">
+      <span class="dc-mention">@everyone</span>
+    </div>
+</div>
+```
+
+
+## Reply
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.Reply>
+      <Msg.Reply.Img src="https://avatars.githubusercontent.com/u/62764562?v=4" />
+      <Msg.Reply.Name>
+        EdwinShdw
+      </Msg.Reply.Name>
+      <span>What is your fav programmin language guys?</span>
+    </Msg.Reply>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>I like TypeScript a lot!</Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <div class="dc-msg-reply">
+        <img class="dc-msg-reply-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+        <span class="dc-msg-reply-name">EdwinShdw</span>
+        <span>What is your fav programmin language guys?</span>
+    </div>
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">I like TypeScript a lot!</div>
+</div>
+```
+
+:::info
+If someone replies to your message it counts as a mention so you should add the `dc-msg-mentioned` class.
+:::
+
+
+### Command replies
+
+If you use a command of a bot it will reply to the command prompt you provided. This one is different to the usual
+reply.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.Reply>
+      <Msg.Reply.Img src="https://avatars.githubusercontent.com/u/62764562?v=4" />
+      <Msg.Reply.Name>
+        EdwinShdw
+      </Msg.Reply.Name>
+      <span>used</span>
+      <Msg.Reply.Cmd>/discord-css</Msg.Reply.Cmd>
+    </Msg.Reply>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>I like TypeScript a lot!</Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <div class="dc-msg-reply">
+        <img class="dc-msg-reply-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+        <span class="dc-msg-reply-name">EdwinShdw</span>
+        <span>used</span>
+        <span class="dc-msg-reply-cmd">/discord-css</span>
+    </div>
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">I like TypeScript a lot!</div>
+</div>
+```
+
+
+### Colored names
+
+The username of a replied message can also be colored. Only difference is that you must use the `color` property.
+
+<CodePreview bordered>
+  <Msg style={{ margin: 0 }}>
+    <Msg.Reply>
+      <Msg.Reply.Img src="https://avatars.githubusercontent.com/u/62764562?v=4" />
+      <Msg.Reply.Name style={{color: '#0aa'}}>
+        EdwinShdw
+      </Msg.Reply.Name>
+      <span>What is your fav programmin language guys?</span>
+    </Msg.Reply>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>I like TypeScript a lot!</Msg.Content>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg">
+    <div class="dc-msg-reply">
+        <img class="dc-msg-reply-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+        // highlight-next-line
+        <span class="dc-msg-reply-name" style="color: #0aa;">EdwinShdw</span>
+        <span>What is your fav programmin language guys?</span>
+    </div>
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">I like TypeScript a lot!</div>
+</div>
+```
