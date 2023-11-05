@@ -11,7 +11,17 @@ Discord uses a tag like styling for users, members, channels and roles which got
 and is therefore the default for this class.
 
 <CodePreview>
-    <Mention>@Username</Mention> <Mention>@Member name</Mention> <Mention># general</Mention>
+  <Row gap="0.5rem">
+    <div>
+      <Mention>@Username</Mention>
+    </div>
+    <div>
+      <Mention>@Member name</Mention>
+    </div>
+    <div>
+      <Mention># general</Mention>
+    </div>
+  </Row>
 </CodePreview>
 
 ```html
@@ -25,9 +35,7 @@ Roles on the other hand will get the color of the mentioned role. You can provid
 `--dc-mention-color` CSS variable.
 
 <CodePreview>
-    <Mention role color='#f47fff'>
-        @Server Booster
-    </Mention>
+    <Mention role color='#f47fff'>@Server Booster</Mention>
 </CodePreview>
 
 ```html

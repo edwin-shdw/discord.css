@@ -126,9 +126,7 @@ Author fields can also contain links inside them.
 
 <CodePreview bordered={true}>
   <Embed>
-    <Embed.Title>
-      Some title
-    </Embed.Title>
+    <Embed.Title>Some title</Embed.Title>
     <Embed.Thumbnail>
       <img src='/img/dcs.webp' />
     </Embed.Thumbnail>
@@ -144,7 +142,7 @@ Author fields can also contain links inside them.
 </div>
 ```
 
-:::caution
+:::warning
 Discord.css uses the `:has` selector for embeds. Firefox does [not support](https://caniuse.com/css-has) this selector
 yet so it will appear slightly different on Firefox browsers.
 :::
@@ -156,9 +154,7 @@ Title behave almost like the author field except they don't have an image.
 
 <CodePreview bordered={true}>
   <Embed>
-    <Embed.Title>
-      Some title
-    </Embed.Title>
+    <Embed.Title>Some title</Embed.Title>
   </Embed>
 </CodePreview>
 
@@ -195,9 +191,7 @@ Descriptions are straight forward as it is just text.
 
 <CodePreview bordered={true}>
   <Embed>
-    <Embed.Description>
-      Description are the longest part of embeds and can contain up to 4096 characters (at least at discords API).
-    </Embed.Description>
+    <Embed.Description>Description are the longest part of embeds and can contain up to 4096 characters (at least at discords API).</Embed.Description>
   </Embed>
 </CodePreview>
 
@@ -220,28 +214,16 @@ result in a row of fields.
   <Embed>
     <Embed.Fields>
       <Embed.Field>
-        <Embed.Field.Name>
-          Field 1
-        </Embed.Field.Name>
-        <Embed.Field.Value>
-          Will be displayed as a block
-        </Embed.Field.Value>
+        <Embed.Field.Name>Field 1</Embed.Field.Name>
+        <Embed.Field.Value>Will be displayed as a block</Embed.Field.Value>
       </Embed.Field>
       <Embed.Field inline={true}>
-        <Embed.Field.Name>
-          Field 2
-        </Embed.Field.Name>
-        <Embed.Field.Value>
-          Will be displayed inline next to field 3
-        </Embed.Field.Value>
+        <Embed.Field.Name>Field 2</Embed.Field.Name>
+        <Embed.Field.Value>Will be displayed inline next to field 3</Embed.Field.Value>
       </Embed.Field>
       <Embed.Field inline={true}>
-        <Embed.Field.Name>
-          Field 3
-        </Embed.Field.Name>
-        <Embed.Field.Value>
-          Will be displayed inline next to field 2
-        </Embed.Field.Value>
+        <Embed.Field.Name>Field 3</Embed.Field.Name>
+        <Embed.Field.Value>Will be displayed inline next to field 2</Embed.Field.Value>
       </Embed.Field>
     </Embed.Fields>
   </Embed>
@@ -301,11 +283,7 @@ a `<span>` with the `dc-embed-footer-seperator` class.
   <Embed>
     <Embed.Footer>
       <img src="/img/dcs.webp" />
-      <span>
-        DCS Docs
-        <span className="dc-embed-footer-seperator">•</span>
-        30.10.2023 22:13
-      </span>
+      <span>DCS Docs<span className="dc-embed-footer-seperator">•</span>30.10.2023 22:13</span>
     </Embed.Footer>
   </Embed>
 </CodePreview>
