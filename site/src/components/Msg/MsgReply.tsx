@@ -33,6 +33,18 @@ export function MsgReplyName({
   )
 }
 
+export function MsgReplyMsg({
+  children,
+}: {
+  children?: React.ReactNode,
+}): React.ReactElement {
+  return(
+    <span className="dc-msg-reply-msg">
+      {children}
+    </span>
+  )
+}
+
 export function MsgReplyCmd({
   children,
 }: {
@@ -48,5 +60,6 @@ export function MsgReplyCmd({
 export default Object.assign(MsgReply, {
   Img: MsgReplyImg,
   Name: MsgReplyName,
+  Msg: MsgReplyMsg,
   Cmd: MsgReplyCmd,
 });
