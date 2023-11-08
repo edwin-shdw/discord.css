@@ -46,6 +46,7 @@
             border-radius: 50%;
             block-size: 1rem;
             inline-size: 1rem;
+            object-fit: cover;
         }
 
         &-name {
@@ -85,6 +86,7 @@
             inline-size: 2.5rem;
             inset-inline-start: 1rem;
             margin-block-start: 0.125rem;
+            object-fit: cover;
             position: absolute;
         }
 
