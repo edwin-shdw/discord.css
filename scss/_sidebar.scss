@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins/active-states' as *;
 
 .#{$prefix}sidebar {
     $transition-time: 200ms;
@@ -50,6 +51,14 @@
             transition: height $transition-time $transition-curve,
                         opacity $transition-time $transition-curve,
                         width $transition-time $transition-curve;
+        }
+
+        &:active {
+            @include active-translate;
+
+            &::before {
+                @include active-translate(true);
+            }
         }
 
         &.#{$prefix}active {

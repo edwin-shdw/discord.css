@@ -4,6 +4,7 @@
 .#{$prefix}btn {
     --#{$prefix}btn-background: #4E5058;
     --#{$prefix}btn-background-hover: #6D6F78;
+    --#{$prefix}btn-background-active: #80848E;
 
     background: var(--#{$prefix}btn-background);
     border: none;
@@ -26,6 +27,10 @@
         text-decoration: none;
     }
 
+    &:active {
+        background: color-mix(in srgb, var(--#{$prefix}btn-background-active), black 11%);
+    }
+
     &-outline {
         @include button-outline(#4E5058);
     }
@@ -34,6 +39,7 @@
         &-#{$color} {
             --#{$prefix}btn-background: #{map-get($states, 'default')};
             --#{$prefix}btn-background-hover: #{map-get($states, 'hover')};
+            --#{$prefix}btn-background-active: #{map-get($states, 'active')};
         }
 
         &-outline-#{$color} {

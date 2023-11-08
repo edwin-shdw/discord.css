@@ -21,14 +21,17 @@ $button-colors: (
     'blurple': (
         'default': $blurple,
         'hover': #4752c4,
+        'active': #3c45a5,
     ),
     'danger': (
         'default': #da373c,
         'hover': #a12828,
+        'active': #8f2022,
     ),
     'success': (
         'default': #248046,
         'hover': #1a6334,
+        'active': #15562b,
     )
 );
 

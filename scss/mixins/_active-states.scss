@@ -1,0 +1,7 @@
+@mixin active-translate($negative: false) {
+    $translate-height: 0.0625rem;
+    @if($negative) {
+        $translate-height: calc($translate-height * -1);
+    }
+    translate: 0 $translate-height;
+}

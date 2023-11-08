@@ -1,5 +1,6 @@
 @use 'variables' as *;
 @use 'link';
+@use 'mixins/active-states' as *;
 
 .#{$prefix}msg {
     --#{$prefix}msg-bg: inherit;
@@ -88,6 +89,10 @@
             margin-block-start: 0.125rem;
             object-fit: cover;
             position: absolute;
+
+            &:active {
+                @include active-translate;
+            }
         }
 
         &-name {
