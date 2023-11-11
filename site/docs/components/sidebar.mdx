@@ -1,0 +1,41 @@
+---
+title: Sidebar
+description: Add the sidebar from discord which contains DMs and servers.
+---
+
+import CodePreview from '@site/src/components/CodePreview';
+import SidebarExample from '@site/src/examples/SidebarExample';
+
+# Sidebar
+
+Don't want to list servers with a basic list? Use the `dc-sidebar` class to create sidebar containing DMs and guilds. To
+display an item as active add the `dc-active` class to the `dc-sidebar-item` class. If you want to separate items you
+can use the `dc-sidebar-separator` class on a `<hr>`.
+
+<CodePreview>
+    <SidebarExample />
+</CodePreview>
+
+```html
+<div class="dc-sidebar dc-scrollbar-none" style="max-block-size: 16rem;">
+    <div class="dc-sidebar-item dc-active">
+        <img class="dc-sidebar-item-img" src="/img/profile/shabotto.png">
+    </div>
+    <hr class="dc-sidebar-separator">
+    <div class="dc-sidebar-item">
+        <img class="dc-sidebar-item-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+    </div>
+    <div class="dc-sidebar-item">
+        <img class="dc-sidebar-item-img" src="https://avatars.githubusercontent.com/u/150550776?v=4">
+    </div>
+    <div class="dc-sidebar-item">
+        <img class="dc-sidebar-item-img" src="https://avatars.githubusercontent.com/u/63116530?v=4">
+    </div>
+    <div class="dc-sidebar-item">
+        <img class="dc-sidebar-item-img" src="https://avatars.githubusercontent.com/u/132844639?v=4">
+    </div>
+    <div class="dc-sidebar-item">
+        <img class="dc-sidebar-item-img" src="/img/redforest.jpg">
+    </div>
+</div>
+```
