@@ -13,19 +13,20 @@
     background: var(--#{$prefix}dark-grey);
     box-sizing: border-box;
     block-size: 100%;
-    min-inline-size: 4.5rem;
+    inline-size: 4.5rem;
     padding-block-start: 0.75rem;
 
     &-item {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         margin-block-end: 0.5rem;
         position: relative;
 
         &:hover {
-            --#{$prefix}sidebar-item-border-radius: 16px;
-            --#{$prefix}sidebar-pill-height: 20px;
-            --#{$prefix}sidebar-pill-width: 8px;
+            --#{$prefix}sidebar-item-border-radius: 1rem;
+            --#{$prefix}sidebar-pill-height: 1.25rem;
+            --#{$prefix}sidebar-pill-width: 0.5rem;
             --#{$prefix}sidebar-pill-opacity: 1;
         }
 
@@ -62,18 +63,18 @@
         }
 
         &.#{$prefix}active {
-            --#{$prefix}sidebar-item-border-radius: 16px;
-            --#{$prefix}sidebar-pill-height: 40px;
-            --#{$prefix}sidebar-pill-width: 8px;
+            --#{$prefix}sidebar-item-border-radius: 1rem;
+            --#{$prefix}sidebar-pill-height: 2.5rem;
+            --#{$prefix}sidebar-pill-width: 0.5rem;
             --#{$prefix}sidebar-pill-opacity: 1;
         }
     }
 
-    &-seperator {
+    &-separator {
         background: var(--#{$prefix}light-grey);
         border-radius: 0.0625rem;
         height: 0.125rem;
-        margin-block-end: 0.5rem;
+        margin-block: 0.5rem;
         margin-inline: auto;
         width: 2rem ;
     }
