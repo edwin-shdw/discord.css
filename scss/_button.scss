@@ -1,10 +1,13 @@
 @use 'variables' as *;
-@use 'mixins/buttons' as *;
+
+$default-color: #4E5058;
+$default-color-hover: #6D6F78;
+$default-color-active: #80848E;
 
 .#{$prefix}btn {
-    --#{$prefix}btn-background: #4E5058;
-    --#{$prefix}btn-background-hover: #6D6F78;
-    --#{$prefix}btn-background-active: #80848E;
+    --#{$prefix}btn-background: #{$default-color};
+    --#{$prefix}btn-background-hover: #{$default-color-hover};
+    --#{$prefix}btn-background-active: #{$default-color-active};
 
     background: var(--#{$prefix}btn-background);
     border: none;
@@ -27,12 +30,18 @@
         text-decoration: none;
     }
 
-    &:active {
-        background: color-mix(in srgb, var(--#{$prefix}btn-background-active), black 11%);
+    &:active:not(:disabled, &-disabled) {
+        background: var(--#{$prefix}btn-background-active);
     }
 
     &-outline {
-        @include button-outline(#4E5058);
+        --#{$prefix}btn-background: transparent;
+        --#{$prefix}btn-background-hover: #{$default-color};
+        --#{$prefix}btn-background-active: #{$default-color-hover};
+        border-color: $default-color;
+        border-style: solid;
+        border-width: 0.0625rem;
+        padding: 0.4375rem 0.9375rem;
     }
 
     @each $color, $states in $button-colors {
@@ -43,7 +52,11 @@
         }
 
         &-outline-#{$color} {
-            @include button-outline(#{map-get($states, 'default')});
+            @extend .#{$prefix}btn-outline;
+            --#{$prefix}btn-background: transparent;
+            --#{$prefix}btn-background-hover: #{map-get($states, 'default')};
+            --#{$prefix}btn-background-active: #{map-get($states, 'hover')};
+            border-color: map-get($states, 'default');
         }
     }
 
