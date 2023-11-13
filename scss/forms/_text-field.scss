@@ -1,7 +1,7 @@
 @use '../variables' as *;
 @use '../scrollbar';
 
-%input {
+%text-field {
     background: var(--#{$prefix}dark-grey);
     border: none;
     border-radius: 0.1875rem;
@@ -28,13 +28,13 @@
     }
 }
 
-input.#{$prefix}input {
-    @extend %input;
+.#{$prefix}input {
+    @extend %text-field;
     block-size: 2.5rem;
 }
 
-textarea.#{$prefix}input {
-    @extend %input;
+.#{$prefix}textarea {
+    @extend %text-field;
     @extend .#{$prefix}scrollbar-thin;
 
     --#{$prefix}scrollbar-color: #151619;
