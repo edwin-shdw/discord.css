@@ -1,0 +1,49 @@
+---
+title: Input
+description: Learn how to include Discord.css in your project.
+---
+
+import CodePreview from "@site/src/components/CodePreview";
+import Input from "@site/src/components/Forms/Input";
+import Label from "@site/src/components/Forms/Label";
+import Textarea from "@site/src/components/Forms/Textarea";
+
+# Input
+
+Input fields require the `dc-input` class while text. Labels should get the `dc-label-header` class while the more
+detailed description of an input should get the `dc-label-description` class.
+
+<CodePreview>
+  <div>
+    <Label type='header'>A label header</Label>
+    <Label type='description'>Labels can be described by an additional text which will look like this.</Label>
+    <Input type="text" placeholder="Simple inputfield" />
+  </div>
+</CodePreview>
+
+```html
+<div>
+    <label class="dc-label-header">A label header</label>
+    <p class="dc-label-description">
+        Labels can be described by an additional text which will look like this.
+    </p>
+    <input class="dc-input" type="text" placeholder="Some input">
+</div>
+```
+
+
+Textareas will need the `dc-textarea` class.
+
+<CodePreview>
+    <Label type='header'>A label header</Label>
+    <Label type='description'>Labels can be described by an additional text which will look like this.</Label>
+    <Textarea type="text" placeholder="A textfield" rows={9} />
+</CodePreview>
+
+```html
+<label class="dc-label-header">A label header</label>
+<p class="dc-label-description">
+    Labels can be described by an additional text which will look like this.
+</p>
+<input class="dc-textarea" type="text" placeholder="Some input">
+```
