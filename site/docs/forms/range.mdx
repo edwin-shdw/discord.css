@@ -1,0 +1,63 @@
+---
+title: Range
+description: Style your ranges like discord does.
+---
+
+import CodePreview from "@site/src/components/CodePreview";
+import Range from "@site/src/components/Forms/Range";
+import Label from "@site/src/components/Forms/Label";
+
+# Range
+
+You can style ranges with the `dc-range` class.
+
+<CodePreview>
+    <Label>Range</Label>
+    <Range rangeFill={false} />
+</CodePreview>
+
+```html
+<label class="dc-label-header">Range</label>
+<input class="dc-range" type="range">
+```
+
+
+
+## Improved appearance
+
+To make it behave like in Discord give the `--dc-range-bg-fill` variable a value whenever the value of the range
+changes. The JavaScript could look like this:
+
+<CodePreview>
+    <Label>Range</Label>
+    <Range />
+</CodePreview>
+
+```js
+const ranges = document.querySelectorAll('.dc-range');
+ranges.forEach(range => {
+    // Set the initial value
+    range.style.setProperty('--dc-range-bg-fill', `${range.value}%`);
+
+    // Change the value when range thumb gets moved
+    range.addEventListener('input', () => {
+        range.style.setProperty('--dc-range-bg-fill', `${range.value}%`);
+    });
+});
+```
+
+
+## Disabled
+
+Add the disabled boolean attribute on an `<input>` to give it a grayed out appearance, remove pointer events, and
+prevent focusing.
+
+<CodePreview>
+    <Label>Range</Label>
+    <Range disabled />
+</CodePreview>
+
+```html
+<label class="dc-label-header">Range</label>
+<input class="dc-range" type="range" disabled>
+```
