@@ -5,6 +5,7 @@
     --#{$prefix}radio-bg: var(--#{$prefix}grey);
     --#{$prefix}radio-bg-hover: hsl(228 6% 32.5% /0.3);
     --#{$prefix}radio-bg-selected: hsl(228 6% 32.5% /06);
+    --#{$prefix}radio-bg-active: hsl(228 6% 32.5% / 0.48);
 
     align-items: center;
     background: var(--#{$prefix}radio-bg);
@@ -19,8 +20,15 @@
     margin-block-end: 0.5rem;
     padding: 0.625rem;
 
-    &:hover {
-        background: var(--#{$prefix}radio-bg-hover);
+    &:not(:has(input:checked)) {
+        &:hover {
+            background: var(--#{$prefix}radio-bg-hover);
+        }
+
+        &:active {
+            color: var(--#{$prefix}white);
+            background: var(--#{$prefix}radio-bg-active);
+        }
     }
 
     &:has(input:checked) {
