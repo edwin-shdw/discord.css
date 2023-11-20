@@ -32,17 +32,6 @@
         }
     }
 
-    @supports not selector(:has(*)) {
-        &:hover {
-            background: var(--#{$prefix}radio-bg-hover);
-        }
-
-        &:active {
-            color: var(--#{$prefix}white);
-            background: var(--#{$prefix}radio-bg-active);
-        }
-    }
-
     &:has(input:checked) {
         --#{$prefix}radio-bg: var(--#{$prefix}radio-bg-selected);
 
@@ -63,6 +52,17 @@
     // Firefox does not support :has()
     // https://caniuse.com/css-has
     // TODO: drop classes as soon as firefox ships support for :has()
+    @supports not selector(:has(*)) {
+        &:hover {
+            background: var(--#{$prefix}radio-bg-hover);
+        }
+
+        &:enabled:active {
+            color: var(--#{$prefix}white);
+            background: var(--#{$prefix}radio-bg-active);
+        }
+    }
+
     &-disabled {
         --#{$prefix}radio-bg-hover: var(--#{$prefix}radio-bg);
 
@@ -85,6 +85,7 @@
 
     input {
         --#{$prefix}radio-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='%23b5bac1'%3E%3C/path%3E%3C/svg%3E");
+        --#{$prefix}radio-icon-active: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
         --#{$prefix}radio-icon-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='white'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='5' fill='white'%3E%3C/circle%3E%3C/svg%3E");
 
         appearance: none;
@@ -94,8 +95,12 @@
             content: var(--#{$prefix}radio-icon);
         }
 
-        &:checked, &:enabled:active {
+        &:checked {
             --#{$prefix}radio-icon: var(--#{$prefix}radio-icon-checked);
+        }
+
+        &:enabled:active:not(&:checked) {
+            --#{$prefix}radio-icon: var(--#{$prefix}radio-icon-active);
         }
 
         &:focus {
