@@ -6,11 +6,12 @@
     --#{$prefix}radio-bg-hover: hsl(228 6% 32.5% /0.3);
     --#{$prefix}radio-bg-selected: hsl(228 6% 32.5% /06);
     --#{$prefix}radio-bg-active: hsl(228 6% 32.5% / 0.48);
+    --#{$prefix}radio-color: #b5bac1;
 
     align-items: center;
     background: var(--#{$prefix}radio-bg);
     border-radius: 0.1875rem;
-    color: #b5bac1;
+    color: var(--#{$prefix}radio-color);
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
@@ -20,7 +21,18 @@
     margin-block-end: 0.5rem;
     padding: 0.625rem;
 
-    &:not(:has(input:checked)) {
+    &:not(:has(input:checked), :has(input:disabled)) {
+        &:hover {
+            background: var(--#{$prefix}radio-bg-hover);
+        }
+
+        &:active {
+            color: var(--#{$prefix}white);
+            background: var(--#{$prefix}radio-bg-active);
+        }
+    }
+
+    @supports not selector(:has(*)) {
         &:hover {
             background: var(--#{$prefix}radio-bg-hover);
         }
@@ -56,6 +68,11 @@
 
         opacity: 0.6;
         cursor: not-allowed;
+
+        &:active {
+            background: var(--#{$prefix}radio-bg);
+            color: var(--#{$prefix}radio-color);
+        }
     }
 
     &-checked {
@@ -63,6 +80,7 @@
         --#{$prefix}radio-bg-hover: var(--#{$prefix}radio-bg-selected);
 
         color: var(--#{$prefix}white);
+        background: var(--#{$prefix}radio-bg-selected);
     }
 
     input {
@@ -76,7 +94,7 @@
             content: var(--#{$prefix}radio-icon);
         }
 
-        &:checked {
+        &:checked, &:enabled:active {
             --#{$prefix}radio-icon: var(--#{$prefix}radio-icon-checked);
         }
 
