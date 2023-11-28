@@ -1,0 +1,68 @@
+---
+title: Colors
+description: Take use of the color palette used by Discord.
+---
+
+
+# Colors
+
+Discord.css ships all color from the [branding guide](https://discord.com/branding) of Discord plus some additional
+colors like those from links or the previous blurple. Those colors can be consumed as CSS and SASS variable.
+
+```scss
+// Colors
+$blurple: #5865F2;
+$old-blurple: #7289DA;
+$green: #57F287;
+$yellow: #FEE75C;
+$red: #ED4245;
+$fuchsia: #EB459E;
+$white: #FFFFFF;
+$black: #23272A;
+$greyple: #99AAB5;
+$light-grey: #313338;
+$grey: #2b2d31;
+$dark-grey: #1e1f22;
+$link: #00a8fc;
+$muted: #949BA4;
+$mention: #F0B132;
+```
+
+While SASS variables are only available as HEX values, the CSS variables also provide the RGB values of those colors.
+
+```css
+root {
+  --dc-blurple: #5865F2;
+  --dc-old-blurple: #7289DA;
+  --dc-green: #57F287;
+  --dc-yellow: #FEE75C;
+  --dc-red: #ED4245;
+  --dc-fuchsia: #EB459E;
+  --dc-white: #FFFFFF;
+  --dc-black: #23272A;
+  --dc-greyple: #99AAB5;
+  --dc-light-grey: #313338;
+  --dc-grey: #2b2d31;
+  --dc-dark-grey: #1e1f22;
+  --dc-link: #00a8fc;
+  --dc-muted: #949BA4;
+  --dc-mention: #F0B132;
+
+  /* RGB values */
+  --dc-blurple-rgb: 88, 101, 242;
+  --dc-old-blurple-rgb: 114, 137, 218;
+  --dc-green-rgb: 87, 242, 135;
+  --dc-yellow-rgb: 254, 231, 92;
+  --dc-red-rgb: 237, 66, 69;
+  --dc-fuchsia-rgb: 235, 69, 158;
+  --dc-white-rgb: 255, 255, 255;
+  --dc-black-rgb: 35, 39, 42;
+  --dc-greyple-rgb: 153, 170, 181;
+  --dc-light-grey-rgb: 49, 51, 56;
+  --dc-grey-rgb: 43, 45, 49;
+  --dc-dark-grey-rgb: 30, 31, 34;
+  --dc-link-rgb: 0, 168, 252;
+  --dc-muted-rgb: 148, 155, 164;
+  --dc-mention-rgb: 240, 177, 50;
+}
+```
