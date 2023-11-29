@@ -33,6 +33,8 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: ['docusaurus-plugin-sass'],
+
   presets: [
     [
       'classic',
@@ -47,7 +49,7 @@ const config = {
         theme: {
           customCss: [
               require.resolve('./src/css/custom.css'),
-              require.resolve('../dist/css/discord.min.css'),
+              '../scss/_index.scss',
           ],
         },
       }),
