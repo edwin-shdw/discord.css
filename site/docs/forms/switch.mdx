@@ -1,0 +1,43 @@
+---
+title: Switch
+description: Style your switches like discord does.
+---
+
+import CodePreview from "@site/src/components/CodePreview";
+import Switch from "@site/src/components/Forms/Switch";
+
+# Switch
+
+You can build a switch by wrapping a `<input>` element with the `dc-switch` class and adding a `dc-switch-slider` class
+as sibling.
+
+<CodePreview>
+    <Switch />
+</CodePreview>
+
+```html
+<div class="dc-switch">
+    <input type="checkbox">
+    <span class="dc-switch-slider"></span>
+</div>
+```
+
+Discord usually displays the label and switch with a `space-between`. For this case you can use the `dc-switch-wrapper`
+and `dc-switch-label` classes.
+
+<CodePreview>
+    <div className="dc-switch-wrapper">
+        <label className="dc-switch-label" for="switch">Activate DCS for current project</label>
+        <Switch id="switch" />
+    </div>
+</CodePreview>
+
+```html
+<div class="dc-switch-wrapper">
+    <label class="dc-switch-label" for="switch">Activate DCS for current project</label>
+    <div class="dc-switch">
+        <input type="checkbox" id="switch">
+        <span class="dc-switch-slider"></span>
+    </div>
+</div>
+```

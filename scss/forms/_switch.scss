@@ -1,0 +1,87 @@
+@use '../variables' as *;
+@use '../focus-ring';
+
+// TODO: As soon as Firefox supports :has selector
+// move inner of slider into own element and create cross/dash/checkmark
+// with ::before & ::after and add animation to it
+// + add focus ring on label and switch
+
+.#{$prefix}switch {
+    --#{$prefix}switch-bg: rgb(128, 132, 142);
+    --#{$prefix}switch-translate: 0;
+    --#{$prefix}switch-slider-checked-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill='rgba(35, 165, 90, 1)' d='M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z'%3E%3C/path%3E%3Cpath fill='rgba(35, 165, 90, 1)' d='M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z'%3E%3C/path%3E%3C/svg%3E");;
+    --#{$prefix}switch-slider-unchecked-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill='rgba(128, 132, 142, 1)' d='M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z'%3E%3C/path%3E%3Cpath fill='rgba(128, 132, 142, 1)' d='M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z'%3E%3C/path%3E%3C/svg%3E");
+    --#{$prefix}switch-slider-active-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
+    block-size: 1.5rem;
+    display: inline-block;
+    inline-size: 2.5rem;
+    position: relative;
+    vertical-align: middle;
+
+    &-slider {
+        position: absolute;
+        cursor: pointer;
+        inset-block: 0;
+        inset-inline: 0;
+        background: var(--#{$prefix}switch-bg);
+        border-radius: 0.875rem;
+        pointer-events: none;
+
+        &::before {
+            position: absolute;
+            content: "";
+            block-size: 1.125rem;
+            inline-size: 1.125rem;
+            border-radius: 1.125rem;
+            background: var(--#{$prefix}white);
+            background-image: var(--#{$prefix}switch-slider-unchecked-svg);
+            inset-block: 0.1875rem;
+            inset-inline-start: 0.1875rem;
+            transition: inset 0.25s, width 0.25s, background 0.25s;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        input:active ~ &::before {
+            inline-size: 1.625rem;
+            background-image: var(--#{$prefix}switch-slider-active-svg);
+        }
+
+        input:checked:active ~ &::before {
+            inset-inline-start: 0.625rem;
+            background-image: var(--#{$prefix}switch-slider-active-svg);
+        }
+
+        input:checked ~ & {
+            --#{$prefix}switch-bg: rgb(35, 165, 90);
+
+            &::before {
+                background-image: var(--#{$prefix}switch-slider-checked-svg);
+                inset-inline-start: 1.1875rem;
+            }
+        }
+
+        input:focus-visible ~ & {
+            @extend .#{$prefix}focus-ring;
+        }
+    }
+
+    &-wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-label {
+        flex-grow: 1;
+        cursor: pointer;
+    }
+
+    input {
+        block-size: 100%;
+        cursor: pointer;
+        inline-size: 100%;
+        margin: 0;
+        opacity: 0;
+    }
+}
