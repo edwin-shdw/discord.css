@@ -65,3 +65,16 @@ the content to be hidden on overflow you can simply not apply the `dc-alert-msg`
     </div>
 </div>
 ```
+
+## Breakpoints
+
+Discord doesn't use alerts on mobile so there is no design to stick to. In order to keep responsiveness discord.css alerts will
+switch from `row` to `column` as soon as the screen gets smaller than `782px` (width of alert + padding). You can customize the
+breakpoint by importing the `alert` module with a custom `$breakpoint` variable.
+
+```scss
+@use 'discord.css/scss/alert' with ($breakpoint: 400px);
+
+// or if using all of discord.css
+@use 'discord.css/scss' with ($breakpoint: 400px);
+```

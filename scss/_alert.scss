@@ -1,10 +1,14 @@
 @use 'variables' as *;
+@use 'mixins/breakpoints' as *;
+
+$breakpoint: 782px !default;
 
 .#{$prefix}alert {
     --#{$prefix}alert-bg: #111214;
 
     inset-block-end: 0;
     inset-inline-start: 50%;
+    max-inline-size: 100%;
     padding-block-end: 1.25rem;
     padding-inline: 1.25rem;
     position: fixed;
@@ -23,14 +27,21 @@
         display: flex;
         inline-size: 46.375rem;
         justify-content: space-between;
+        max-inline-size: 100%;
         padding-block: 0.625rem;
         padding-inline: 1rem 0.625rem;
         transition: background-color 500ms;
+
+        @include media-breakpoint-down($breakpoint) {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
     }
 
     &-msg {
         font-size: 1rem;
         font-weight: 500;
+        inline-size: 100%;
         line-height: 1.25rem;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -43,6 +54,11 @@
         font-size: 14px;
         gap: 0.625rem;
         min-inline-size: fit-content;
+
+        @include media-breakpoint-down($breakpoint) {
+            inline-size: 100%;
+            justify-content: end;
+        }
     }
 
     &-warn {
