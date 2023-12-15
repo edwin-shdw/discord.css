@@ -410,3 +410,14 @@ The username of a replied message can also be colored. Only difference is that y
     <div class="dc-msg-content">I like TypeScript a lot!</div>
 </div>
 ```
+
+## Breakpoints
+
+You can customize the breakpoint by importing the `message` module with a custom variable named `$msg-breakpoint`.
+
+```scss
+@use 'discord.css/scss/message' with ($msg-breakpoint: 400px);
+
+// or if using all of discord.css
+@use 'discord.css/scss' with ($msg-breakpoint: 400px);
+```

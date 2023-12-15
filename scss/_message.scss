@@ -1,6 +1,9 @@
 @use 'variables' as *;
 @use 'link';
 @use 'mixins/active-states' as *;
+@use 'mixins/breakpoints' as *;
+
+$msg-breakpoint: 992px;
 
 .#{$prefix}msg {
     --#{$prefix}msg-bg: inherit;
@@ -11,6 +14,10 @@
     padding-block: 0.125rem;
     padding-inline: 4.5rem 3rem;
     position: relative;
+
+    @include media-breakpoint-down($msg-breakpoint) {
+        padding-inline: 4.5rem 0.5rem;
+    }
 
     &:hover {
         --#{$prefix}msg-bg: var(--#{$prefix}msg-bg-hover);
@@ -123,6 +130,7 @@
         & img, & video {
             border-radius: 0.5rem;
             display: block;
+            inline-size: 100%;
             max-inline-size: 34.375rem;
             max-block-size: 21.875rem;
             object-fit: contain;
