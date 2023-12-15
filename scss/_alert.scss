@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use 'mixins/breakpoints' as *;
 
-$breakpoint: 782px !default;
+$alert-breakpoint: 782px !default;
 
 .#{$prefix}alert {
     --#{$prefix}alert-bg: #111214;
@@ -32,7 +32,7 @@ $breakpoint: 782px !default;
         padding-inline: 1rem 0.625rem;
         transition: background-color 500ms;
 
-        @include media-breakpoint-down($breakpoint) {
+        @include media-breakpoint-down($alert-breakpoint) {
             flex-direction: column;
             gap: 0.5rem;
         }
@@ -55,7 +55,7 @@ $breakpoint: 782px !default;
         gap: 0.625rem;
         min-inline-size: fit-content;
 
-        @include media-breakpoint-down($breakpoint) {
+        @include media-breakpoint-down($alert-breakpoint) {
             inline-size: 100%;
             justify-content: end;
         }
