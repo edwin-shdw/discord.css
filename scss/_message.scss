@@ -25,17 +25,18 @@ $msg-breakpoint: 992px;
 
     &-reply {
         align-items: center;
-        block-size: 1.125rem;
         color: #b5bac1;
         display: flex;
+        flex-wrap: wrap;
         font-size: 0.875rem;
         font-weight: 400;
-        gap: 0.25rem;
-        line-height: 1.375rem;
+        column-gap: 0.25rem;
+        line-height: 1.125rem;
         margin-block-end: 0.25rem;
+        position: relative;
 
         &::before {
-            block-size: 0.75rem;
+            block-size: calc(100% - 0.5rem);
             border-block-start: 0.125rem solid #4e5058;
             border-inline-start: 0.125rem solid #4e5058;
             border-start-start-radius: 0.375rem;
@@ -43,7 +44,7 @@ $msg-breakpoint: 992px;
             content: "";
             display: block;
             inline-size: 2.0625rem;
-            inset-inline-start: 2.25rem;
+            inset-inline-start: -2.25rem;
             inset-block-start: 0.625rem;
             margin-block: -0.0625rem -0.125rem;
             margin-inline: -0.0625rem 0.25rem;
