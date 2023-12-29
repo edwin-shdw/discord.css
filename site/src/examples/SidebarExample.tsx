@@ -17,7 +17,7 @@ export default function SidebarExample(): React.ReactElement {
     <Sidebar style={{ maxBlockSize: '16rem' }}>
       {images.map((image, index) => (
         <React.Fragment key={index}>
-          <Sidebar.Item src={image} active={index === activeItem} onClick={() => setActiveItem(index)} />
+          <Sidebar.Img src={image} active={index === activeItem} onClick={() => setActiveItem(index)} />
           {index === 0 && <Sidebar.Separator />}
         </React.Fragment>
       ))}

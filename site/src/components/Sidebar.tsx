@@ -11,22 +11,38 @@ export function Sidebar({
   )
 }
 
-interface SidebarItemProps extends React.ComponentPropsWithoutRef<'div'> {
+export function SidebarItem({
+  active,
+  children,
+  ...props
+}: {
+  active?: boolean,
+  children?: React.ReactNode,
+  props?: React.ComponentPropsWithoutRef<'div'>
+}) {
+  return(
+    <div className={`dc-sidebar-item ${active ? 'dc-active' : ''}`} {...props} >
+      {children}
+    </div>
+  )
+}
+
+interface SidebarImgProps extends React.ComponentPropsWithoutRef<'div'> {
   src: string,
   alt?: string,
   active?: boolean,
 }
 
-export function SidebarItem({
+export function SidebarImg({
   src,
   alt = 'Server image',
   active,
   ...props
-}: SidebarItemProps): React.ReactElement {
-  return(
-    <div className={`dc-sidebar-item ${active ? 'dc-active' : ''}`} {...props} >
-      <img className="dc-sidebar-item-img" src={src} alt={alt} />
-    </div>
+}: SidebarImgProps): React.ReactElement {
+  return (
+    <SidebarItem active={active} {...props}>
+      <img className="dc-sidebar-item-img" src={src} alt={alt}/>
+    </SidebarItem>
   )
 }
 
@@ -37,6 +53,7 @@ export function SidebarSeparator(): React.ReactElement {
 }
 
 export default Object.assign(Sidebar, {
+  Img: SidebarImg,
   Item: SidebarItem,
   Separator: SidebarSeparator,
 });
