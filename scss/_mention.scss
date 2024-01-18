@@ -1,17 +1,17 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 
-.#{$prefix}mention {
-    --#{$prefix}mention-bg: var(--#{$prefix}blurple-rgb);
-    --#{$prefix}mention-bg-opacity: 0.5;
-    --#{$prefix}mention-color: var(--#{$prefix}white-rgb);
-    --#{$prefix}mention-color-opacity: 0.86;
-    --#{$prefix}mention-bg-opacity-hover: 1;
-    --#{$prefix}mention-color-hover: var(--#{$prefix}blurple-rgb);
-    --#{$prefix}mention-color-opacity-hover: 1;
+.#{vars.$prefix}mention {
+    --#{vars.$prefix}mention-bg: var(--#{vars.$prefix}blurple-rgb);
+    --#{vars.$prefix}mention-bg-opacity: 0.5;
+    --#{vars.$prefix}mention-color: var(--#{vars.$prefix}white-rgb);
+    --#{vars.$prefix}mention-color-opacity: 0.86;
+    --#{vars.$prefix}mention-bg-opacity-hover: 1;
+    --#{vars.$prefix}mention-color-hover: var(--#{vars.$prefix}blurple-rgb);
+    --#{vars.$prefix}mention-color-opacity-hover: 1;
 
-    background: rgba(var(--#{$prefix}mention-bg), var(--#{$prefix}mention-bg-opacity));
+    background: rgba(var(--#{vars.$prefix}mention-bg), var(--#{vars.$prefix}mention-bg-opacity));
     border-radius: 0.1875rem;
-    color: rgba(var(--#{$prefix}mention-color), var(--#{$prefix}mention-color-opacity));
+    color: rgba(var(--#{vars.$prefix}mention-color), var(--#{vars.$prefix}mention-color-opacity));
     cursor: pointer;
     font-weight: 500;
     padding-inline: 0.125rem;
@@ -19,18 +19,18 @@
     transition: color 50ms ease-out, background-color 50ms ease-out;
 
     &:hover {
-        background: rgba(var(--#{$prefix}mention-bg), var(--#{$prefix}mention-bg-opacity-hover));
-        color: rgba(var(--#{$prefix}mention-color), var(--#{$prefix}mention-color-opacity-hover));
+        background: rgba(var(--#{vars.$prefix}mention-bg), var(--#{vars.$prefix}mention-bg-opacity-hover));
+        color: rgba(var(--#{vars.$prefix}mention-color), var(--#{vars.$prefix}mention-color-opacity-hover));
     }
 
     &-role {
-        --#{$prefix}mention-bg: var(--#{$prefix}mention-color);
-        --#{$prefix}mention-bg-opacity: 0.1;
-        --#{$prefix}mention-color: var(--#{$prefix}blurple-rgb);
-        --#{$prefix}mention-color-opacity: 1;
-        --#{$prefix}mention-bg-opacity-hover: 0.3;
-        --#{$prefix}mention-color-hover: var(--#{$prefix}blurple-rgb);
-        --#{$prefix}mention-color-opacity-hover: 1;
+        --#{vars.$prefix}mention-bg: var(--#{vars.$prefix}mention-color);
+        --#{vars.$prefix}mention-bg-opacity: 0.1;
+        --#{vars.$prefix}mention-color: var(--#{vars.$prefix}blurple-rgb);
+        --#{vars.$prefix}mention-color-opacity: 1;
+        --#{vars.$prefix}mention-bg-opacity-hover: 0.3;
+        --#{vars.$prefix}mention-color-hover: var(--#{vars.$prefix}blurple-rgb);
+        --#{vars.$prefix}mention-color-opacity-hover: 1;
 
         cursor: text;
     }

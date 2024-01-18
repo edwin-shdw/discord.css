@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 
 @mixin tag-verified {
     inline-size: 0.9375rem;
@@ -6,21 +6,21 @@
     margin-inline-start: -0.1875rem;
 }
 
-.#{$prefix}tag {
-    --#{$prefix}tag-bg: var(--#{$prefix}blurple);
-    --#{$prefix}tag-color: var(--#{$prefix}white);
+.#{vars.$prefix}tag {
+    --#{vars.$prefix}tag-bg: var(--#{vars.$prefix}blurple);
+    --#{vars.$prefix}tag-color: var(--#{vars.$prefix}white);
 
     align-items: center;
-    background: var(--#{$prefix}tag-bg);
+    background: var(--#{vars.$prefix}tag-bg);
     border-radius: 0.1875rem;
-    color: var(--#{$prefix}tag-color);
+    color: var(--#{vars.$prefix}tag-color);
     display: inline-flex;
     font-size: 0.625rem;
     padding-inline: 0.275rem;
     text-transform: uppercase;
 
     &-verified {
-        @extend .#{$prefix}tag;
+        @extend .#{vars.$prefix}tag;
 
         &::before {
             content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 15.2'%3E%3Cpath d='M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z' fill='white'%3E%3C/path%3E%3C/svg%3E");

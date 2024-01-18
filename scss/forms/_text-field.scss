@@ -1,12 +1,12 @@
-@use '../variables' as *;
+@use '../variables' as vars;
 @use '../scrollbar';
 
 %text-field {
-    background: var(--#{$prefix}dark-grey);
+    background: var(--#{vars.$prefix}dark-grey);
     border: none;
     border-radius: 0.1875rem;
     box-sizing: border-box;
-    color: var(--#{$prefix}white);
+    color: var(--#{vars.$prefix}white);
     display: block;
     font-family: inherit;
     font-size: 1rem;
@@ -28,16 +28,16 @@
     }
 }
 
-.#{$prefix}input {
+.#{vars.$prefix}input {
     @extend %text-field;
     block-size: 2.5rem;
 }
 
-.#{$prefix}textarea {
+.#{vars.$prefix}textarea {
     @extend %text-field;
-    @extend .#{$prefix}scrollbar-thin;
+    @extend .#{vars.$prefix}scrollbar-thin;
 
-    --#{$prefix}scrollbar-color: #151619;
+    --#{vars.$prefix}scrollbar-color: #151619;
 
     block-size: 8.5rem;
     overflow-y: auto;

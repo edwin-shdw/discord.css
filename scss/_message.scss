@@ -1,26 +1,26 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 @use 'link';
-@use 'mixins/active-states' as *;
-@use 'mixins/breakpoints' as *;
+@use 'mixins/active-states';
+@use 'mixins/breakpoints' as bp;
 
 $msg-breakpoint: 992px;
 
-.#{$prefix}msg {
-    --#{$prefix}msg-bg: inherit;
-    --#{$prefix}msg-bg-hover: #{mix(black, $light-grey, 7%)};
+.#{vars.$prefix}msg {
+    --#{vars.$prefix}msg-bg: inherit;
+    --#{vars.$prefix}msg-bg-hover: #{mix(black, vars.$light-grey, 7%)};
 
-    background: var(--#{$prefix}msg-bg);
+    background: var(--#{vars.$prefix}msg-bg);
     margin-block-start: 1.0625rem;
     padding-block: 0.125rem;
     padding-inline: 4.5rem 3rem;
     position: relative;
 
-    @include media-breakpoint-down($msg-breakpoint) {
+    @include bp.media-breakpoint-down($msg-breakpoint) {
         padding-inline: 4.5rem 0.5rem;
     }
 
     &:hover {
-        --#{$prefix}msg-bg: var(--#{$prefix}msg-bg-hover);
+        --#{vars.$prefix}msg-bg: var(--#{vars.$prefix}msg-bg-hover);
     }
 
     &-reply {
@@ -74,7 +74,7 @@ $msg-breakpoint: 992px;
         }
 
         &-cmd {
-            @extend .#{$prefix}link;
+            @extend .#{vars.$prefix}link;
 
             font-weight: 500;
             opacity: 0.64;
@@ -82,7 +82,7 @@ $msg-breakpoint: 992px;
     }
 
     &-author {
-        --#{$prefix}author-color: var(--#{$prefix}white);
+        --#{vars.$prefix}author-color: var(--#{vars.$prefix}white);
 
         align-items: center;
         display: flex;
@@ -99,12 +99,12 @@ $msg-breakpoint: 992px;
             position: absolute;
 
             &:active {
-                @include active-translate;
+                @include active-states.active-translate;
             }
         }
 
         &-name {
-            color: var(--#{$prefix}author-color);
+            color: var(--#{vars.$prefix}author-color);
             cursor: pointer;
             font-weight: 500;
             line-height: 1.375rem;
@@ -115,7 +115,7 @@ $msg-breakpoint: 992px;
         }
 
         &-timestamp {
-            color: var(--#{$prefix}muted);
+            color: var(--#{vars.$prefix}muted);
             font-size: 0.75rem;
             line-height: 1.375rem;
             margin-inline-start: 0.25rem;
@@ -145,18 +145,18 @@ $msg-breakpoint: 992px;
         gap: 0.25rem;
         padding-block: 0.125rem;
 
-        &-btn-row > .#{$prefix}btn {
+        &-btn-row > .#{vars.$prefix}btn {
             margin-block: 0.25rem;
             margin-inline-end: 0.5rem;
         }
     }
 
     &-mentioned {
-        --#{$prefix}msg-bg: rgba(var(--#{$prefix}mention-rgb), 0.1);
-        --#{$prefix}msg-bg-hover: rgba(var(--#{$prefix}mention-rgb), 0.08);
+        --#{vars.$prefix}msg-bg: rgba(var(--#{vars.$prefix}mention-rgb), 0.1);
+        --#{vars.$prefix}msg-bg-hover: rgba(var(--#{vars.$prefix}mention-rgb), 0.08);
 
         &::before {
-            background: var(--#{$prefix}mention);
+            background: var(--#{vars.$prefix}mention);
             block-size: 100%;
             content: '';
             inline-size: 0.125rem;

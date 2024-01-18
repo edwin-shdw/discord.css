@@ -1,18 +1,18 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 
 $default-color: #4E5058;
 $default-color-hover: #6D6F78;
 $default-color-active: #80848E;
 
-.#{$prefix}btn {
-    --#{$prefix}btn-background: #{$default-color};
-    --#{$prefix}btn-background-hover: #{$default-color-hover};
-    --#{$prefix}btn-background-active: #{$default-color-active};
+.#{vars.$prefix}btn {
+    --#{vars.$prefix}btn-background: #{$default-color};
+    --#{vars.$prefix}btn-background-hover: #{$default-color-hover};
+    --#{vars.$prefix}btn-background-active: #{$default-color-active};
 
-    background: var(--#{$prefix}btn-background);
+    background: var(--#{vars.$prefix}btn-background);
     border: none;
     border-radius: 0.1875rem;
-    color: var(--#{$prefix}white);
+    color: var(--#{vars.$prefix}white);
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
@@ -25,37 +25,37 @@ $default-color-active: #80848E;
     transition: background-color 170ms ease, color 170ms ease;
 
     &:hover {
-        background: var(--#{$prefix}btn-background-hover);
-        color: var(--#{$prefix}white);
+        background: var(--#{vars.$prefix}btn-background-hover);
+        color: var(--#{vars.$prefix}white);
         text-decoration: none;
     }
 
     &:active:not(:disabled, &-disabled, &-cancel) {
-        background: var(--#{$prefix}btn-background-active);
+        background: var(--#{vars.$prefix}btn-background-active);
     }
 
     &-outline {
-        --#{$prefix}btn-background: transparent;
-        --#{$prefix}btn-background-hover: #{$default-color};
-        --#{$prefix}btn-background-active: #{$default-color-hover};
+        --#{vars.$prefix}btn-background: transparent;
+        --#{vars.$prefix}btn-background-hover: #{$default-color};
+        --#{vars.$prefix}btn-background-active: #{$default-color-hover};
         border-color: $default-color;
         border-style: solid;
         border-width: 0.0625rem;
         padding: 0.4375rem 0.9375rem;
     }
 
-    @each $color, $states in $button-colors {
+    @each $color, $states in vars.$button-colors {
         &-#{$color} {
-            --#{$prefix}btn-background: #{map-get($states, 'default')};
-            --#{$prefix}btn-background-hover: #{map-get($states, 'hover')};
-            --#{$prefix}btn-background-active: #{map-get($states, 'active')};
+            --#{vars.$prefix}btn-background: #{map-get($states, 'default')};
+            --#{vars.$prefix}btn-background-hover: #{map-get($states, 'hover')};
+            --#{vars.$prefix}btn-background-active: #{map-get($states, 'active')};
         }
 
         &-outline-#{$color} {
-            @extend .#{$prefix}btn-outline;
-            --#{$prefix}btn-background: transparent;
-            --#{$prefix}btn-background-hover: #{map-get($states, 'default')};
-            --#{$prefix}btn-background-active: #{map-get($states, 'hover')};
+            @extend .#{vars.$prefix}btn-outline;
+            --#{vars.$prefix}btn-background: transparent;
+            --#{vars.$prefix}btn-background-hover: #{map-get($states, 'default')};
+            --#{vars.$prefix}btn-background-active: #{map-get($states, 'hover')};
             border-color: map-get($states, 'default');
         }
     }
@@ -72,17 +72,17 @@ $default-color-active: #80848E;
     }
 
     &-cancel {
-        --#{$prefix}btn-background: transparent;
+        --#{vars.$prefix}btn-background: transparent;
 
         &:hover {
-            --#{$prefix}btn-background-hover: transparent;
+            --#{vars.$prefix}btn-background-hover: transparent;
             text-decoration: underline;
         }
     }
 
     &:disabled,
     &-disabled {
-        --#{$prefix}btn-background-hover: var(--#{$prefix}btn-background);
+        --#{vars.$prefix}btn-background-hover: var(--#{vars.$prefix}btn-background);
         cursor: not-allowed;
         opacity: 0.5;
     }

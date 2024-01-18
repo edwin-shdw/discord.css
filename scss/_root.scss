@@ -1,13 +1,13 @@
 @use 'sass:color';
-@use 'variables' as *;
+@use 'variables' as vars;
 
 :root {
-    --discord-css-prefix: #{$prefix};
-    @each $color, $value in $discord-colors {
-        --#{$prefix}#{$color}: #{$value};
+    --discord-css-prefix: #{vars.$prefix};
+    @each $color, $value in vars.$discord-colors {
+        --#{vars.$prefix}#{$color}: #{$value};
     }
 
-    @each $color, $value in $discord-colors {
-        --#{$prefix}#{$color}-rgb: #{color.red($value), color.green($value), color.blue($value)};
+    @each $color, $value in vars.$discord-colors {
+        --#{vars.$prefix}#{$color}-rgb: #{color.red($value), color.green($value), color.blue($value)};
     }
 }

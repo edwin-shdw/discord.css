@@ -1,8 +1,8 @@
-@use '../variables' as *;
+@use '../variables' as vars;
 
 $color: #B5BAC1;
 
-.#{$prefix}label {
+.#{vars.$prefix}label {
     &-header {
         color: $color;
         display: inline-block;

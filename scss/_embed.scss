@@ -1,11 +1,11 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 
-.#{$prefix}embed {
-    --#{$prefix}embed-color: #{$dark-grey};
-    --#{$prefix}embed-span: span 1;
+.#{vars.$prefix}embed {
+    --#{vars.$prefix}embed-color: #{vars.$dark-grey};
+    --#{vars.$prefix}embed-span: span 1;
 
-    background: $grey;
-    border-inline-start: 0.25rem solid var(--#{$prefix}embed-color);
+    background: vars.$grey;
+    border-inline-start: 0.25rem solid var(--#{vars.$prefix}embed-color);
     border-radius: 0.25rem;
     color: var(--dc-white);
     display: grid;
@@ -18,7 +18,7 @@
     padding-inline: 0.75rem 1rem;
 
     &:has(&-thumbnail) {
-        --#{$prefix}embed-span: span 2;
+        --#{vars.$prefix}embed-span: span 2;
     }
 
     &-author {
@@ -76,7 +76,7 @@
         margin-block-start: 0.5rem;
 
         & > a {
-            color: $link;
+            color: vars.$link;
             text-decoration: none;
 
             &:hover {
@@ -100,7 +100,7 @@
         grid-row: 4;
         margin-block-start: 0.5rem;
 
-        .#{$prefix}embed-field {
+        .#{vars.$prefix}embed-field {
             min-width: 100%;
 
             &-inline {
@@ -118,7 +118,7 @@
     }
 
     &-image {
-        grid-column: 1 / var(--#{$prefix}embed-span);
+        grid-column: 1 / var(--#{vars.$prefix}embed-span);
         grid-row: 5;
         margin-block-start: 1rem;
 
@@ -135,7 +135,7 @@
         font-size: 0.75rem;
         font-weight: 500;
         gap: 0.5rem;
-        grid-column: 1 / var(--#{$prefix}embed-span);
+        grid-column: 1 / var(--#{vars.$prefix}embed-span);
         grid-row: 6;
         margin-block-start: 0.5rem;
 

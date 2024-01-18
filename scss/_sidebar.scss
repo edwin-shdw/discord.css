@@ -1,16 +1,16 @@
-@use 'variables' as *;
-@use 'mixins/active-states' as *;
+@use 'variables' as vars;
+@use 'mixins/active-states';
 
-.#{$prefix}sidebar {
+.#{vars.$prefix}sidebar {
     $transition-time: 200ms;
     $transition-curve: ease-out;
 
-    --#{$prefix}sidebar-item-border-radius: 50%;
-    --#{$prefix}sidebar-pill-height: 0;
-    --#{$prefix}sidebar-pill-width: 0;
-    --#{$prefix}sidebar-pill-opacity: 0;
+    --#{vars.$prefix}sidebar-item-border-radius: 50%;
+    --#{vars.$prefix}sidebar-pill-height: 0;
+    --#{vars.$prefix}sidebar-pill-width: 0;
+    --#{vars.$prefix}sidebar-pill-opacity: 0;
 
-    background: var(--#{$prefix}dark-grey);
+    background: var(--#{vars.$prefix}dark-grey);
     box-sizing: border-box;
     block-size: 100%;
     inline-size: 4.5rem;
@@ -24,15 +24,15 @@
         position: relative;
 
         &:hover {
-            --#{$prefix}sidebar-item-border-radius: 1rem;
-            --#{$prefix}sidebar-pill-height: 1.25rem;
-            --#{$prefix}sidebar-pill-width: 0.5rem;
-            --#{$prefix}sidebar-pill-opacity: 1;
+            --#{vars.$prefix}sidebar-item-border-radius: 1rem;
+            --#{vars.$prefix}sidebar-pill-height: 1.25rem;
+            --#{vars.$prefix}sidebar-pill-width: 0.5rem;
+            --#{vars.$prefix}sidebar-pill-opacity: 1;
         }
 
         &-img {
             block-size: 3rem;
-            border-radius: var(--#{$prefix}sidebar-item-border-radius);
+            border-radius: var(--#{vars.$prefix}sidebar-item-border-radius);
             inline-size: 3rem;
             object-fit: cover;
             transition: border-radius $transition-time $transition-curve;
@@ -40,14 +40,14 @@
 
         &::before {
             align-self: center;
-            background: var(--#{$prefix}white);
-            block-size: var(--#{$prefix}sidebar-pill-height);
+            background: var(--#{vars.$prefix}white);
+            block-size: var(--#{vars.$prefix}sidebar-pill-height);
             border-radius: 0.25rem;
             content: '';
-            inline-size: var(--#{$prefix}sidebar-pill-width);
+            inline-size: var(--#{vars.$prefix}sidebar-pill-width);
             inset-inline-start: 0;
             margin-inline: -0.25rem;
-            opacity: var(--#{$prefix}sidebar-pill-opacity);
+            opacity: var(--#{vars.$prefix}sidebar-pill-opacity);
             position: absolute;
             transition: height $transition-time $transition-curve,
                         opacity $transition-time $transition-curve,
@@ -55,23 +55,23 @@
         }
 
         &:active {
-            @include active-translate;
+            @include active-states.active-translate;
 
             &::before {
-                @include active-translate(true);
+                @include active-states.active-translate(true);
             }
         }
 
-        &.#{$prefix}active {
-            --#{$prefix}sidebar-item-border-radius: 1rem;
-            --#{$prefix}sidebar-pill-height: 2.5rem;
-            --#{$prefix}sidebar-pill-width: 0.5rem;
-            --#{$prefix}sidebar-pill-opacity: 1;
+        &.#{vars.$prefix}active {
+            --#{vars.$prefix}sidebar-item-border-radius: 1rem;
+            --#{vars.$prefix}sidebar-pill-height: 2.5rem;
+            --#{vars.$prefix}sidebar-pill-width: 0.5rem;
+            --#{vars.$prefix}sidebar-pill-opacity: 1;
         }
     }
 
     &-separator {
-        background: var(--#{$prefix}light-grey);
+        background: var(--#{vars.$prefix}light-grey);
         border-radius: 0.0625rem;
         height: 0.125rem;
         margin-block: 0.5rem;

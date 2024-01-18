@@ -1,35 +1,35 @@
-@use '../variables' as *;
+@use '../variables' as vars;
 @use '../focus-ring';
 
 @mixin thumb {
     appearance: none;
-    background: var(--#{$prefix}white);
+    background: var(--#{vars.$prefix}white);
     block-size: 1.5rem;
     border: none;
     border-radius: 0.1875rem;
-    box-shadow: var(--#{$prefix}range-thumb-box-shadow);
-    cursor: var(--#{$prefix}range-thumb-cursor);
+    box-shadow: var(--#{vars.$prefix}range-thumb-box-shadow);
+    cursor: var(--#{vars.$prefix}range-thumb-cursor);
     inline-size: 0.675rem;
 }
 
-.#{$prefix}range {
-    --#{$prefix}range-thumb-cursor: ew-resize;
-    --#{$prefix}range-bg-fill: 0%;
+.#{vars.$prefix}range {
+    --#{vars.$prefix}range-thumb-cursor: ew-resize;
+    --#{vars.$prefix}range-bg-fill: 0%;
 
     appearance: none;
-    background: linear-gradient(90deg, var(--#{$prefix}blurple) var(--#{$prefix}range-bg-fill), #4e5058 0%);
+    background: linear-gradient(90deg, var(--#{vars.$prefix}blurple) var(--#{vars.$prefix}range-bg-fill), #4e5058 0%);
     block-size: 0.5rem;
     border-radius: 0.25rem;
     inline-size: 100%;
 
     &:disabled,
     &-disabled {
-        --#{$prefix}range-thumb-cursor: not-allowed;
+        --#{vars.$prefix}range-thumb-cursor: not-allowed;
         opacity: 0.5;
     }
 
     &:focus-visible {
-        --#{$prefix}range-thumb-box-shadow: #{focus-ring.$box-shadow};
+        --#{vars.$prefix}range-thumb-box-shadow: #{focus-ring.$box-shadow};
 
         outline: none;
     }

@@ -1,24 +1,24 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 
-.#{$prefix}scrollbar {
-    --#{$prefix}scrollbar-color: #1a1b1e;
+.#{vars.$prefix}scrollbar {
+    --#{vars.$prefix}scrollbar-color: #1a1b1e;
 
     overflow-y: scroll;
-    scrollbar-color: var(--#{$prefix}scrollbar-color) var(--#{$prefix}grey);
+    scrollbar-color: var(--#{vars.$prefix}scrollbar-color) var(--#{vars.$prefix}grey);
 
     &::-webkit-scrollbar {
         inline-size: 1rem;
     }
 
     &::-webkit-scrollbar-track {
-        background: var(--#{$prefix}grey);
+        background: var(--#{vars.$prefix}grey);
         background-clip: padding-box;
         border: 0.25rem solid transparent;
         border-radius: 8px;
     }
 
     &::-webkit-scrollbar-thumb {
-        background: var(--#{$prefix}scrollbar-color);
+        background: var(--#{vars.$prefix}scrollbar-color);
         background-clip: padding-box;
         border: 0.25rem solid transparent;
         border-radius: 0.5rem;
@@ -26,7 +26,7 @@
     }
 
     &-thin {
-        @extend .#{$prefix}scrollbar;
+        @extend .#{vars.$prefix}scrollbar;
         scrollbar-width: none;
 
         &::-webkit-scrollbar {

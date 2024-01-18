@@ -1,7 +1,7 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 
-.#{$prefix}link {
-    color: var(--#{$prefix}link);
+.#{vars.$prefix}link {
+    color: var(--#{vars.$prefix}link);
     text-decoration: none;
     cursor: pointer;
 
