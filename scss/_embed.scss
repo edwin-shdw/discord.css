@@ -32,7 +32,7 @@
         justify-content: flex-start;
         margin-block-start: 0.5rem;
 
-        & > img {
+        > img {
             aspect-ratio: 1;
             border-radius: 50%;
             max-height: 1.5rem;
@@ -40,7 +40,7 @@
             object-fit: cover;
         }
 
-        & > a {
+        > a {
             color: var(--dc-white);
             text-decoration: none;
 
@@ -59,7 +59,7 @@
         min-inline-size: 5rem;
         position: relative;
 
-        & > img {
+        > img {
             max-block-size: 5rem;
             max-inline-size: 5rem;
             border-radius: 0.25rem;
@@ -75,7 +75,7 @@
         grid-row: 2;
         margin-block-start: 0.5rem;
 
-        & > a {
+        > a {
             color: vars.$link;
             text-decoration: none;
 
@@ -122,7 +122,7 @@
         grid-row: 5;
         margin-block-start: 1rem;
 
-        & > img {
+        > img {
             border-radius: 0.25rem;
             max-block-size: 18.75rem;
             max-inline-size: 100%;
@@ -139,7 +139,7 @@
         grid-row: 6;
         margin-block-start: 0.5rem;
 
-        & > img {
+        > img {
             aspect-ratio: 1;
             border-radius: 50%;
             max-height: 1.5rem;
