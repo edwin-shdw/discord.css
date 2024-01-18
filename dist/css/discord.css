@@ -36,6 +36,7 @@
   --dc-alert-bg: #111214;
   inset-block-end: 0;
   inset-inline-start: 50%;
+  max-inline-size: 100%;
   padding-block-end: 1.25rem;
   padding-inline: 1.25rem;
   position: fixed;
@@ -53,13 +54,21 @@
   display: flex;
   inline-size: 46.375rem;
   justify-content: space-between;
+  max-inline-size: 100%;
   padding-block: 0.625rem;
   padding-inline: 1rem 0.625rem;
   transition: background-color 500ms;
 }
+@media (max-width: 782px) {
+  .dc-alert-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 .dc-alert-msg {
   font-size: 1rem;
   font-weight: 500;
+  inline-size: 100%;
   line-height: 1.25rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -71,6 +80,12 @@
   font-size: 14px;
   gap: 0.625rem;
   min-inline-size: fit-content;
+}
+@media (max-width: 782px) {
+  .dc-alert-actions {
+    inline-size: 100%;
+    justify-content: end;
+  }
 }
 .dc-alert-warn {
   --dc-alert-bg: var(--dc-red);
@@ -179,6 +194,7 @@
   inline-size: fit-content;
   line-height: normal;
   max-inline-size: 32.25rem;
+  overflow-wrap: anywhere;
   padding-block: 0.5rem 1rem;
   padding-inline: 0.75rem 1rem;
 }
@@ -212,7 +228,7 @@
 }
 .dc-embed-thumbnail {
   grid-column: 2;
-  grid-row: 1/span 6;
+  grid-row: 1/span 4;
   margin-block-start: 0.5rem;
   margin-inline-start: 1rem;
   min-block-size: 5rem;
@@ -446,7 +462,7 @@
   --dc-switch-slider-active-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
   block-size: 1.5rem;
   display: inline-block;
-  inline-size: 2.5rem;
+  min-inline-size: 2.5rem;
   position: relative;
   vertical-align: middle;
 }
@@ -644,22 +660,28 @@ input:checked ~ .dc-switch-slider::before {
   padding-inline: 4.5rem 3rem;
   position: relative;
 }
+@media (max-width: 992px) {
+  .dc-msg {
+    padding-inline: 4.5rem 0.5rem;
+  }
+}
 .dc-msg:hover {
   --dc-msg-bg: var(--dc-msg-bg-hover);
 }
 .dc-msg-reply {
   align-items: center;
-  block-size: 1.125rem;
   color: #b5bac1;
   display: flex;
+  flex-wrap: wrap;
   font-size: 0.875rem;
   font-weight: 400;
-  gap: 0.25rem;
-  line-height: 1.375rem;
+  column-gap: 0.25rem;
+  line-height: 1.125rem;
   margin-block-end: 0.25rem;
+  position: relative;
 }
 .dc-msg-reply::before {
-  block-size: 0.75rem;
+  block-size: calc(100% - 0.5rem);
   border-block-start: 0.125rem solid #4e5058;
   border-inline-start: 0.125rem solid #4e5058;
   border-start-start-radius: 0.375rem;
@@ -667,7 +689,7 @@ input:checked ~ .dc-switch-slider::before {
   content: "";
   display: block;
   inline-size: 2.0625rem;
-  inset-inline-start: 2.25rem;
+  inset-inline-start: -2.25rem;
   inset-block-start: 0.625rem;
   margin-block: -0.0625rem -0.125rem;
   margin-inline: -0.0625rem 0.25rem;
@@ -738,6 +760,7 @@ input:checked ~ .dc-switch-slider::before {
 .dc-msg-content img, .dc-msg-content video {
   border-radius: 0.5rem;
   display: block;
+  inline-size: 100%;
   max-inline-size: 34.375rem;
   max-block-size: 21.875rem;
   object-fit: contain;
