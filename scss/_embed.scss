@@ -28,7 +28,6 @@
         font-weight: 600;
         gap: 8px;
         grid-column: 1;
-        grid-row: 1;
         justify-content: flex-start;
         margin-block-start: 0.5rem;
 
@@ -72,7 +71,6 @@
     &-title {
         font-weight: 600;
         grid-column: 1;
-        grid-row: 2;
         margin-block-start: 0.5rem;
 
         > a {
@@ -88,7 +86,6 @@
     &-description {
         font-size: 0.875rem;
         grid-column: 1;
-        grid-row: 3;
         margin-block-start: 0.5rem;
     }
 
@@ -97,7 +94,6 @@
         flex-wrap: wrap;
         gap: 0.5rem;
         grid-column: 1;
-        grid-row: 4;
         margin-block-start: 0.5rem;
 
         .#{vars.$prefix}embed-field {
