@@ -85,5 +85,6 @@ $default-color-active: #80848E;
         --#{vars.$prefix}btn-background-hover: var(--#{vars.$prefix}btn-background);
         cursor: not-allowed;
         opacity: 0.5;
+        text-decoration: none;
     }
 }
