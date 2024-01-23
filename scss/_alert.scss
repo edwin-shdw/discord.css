@@ -3,6 +3,10 @@
 
 $alert-breakpoint: 782px !default;
 
+[dir='rtl'] {
+    --#{vars.$prefix}alert-translate: 50%;
+}
+
 .#{vars.$prefix}alert {
     --#{vars.$prefix}alert-bg: #111214;
 
@@ -13,11 +17,11 @@ $alert-breakpoint: 782px !default;
     padding-inline: 1.25rem;
     position: fixed;
     transition: translate 500ms cubic-bezier(0.69, -2, 0.20, 2);
-    translate: -50% 100%;
+    translate: var(--#{vars.$prefix}alert-translate, -50%) 100%;
     z-index: 2;
 
     &.#{vars.$prefix}show {
-        translate: -50%;
+        translate: var(--#{vars.$prefix}alert-translate, -50%);
     }
 
     &-content {
