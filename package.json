@@ -4,12 +4,13 @@
   "description": "A stylesheet library containing the styling for Discord components",
   "main": "index.js",
   "scripts": {
-    "build": "npm run css && npm run css:minify",
+    "build": "npm run css && npm run css:minify && node ./build/banner.js",
     "css": "sass scss/_index.scss ./dist/css/discord.css",
     "css:minify": "sass scss/_index.scss ./dist/css/discord.min.css --style=compressed",
     "watch": "sass scss/_index.scss ./dist/css/discord.min.css --watch --style=compressed",
     "docs": "npm --prefix ./site run start",
     "docs-build": "npm --prefix ./site run build",
+    "version": "npm run build && git add -A dist",
     "test": "echo \"If it looks pretty it must be fine\" && exit 1"
   },
   "keywords": [
