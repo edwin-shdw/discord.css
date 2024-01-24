@@ -1,11 +1,13 @@
 @use 'variables' as vars;
 
+// use of :is() selector as it gets extended by _message.scss
+
 .#{vars.$prefix}link {
     color: var(--#{vars.$prefix}link);
     text-decoration: none;
     cursor: pointer;
 
-    &:hover {
+    :is(&):hover {
         text-decoration: underline;
     }
 }

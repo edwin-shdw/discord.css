@@ -1,23 +1,25 @@
 @use 'variables' as vars;
 
+// use of :is() selector as it gets extended by _text-field.scss
+
 .#{vars.$prefix}scrollbar {
     --#{vars.$prefix}scrollbar-color: #1a1b1e;
 
     overflow-y: scroll;
     scrollbar-color: var(--#{vars.$prefix}scrollbar-color) var(--#{vars.$prefix}grey);
 
-    &::-webkit-scrollbar {
+    :is(&)::-webkit-scrollbar {
         inline-size: 1rem;
     }
 
-    &::-webkit-scrollbar-track {
+    :is(&)::-webkit-scrollbar-track {
         background: var(--#{vars.$prefix}grey);
         background-clip: padding-box;
         border: 0.25rem solid transparent;
         border-radius: 8px;
     }
 
-    &::-webkit-scrollbar-thumb {
+    :is(&)::-webkit-scrollbar-thumb {
         background: var(--#{vars.$prefix}scrollbar-color);
         background-clip: padding-box;
         border: 0.25rem solid transparent;
@@ -29,19 +31,19 @@
         @extend .#{vars.$prefix}scrollbar;
         scrollbar-width: none;
 
-        &::-webkit-scrollbar {
+        :is(&)::-webkit-scrollbar {
             inline-size: 0;
         }
 
-        &::-webkit-scrollbar-track {
+        :is(&)::-webkit-scrollbar-track {
             border: 0.125rem solid transparent;
         }
 
-        &::-webkit-scrollbar-thumb {
+        :is(&)::-webkit-scrollbar-thumb {
             border: 0.125rem solid transparent;
         }
 
-        &:hover {
+        :is(&):hover {
             scrollbar-width: thin;
 
             &::-webkit-scrollbar {

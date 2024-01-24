@@ -14,15 +14,15 @@
     inline-size: 100%;
     padding: 0.625rem;
 
-    &::placeholder {
+    :is(&)::placeholder {
         color: #87898C;
     }
 
-    &:focus {
+    :is(&):focus {
         outline: none;
     }
 
-    &:disabled {
+    :is(&):disabled {
         cursor: not-allowed;
         opacity: 0.6;
     }
