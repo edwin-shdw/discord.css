@@ -1,3 +1,8 @@
+/*
+ * discord.css v0.3.2
+ * Copyright 2023-2024 edwin-shdw and contributers (https://github.com/edwin-shdw/discord.css/graphs/contributors)
+ * Licensed under MIT (https://github.com/edwin-shdw/discord.css/blob/main/LICENSE)
+ */
 :root {
   --discord-css-prefix: dc-;
   --dc-blurple: #5865F2;
@@ -32,6 +37,10 @@
   --dc-mention-rgb: 240, 177, 50;
 }
 
+[dir=rtl] {
+  --dc-alert-translate: 50%;
+}
+
 .dc-alert {
   --dc-alert-bg: #111214;
   inset-block-end: 0;
@@ -41,11 +50,11 @@
   padding-inline: 1.25rem;
   position: fixed;
   transition: translate 500ms cubic-bezier(0.69, -2, 0.2, 2);
-  translate: -50% 100%;
+  translate: var(--dc-alert-translate, -50%) 100%;
   z-index: 2;
 }
 .dc-alert.dc-show {
-  translate: -50%;
+  translate: var(--dc-alert-translate, -50%);
 }
 .dc-alert-content {
   align-items: center;
@@ -180,6 +189,7 @@
   --dc-btn-background-hover: var(--dc-btn-background);
   cursor: not-allowed;
   opacity: 0.5;
+  text-decoration: none;
 }
 
 .dc-embed {
@@ -208,7 +218,6 @@
   font-weight: 600;
   gap: 8px;
   grid-column: 1;
-  grid-row: 1;
   justify-content: flex-start;
   margin-block-start: 0.5rem;
 }
@@ -246,7 +255,6 @@
 .dc-embed-title {
   font-weight: 600;
   grid-column: 1;
-  grid-row: 2;
   margin-block-start: 0.5rem;
 }
 .dc-embed-title > a {
@@ -259,7 +267,6 @@
 .dc-embed-description {
   font-size: 0.875rem;
   grid-column: 1;
-  grid-row: 3;
   margin-block-start: 0.5rem;
 }
 .dc-embed-fields {
@@ -267,7 +274,6 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   grid-column: 1;
-  grid-row: 4;
   margin-block-start: 0.5rem;
 }
 .dc-embed-fields .dc-embed-field {
@@ -526,16 +532,16 @@ input:checked ~ .dc-switch-slider::before {
   overflow-y: scroll;
   scrollbar-color: var(--dc-scrollbar-color) var(--dc-grey);
 }
-.dc-scrollbar::-webkit-scrollbar, .dc-scrollbar-thin::-webkit-scrollbar, .dc-textarea::-webkit-scrollbar {
+:is(.dc-scrollbar, .dc-scrollbar-thin, .dc-textarea)::-webkit-scrollbar {
   inline-size: 1rem;
 }
-.dc-scrollbar::-webkit-scrollbar-track, .dc-scrollbar-thin::-webkit-scrollbar-track, .dc-textarea::-webkit-scrollbar-track {
+:is(.dc-scrollbar, .dc-scrollbar-thin, .dc-textarea)::-webkit-scrollbar-track {
   background: var(--dc-grey);
   background-clip: padding-box;
   border: 0.25rem solid transparent;
   border-radius: 8px;
 }
-.dc-scrollbar::-webkit-scrollbar-thumb, .dc-scrollbar-thin::-webkit-scrollbar-thumb, .dc-textarea::-webkit-scrollbar-thumb {
+:is(.dc-scrollbar, .dc-scrollbar-thin, .dc-textarea)::-webkit-scrollbar-thumb {
   background: var(--dc-scrollbar-color);
   background-clip: padding-box;
   border: 0.25rem solid transparent;
@@ -545,19 +551,19 @@ input:checked ~ .dc-switch-slider::before {
 .dc-scrollbar-thin, .dc-textarea {
   scrollbar-width: none;
 }
-.dc-scrollbar-thin::-webkit-scrollbar, .dc-textarea::-webkit-scrollbar {
+:is(.dc-scrollbar-thin, .dc-textarea)::-webkit-scrollbar {
   inline-size: 0;
 }
-.dc-scrollbar-thin::-webkit-scrollbar-track, .dc-textarea::-webkit-scrollbar-track {
+:is(.dc-scrollbar-thin, .dc-textarea)::-webkit-scrollbar-track {
   border: 0.125rem solid transparent;
 }
-.dc-scrollbar-thin::-webkit-scrollbar-thumb, .dc-textarea::-webkit-scrollbar-thumb {
+:is(.dc-scrollbar-thin, .dc-textarea)::-webkit-scrollbar-thumb {
   border: 0.125rem solid transparent;
 }
-.dc-scrollbar-thin:hover, .dc-textarea:hover {
+:is(.dc-scrollbar-thin, .dc-textarea):hover {
   scrollbar-width: thin;
 }
-.dc-scrollbar-thin:hover::-webkit-scrollbar, .dc-textarea:hover::-webkit-scrollbar {
+:is(.dc-scrollbar-thin, .dc-textarea):hover::-webkit-scrollbar {
   inline-size: 0.5rem;
 }
 .dc-scrollbar-none {
@@ -581,13 +587,13 @@ input:checked ~ .dc-switch-slider::before {
   inline-size: 100%;
   padding: 0.625rem;
 }
-.dc-textarea::placeholder, .dc-input::placeholder {
+:is(.dc-textarea, .dc-input)::placeholder {
   color: #87898C;
 }
-.dc-textarea:focus, .dc-input:focus {
+:is(.dc-textarea, .dc-input):focus {
   outline: none;
 }
-.dc-textarea:disabled, .dc-input:disabled {
+:is(.dc-textarea, .dc-input):disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
@@ -615,7 +621,7 @@ input:checked ~ .dc-switch-slider::before {
   text-decoration: none;
   cursor: pointer;
 }
-.dc-link:hover, .dc-msg-reply-cmd:hover {
+:is(.dc-link, .dc-msg-reply-cmd):hover {
   text-decoration: underline;
 }
 
