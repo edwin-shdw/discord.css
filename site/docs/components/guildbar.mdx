@@ -1,0 +1,113 @@
+---
+title: Guildbar
+description: Add the guildbar from discord which contains DMs and servers.
+---
+
+import CodePreview from '@site/src/components/CodePreview';
+import GuildbarExample from '@site/src/examples/GuildbarExample';
+
+# Guildbar
+
+Don't want to list servers with a basic list? Use the `dc-guildbar` class to create guildbar containing DMs and guilds. To
+display an item as active add the `dc-active` class to the `dc-guildbar-item` class. If you want to separate items you
+can use the `dc-guildbar-separator` class on a `<hr>`.
+
+<CodePreview>
+  <GuildbarExample/>
+</CodePreview>
+
+```html
+<div class="dc-guildbar dc-scrollbar-none" style="max-block-size: 16rem;">
+    <div class="dc-guildbar-item dc-active">
+        <img class="dc-guildbar-item-img" src="/img/profile/shabotto.png">
+    </div>
+    <hr class="dc-guildbar-separator">
+    <div class="dc-guildbar-item">
+        <img class="dc-guildbar-item-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+    </div>
+    <div class="dc-guildbar-item">
+        <img class="dc-guildbar-item-img" src="https://avatars.githubusercontent.com/u/150550776?v=4">
+    </div>
+    <div class="dc-guildbar-item">
+        <img class="dc-guildbar-item-img" src="https://avatars.githubusercontent.com/u/63116530?v=4">
+    </div>
+    <div class="dc-guildbar-item">
+        <img class="dc-guildbar-item-img" src="https://avatars.githubusercontent.com/u/132844639?v=4">
+    </div>
+    <div class="dc-guildbar-item">
+        <img class="dc-guildbar-item-img" src="/img/redforest.jpg">
+    </div>
+</div>
+```
+
+## Guilds without image
+
+Guilds which don't have any image set will display the first letters of the guild name in uppercase e.g. `My server`
+will be displayed as `MS`. Furthermore, the font-size will shrink depending on the length of the initials. It's not
+possible to cover this with pure CSS so this will require a JS solution. You can use the `dc-guildbar-item-letter` inside
+a container with the `dc-guildbar-item-img` class to style the letters and icons. Icons usually use a green color which
+can be used with the `dc-guildbar-item-success` class.
+
+<CodePreview>
+  <div className="dc-guildbar dc-scrollbar-none" style={{ maxBlockSize: '16rem' }}>
+    <div className="dc-guildbar-item">
+      <div className="dc-guildbar-item-img">
+        <span className="dc-guildbar-item-letter">MS</span>
+      </div>
+    </div>
+    <div className="dc-guildbar-item">
+      <div className="dc-guildbar-item-img">
+        <span className="dc-guildbar-item-letter">MSI</span>
+      </div>
+    </div>
+    <div className="dc-guildbar-item">
+      <div className="dc-guildbar-item-img">
+        <span className="dc-guildbar-item-letter" style={{ fontSize: 16 }}>MSIT</span>
+      </div>
+    </div>
+    <div className="dc-guildbar-item">
+      <div className="dc-guildbar-item-img">
+        <span className="dc-guildbar-item-letter" style={{ fontSize: 14 }}>MSITL</span>
+      </div>
+    </div>
+    <div className="dc-guildbar-item dc-guildbar-item-success">
+      <div className="dc-guildbar-item-img">
+        <svg className="dc-guildbar-item-letter" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M13 5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5Z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</CodePreview>
+
+```html
+<div class="dc-guildbar dc-scrollbar-none" style="max-block-size: 16rem;">
+  <div class="dc-guildbar-item">
+    <div class="dc-guildbar-item-img">
+      <span class="dc-guildbar-item-letter">MS</span>
+    </div>
+  </div>
+  <div class="dc-guildbar-item">
+    <div class="dc-guildbar-item-img">
+      <span class="dc-guildbar-item-letter">MSI</span>
+    </div>
+  </div>
+  <div class="dc-guildbar-item">
+    <div class="dc-guildbar-item-img">
+      <span class="dc-guildbar-item-letter" style="font-size: 16px;">MSIT</span>
+    </div>
+  </div>
+  <div class="dc-guildbar-item">
+    <div class="dc-guildbar-item-img">
+      <span class="dc-guildbar-item-letter" style="font-size: 14px;">MSITL</span>
+    </div>
+  </div>
+  <div class="dc-guildbar-item dc-guildbar-item-success">
+    <div class="dc-guildbar-item-img">
+      <svg class="dc-guildbar-item-letter" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M13 5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+```

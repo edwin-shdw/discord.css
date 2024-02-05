@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from '@site/src/components/Sidebar';
+import Guildbar from '@site/src/components/Guildbar';
 
 const images = [
   '/img/profile/shabotto.png',
@@ -10,17 +10,17 @@ const images = [
   '/img/redforest.jpg',
 ];
 
-export default function SidebarExample(): React.ReactElement {
+export default function GuildbarExample(): React.ReactElement {
   const [activeItem, setActiveItem] = React.useState(0);
 
   return(
-    <Sidebar style={{ maxBlockSize: '16rem' }}>
+    <Guildbar style={{ maxBlockSize: '16rem' }}>
       {images.map((image, index) => (
         <React.Fragment key={index}>
-          <Sidebar.Img src={image} active={index === activeItem} onClick={() => setActiveItem(index)} />
-          {index === 0 && <Sidebar.Separator />}
+          <Guildbar.Img src={image} active={index === activeItem} onClick={() => setActiveItem(index)} />
+          {index === 0 && <Guildbar.Separator />}
         </React.Fragment>
       ))}
-    </Sidebar>
+    </Guildbar>
   )
 }
