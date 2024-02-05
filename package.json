@@ -2,7 +2,7 @@
   "name": "discord.css",
   "version": "0.3.2",
   "description": "A stylesheet library containing the styling for Discord components",
-  "main": "index.js",
+  "main": "dist/css/discord.min.css",
   "scripts": {
     "build": "npm run css && npm run css:minify && node ./build/banner.js",
     "css": "sass scss/_index.scss ./dist/css/discord.css",
