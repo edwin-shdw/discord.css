@@ -5,7 +5,9 @@
     $transition-time: 200ms;
     $transition-curve: ease-out;
 
+    --#{vars.$prefix}sidebar-item-bg: #{vars.$light-grey};
     --#{vars.$prefix}sidebar-item-border-radius: 50%;
+    --#{vars.$prefix}sidebar-item-color: #dbdee1;
     --#{vars.$prefix}sidebar-pill-height: 0;
     --#{vars.$prefix}sidebar-pill-width: 0;
     --#{vars.$prefix}sidebar-pill-opacity: 0;
@@ -24,18 +26,38 @@
         position: relative;
 
         &:hover {
+            --#{vars.$prefix}sidebar-item-bg: #{vars.$blurple};
             --#{vars.$prefix}sidebar-item-border-radius: 1rem;
+            --#{vars.$prefix}sidebar-item-color: #{vars.$white};
             --#{vars.$prefix}sidebar-pill-height: 1.25rem;
             --#{vars.$prefix}sidebar-pill-width: 0.5rem;
             --#{vars.$prefix}sidebar-pill-opacity: 1;
         }
 
+        &-success {
+            --#{vars.$prefix}sidebar-item-color: #23a559;
+
+            &:hover {
+                --#{vars.$prefix}sidebar-item-bg: #23a559;
+            }
+        }
+
         &-img {
+            background: var(--#{vars.$prefix}sidebar-item-bg);
             block-size: 3rem;
             border-radius: var(--#{vars.$prefix}sidebar-item-border-radius);
+            display: grid;
             inline-size: 3rem;
             object-fit: cover;
-            transition: border-radius $transition-time $transition-curve;
+            transition: border-radius $transition-time $transition-curve, background-color $transition-time $transition-curve;
+        }
+
+        &-letter {
+            color: var(--#{vars.$prefix}sidebar-item-color);
+            font-size: 1.125rem;
+            font-weight: 500;
+            place-self: center;
+            white-space: nowrap;
         }
 
         &::before {
