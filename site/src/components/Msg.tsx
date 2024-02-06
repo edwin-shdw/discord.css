@@ -5,18 +5,23 @@ import MsgContent from './Msg/MsgContent';
 import MsgComponents from './Msg/MsgComponents';
 import MsgReply from './Msg/MsgReply';
 import MsgButtonRow from './Msg/MsgButtonRow';
+import { MsgEphemeral } from '@site/src/components/Msg/MsgEphemeral';
 
 interface MsgProps extends React.ComponentPropsWithoutRef<'div'> {
   children?: React.ReactNode,
   mentioned?: boolean,
+  ephemeral?: boolean,
 }
 
 function Msg({
   children,
   mentioned,
+  ephemeral,
   ...props
 }: MsgProps): React.ReactElement {
-  const msgClass = `dc-msg${mentioned ? ' dc-msg-mentioned' : ''}`;
+  let msgClass = `dc-msg${mentioned ? ' dc-msg-mentioned' : ''}`;
+  msgClass += ephemeral ? ' dc-msg-ephemeral' : ''
+
   return(
     <div className={msgClass} {...props}>
       {children}
@@ -30,5 +35,6 @@ export default Object.assign(Msg, {
   ButtonRow: MsgButtonRow,
   Components: MsgComponents,
   Content: MsgContent,
+  Ephemeral: MsgEphemeral,
   Reply: MsgReply,
 });

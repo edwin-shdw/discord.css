@@ -165,4 +165,29 @@ $msg-breakpoint: 992px;
             position: absolute;
         }
     }
+
+    &-ephemeral {
+        --#{vars.$prefix}msg-bg: rgba(var(--#{vars.$prefix}blurple-rgb), 0.07);
+        --#{vars.$prefix}msg-bg-hover: rgba(var(--#{vars.$prefix}blurple-rgb), 0.12);
+
+        &::before {
+            background: var(--#{vars.$prefix}blurple);
+            block-size: 100%;
+            content: '';
+            inline-size: 0.125rem;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            position: absolute;
+        }
+
+        &-msg {
+            color: var(--#{vars.$prefix}muted);
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+            font-size: 0.75rem;
+            padding-block: 0.125rem;
+            margin-block-start: 0.25rem;
+        }
+    }
 }

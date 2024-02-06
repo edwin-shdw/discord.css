@@ -411,6 +411,62 @@ The username of a replied message can also be colored. Only difference is that y
 </div>
 ```
 
+## Ephemeral
+
+Add the `dc-msg-ephemeral` class to the `dc-msg` class to apply the ephemeral style of a message. Use the
+`dc-msg-ephemeral-msg` class for the message at the bottom.
+
+<CodePreview bordered>
+  <Msg ephemeral style={{ margin: 0 }}>
+    <Msg.Reply>
+      <Msg.Reply.Img src="https://avatars.githubusercontent.com/u/62764562?v=4" />
+      <Msg.Reply.Name>EdwinShdw</Msg.Reply.Name>
+      <span>used</span>
+      <Msg.Reply.Cmd>/discord-css</Msg.Reply.Cmd>
+    </Msg.Reply>
+    <Msg.AuthorImg
+      src="/img/profile/shabotto.png"
+    />
+    <Msg.Author>
+      <Msg.Author.Name>Shabotto</Msg.Author.Name>
+      <span className="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </Msg.Author>
+    <Msg.Content>I like TypeScript a lot!</Msg.Content>
+    <Msg.Ephemeral>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M15.56 11.77c.2-.1.44.02.44.23a4 4 0 1 1-4-4c.21 0 .33.25.23.44a2.5 2.5 0 0 0 3.32 3.32Z" />
+        <path fill="currentColor" fill-rule="evenodd" d="M22.89 11.7c.07.2.07.4 0 .6C22.27 13.9 19.1 21 12 21c-7.11 0-10.27-7.11-10.89-8.7a.83.83 0 0 1 0-.6C1.73 10.1 4.9 3 12 3c7.11 0 10.27 7.11 10.89 8.7Zm-4.5-3.62A15.11 15.11 0 0 1 20.85 12c-.38.88-1.18 2.47-2.46 3.92C16.87 17.62 14.8 19 12 19c-2.8 0-4.87-1.38-6.39-3.08A15.11 15.11 0 0 1 3.15 12c.38-.88 1.18-2.47 2.46-3.92C7.13 6.38 9.2 5 12 5c2.8 0 4.87 1.38 6.39 3.08Z" />
+      </svg>
+      <>Only you can see this • <a className="dc-link">Dismiss message</a></>
+    </Msg.Ephemeral>
+  </Msg>
+</CodePreview>
+
+```html
+<div class="dc-msg dc-msg-ephemeral">
+    <div class="dc-msg-reply">
+        <img class="dc-msg-reply-img" src="https://avatars.githubusercontent.com/u/62764562?v=4">
+        <span class="dc-msg-reply-name">EdwinShdw</span>
+        <span>used</span>
+        <span class="dc-msg-reply-cmd">/discord-css</span>
+    </div>
+    <img class="dc-msg-author-img" src="/img/profile/shabotto.png">
+    <div class="dc-msg-author">
+        <span class="dc-msg-author-name">Shabotto</span>
+        <span class="dc-msg-author-timestamp">03.11.2023 01:02</span>
+    </div>
+    <div class="dc-msg-content">I like TypeScript a lot!</div>
+    <div class="dc-msg-ephemeral-msg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M15.56 11.77c.2-.1.44.02.44.23a4 4 0 1 1-4-4c.21 0 .33.25.23.44a2.5 2.5 0 0 0 3.32 3.32Z"></path>
+            <path fill="currentColor" fill-rule="evenodd" d="M22.89 11.7c.07.2.07.4 0 .6C22.27 13.9 19.1 21 12 21c-7.11 0-10.27-7.11-10.89-8.7a.83.83 0 0 1 0-.6C1.73 10.1 4.9 3 12 3c7.11 0 10.27 7.11 10.89 8.7Zm-4.5-3.62A15.11 15.11 0 0 1 20.85 12c-.38.88-1.18 2.47-2.46 3.92C16.87 17.62 14.8 19 12 19c-2.8 0-4.87-1.38-6.39-3.08A15.11 15.11 0 0 1 3.15 12c.38-.88 1.18-2.47 2.46-3.92C7.13 6.38 9.2 5 12 5c2.8 0 4.87 1.38 6.39 3.08Z"></path>
+        </svg>
+        Only you can see this • <div class="dc-link">Dismiss message</div>
+    </div>
+</div>
+```
+
+
 ## Breakpoints
 
 You can customize the breakpoint by importing the `message` module with a custom variable named `$msg-breakpoint`.
