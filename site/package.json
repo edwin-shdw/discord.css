@@ -17,7 +17,7 @@
   "dependencies": {
     "@docusaurus/core": "^3.1.1",
     "@docusaurus/preset-classic": "^3.1.1",
-    "@mdx-js/react": "^3.0.0",
+    "@mdx-js/react": "^3.0.1",
     "clsx": "^2.1.0",
     "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.3.1",
@@ -27,8 +27,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/tsconfig": "^3.1.1",
-    "@types/react": "^18.2.54",
-    "typescript": "^5.3.3"
+    "@types/react": "^18.2.69",
+    "typescript": "^5.4.3"
   },
   "browserslist": {
     "production": [
