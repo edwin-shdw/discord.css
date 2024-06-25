@@ -7,11 +7,11 @@ const files = fs.readdirSync(distDir).filter(file => file.endsWith('.css'));
 const year = new Date().getFullYear();
 
 const banner = (
-  '/*\n' +
-  ` * discord.css v${pkg.version}\n` +
-  ` * Copyright 2023-${year} edwin-shdw and contributers (https://github.com/edwin-shdw/discord.css/graphs/contributors)\n` +
-  ' * Licensed under MIT (https://github.com/edwin-shdw/discord.css/blob/main/LICENSE)\n' +
-  ' */'
+`/*
+ * discord.css v${pkg.version}
+ * Copyright 2023-${year} edwin-shdw and contributers (https://github.com/edwin-shdw/discord.css/graphs/contributors)
+ * Licensed under MIT (https://github.com/edwin-shdw/discord.css/blob/main/LICENSE)
+ */`
 );
 
 for(const file of files) {
