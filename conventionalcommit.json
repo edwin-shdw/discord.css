@@ -1,0 +1,47 @@
+{
+  "types": {
+    "feat": {
+      "description": "Introduces a new feature"
+    },
+    "fix": {
+      "description": "A bug fix"
+    },
+    "perf": {
+      "description": "A code change that improves performance"
+    },
+    "refactor": {
+      "description": "A code change that neither fixes a bug nor adds a feature"
+    },
+    "docs": {
+      "description": "Changes that affect documentation"
+    },
+    "style": {
+      "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+    },
+    "build": {
+      "description": "Changes that affect the build system or external dependencies"
+    },
+    "chore": {
+      "description": "Non user-facing changes"
+    }
+  },
+  "commonScopes": {
+    "docs": {
+      "description": "Changes changes that affect documentation inside /site"
+    }
+  },
+  "footerTypes": [
+    {
+      "name": "BREAKING CHANGE",
+      "description": "The commit introduces a breaking change"
+    },
+    {
+      "name": "Closes",
+      "description": "The commit closes issues or pull requests"
+    },
+    {
+      "name": "Co-authored-by",
+      "description": "The commit is co-authored by another person"
+    }
+  ]
+}
