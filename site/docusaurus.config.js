@@ -48,8 +48,7 @@ const config = {
         },
         theme: {
           customCss: [
-              require.resolve('./src/css/custom.css'),
-              '../scss/_index.scss',
+            './src/styles/styles.scss',
           ],
         },
       }),
@@ -102,7 +101,7 @@ const config = {
               },
               {
                 label: 'Changelog',
-                to: 'changelog',
+                to: 'https://github.com/edwin-shdw/discord.css/releases',
               },
               {
                 label: 'Preview',
