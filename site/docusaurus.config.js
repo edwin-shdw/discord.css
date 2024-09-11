@@ -80,7 +80,8 @@ const config = {
           },
           {
             href: 'https://github.com/edwin-shdw/discord.css',
-            label: 'GitHub',
+            className: 'icon-link icon-link--github',
+            title: 'GitHub',
             position: 'right',
           },
         ],

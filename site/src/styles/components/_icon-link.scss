@@ -1,0 +1,23 @@
+@mixin icon-link($name, $svg-encode-url) {
+    .icon-link--#{$name} {
+        --_icon-link-svg: url('#{$svg-encode-url}');
+    }
+}
+
+.icon-link {
+    &::before {
+        content: '';
+        inline-size: 1.5rem;
+        block-size: 1.5rem;
+        display: flex;
+        background-color: var(--ifm-navbar-link-color);
+        mask-image: var(--_icon-link-svg);
+        transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    }
+
+    &:hover::before {
+        background-color: var(--ifm-navbar-link-hover-color);
+    }
+}
+
+@include icon-link('github', '/img/github.svg');
