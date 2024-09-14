@@ -5,13 +5,13 @@
   "main": "dist/css/discord.min.css",
   "scripts": {
     "build": "pnpm run css && pnpm run css:minify && node ./build/banner.js",
+    "build:docs": "pnpm -F site run build",
     "css": "sass scss/_index.scss ./dist/css/discord.css",
     "css:minify": "sass scss/_index.scss ./dist/css/discord.min.css --style=compressed",
-    "watch": "sass scss/_index.scss ./dist/css/discord.min.css --watch --style=compressed",
-    "docs": "pnpm --prefix ./site run start",
-    "docs-build": "pnpm --prefix ./site run build",
+    "dev": "pnpm -F site run start",
+    "test": "echo \"If it looks pretty it must be fine\" && exit 1",
     "version": "pnpm run build && git add -A dist",
-    "test": "echo \"If it looks pretty it must be fine\" && exit 1"
+    "watch": "sass scss/_index.scss ./dist/css/discord.min.css --watch --style=compressed"
   },
   "keywords": [
     "discord",
