@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'variables' as vars;
 @use 'link';
 @use 'mixins/active-states';
@@ -7,7 +8,7 @@ $msg-breakpoint: 992px;
 
 .#{vars.$prefix}msg {
     --#{vars.$prefix}msg-bg: inherit;
-    --#{vars.$prefix}msg-bg-hover: #{mix(black, vars.$light-grey, 7%)};
+    --#{vars.$prefix}msg-bg-hover: #{color.mix(black, vars.$light-grey, 7%)};
 
     background: var(--#{vars.$prefix}msg-bg);
     margin-block-start: 1.0625rem;

@@ -3,6 +3,7 @@
 
 :root {
     --discord-css-prefix: #{vars.$prefix};
+
     @each $color, $value in vars.$discord-colors {
         --#{vars.$prefix}#{$color}: #{$value};
     }

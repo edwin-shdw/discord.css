@@ -34,8 +34,8 @@
         > img {
             aspect-ratio: 1;
             border-radius: 50%;
-            max-height: 1.5rem;
-            max-width: 1.5rem;
+            max-block-size: 1.5rem;
+            max-inline-size: 1.5rem;
             object-fit: cover;
         }
 
@@ -97,7 +97,7 @@
         margin-block-start: 0.5rem;
 
         .#{vars.$prefix}embed-field {
-            min-width: 100%;
+            min-inline-size: 100%;
 
             &-inline {
                 flex-grow: 1;
@@ -138,8 +138,8 @@
         > img {
             aspect-ratio: 1;
             border-radius: 50%;
-            max-height: 1.5rem;
-            max-width: 1.5rem;
+            max-block-size: 1.5rem;
+            max-inline-size: 1.5rem;
             object-fit: cover;
         }
 

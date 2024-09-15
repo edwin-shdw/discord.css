@@ -29,6 +29,7 @@
 
     &-thin {
         @extend .#{vars.$prefix}scrollbar;
+
         scrollbar-width: none;
 
         :is(&)::-webkit-scrollbar {

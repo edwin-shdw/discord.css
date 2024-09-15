@@ -71,9 +71,9 @@
             margin-inline: -0.25rem;
             opacity: var(--#{vars.$prefix}guildbar-pill-opacity);
             position: absolute;
-            transition: height $transition-time $transition-curve,
-                        opacity $transition-time $transition-curve,
-                        width $transition-time $transition-curve;
+            transition: block-size $transition-time $transition-curve,
+            opacity $transition-time $transition-curve,
+            inline-size $transition-time $transition-curve;
         }
 
         &:active {
@@ -95,9 +95,9 @@
     &-separator {
         background: var(--#{vars.$prefix}light-grey);
         border-radius: 0.0625rem;
-        height: 0.125rem;
+        block-size: 0.125rem;
         margin-block: 0.5rem;
         margin-inline: auto;
-        width: 2rem ;
+        inline-size: 2rem;
     }
 }
