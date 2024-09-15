@@ -27,7 +27,7 @@
   },
   "commonScopes": {
     "docs": {
-      "description": "Changes changes that affect documentation inside /site"
+      "description": "Changes that affect documentation inside /site"
     }
   },
   "footerTypes": [
