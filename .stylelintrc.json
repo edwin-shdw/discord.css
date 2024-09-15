@@ -1,0 +1,43 @@
+{
+  "plugins": [
+    "stylelint-plugin-logical-css"
+  ],
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
+  "rules": {
+    "color-hex-length": null,
+    "plugin/use-logical-properties-and-values": [
+      true,
+      {
+        "ignore": [
+          "overflow-y",
+          "overflow-x"
+        ]
+      }
+    ],
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "after-dollar-variable",
+          "first-nested"
+        ],
+        "ignore": [
+          "after-comment",
+          "after-dollar-variable",
+          "inside-single-line-block"
+        ]
+      }
+    ],
+    "scss/dollar-variable-empty-line-after": [
+      "always",
+      {
+        "except": [
+          "before-dollar-variable"
+        ]
+      }
+    ],
+    "scss/at-extend-no-missing-placeholder": null
+  }
+}
