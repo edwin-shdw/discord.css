@@ -12,10 +12,12 @@
 
     align-items: center;
     background: var(--#{vars.$prefix}tag-bg);
-    border-radius: 0.1875rem;
+    border-radius: 0.25rem;
     color: var(--#{vars.$prefix}tag-color);
     display: inline-flex;
-    font-size: 0.625rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 0.9375rem;
     padding-inline: 0.275rem;
     text-transform: uppercase;
 
