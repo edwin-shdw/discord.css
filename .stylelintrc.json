@@ -34,7 +34,8 @@
       "always",
       {
         "except": [
-          "before-dollar-variable"
+          "before-dollar-variable",
+          "last-nested"
         ]
       }
     ],

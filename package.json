@@ -8,7 +8,7 @@
     "build:docs": "pnpm -F site run build",
     "css": "pnpm run css:lint && sass scss/_index.scss ./dist/css/discord.css",
     "css:minify": "pnpm run css:lint && sass scss/_index.scss ./dist/css/discord.min.css --style=compressed",
-    "css:lint": "stylelint scss/*.scss",
+    "css:lint": "stylelint scss/**/*.scss",
     "dev": "pnpm -F site run start",
     "test": "echo \"If it looks pretty it must be fine\" && exit 1",
     "version": "pnpm run build && git add -A dist",
