@@ -3,9 +3,9 @@
 
 .#{vars.$prefix}radio {
     --#{vars.$prefix}radio-bg: var(--#{vars.$prefix}grey);
-    --#{vars.$prefix}radio-bg-hover: hsl(228 6% 32.5% /0.3);
-    --#{vars.$prefix}radio-bg-selected: hsl(228 6% 32.5% /06);
-    --#{vars.$prefix}radio-bg-active: hsl(228 6% 32.5% / 0.48);
+    --#{vars.$prefix}radio-bg-hover: hsl(228deg 6% 32.5% / 30%);
+    --#{vars.$prefix}radio-bg-selected: hsl(228deg 6% 32.5% / 60%);
+    --#{vars.$prefix}radio-bg-active: hsl(228deg 6% 32.5% / 48%);
     --#{vars.$prefix}radio-color: #b5bac1;
 
     align-items: center;
