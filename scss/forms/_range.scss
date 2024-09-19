@@ -25,6 +25,7 @@
     &:disabled,
     &-disabled {
         --#{vars.$prefix}range-thumb-cursor: not-allowed;
+
         opacity: 0.5;
     }
 

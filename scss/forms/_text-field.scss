@@ -30,6 +30,7 @@
 
 .#{vars.$prefix}input {
     @extend %text-field;
+
     block-size: 2.5rem;
 }
 
