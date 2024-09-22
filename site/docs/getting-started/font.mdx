@@ -1,0 +1,50 @@
+---
+title: Set up a font
+description: Learn how to customize and set up fonts in discord.css.
+sidebar_position: 3
+---
+
+# Set up a font
+
+Discord uses the `gg sans` font which is currently not an open-source font. Therefore, discord.css doesn't ship any
+font out of the box and will inherit the font by default. However, we found two possible open source alternatives which
+seem to fit pretty well:
+
+- `Hanken Grotesk` ([view on Google Fonts](https://fonts.google.com/specimen/Hanken+Grotesk))
+- `Work Sans` ([view on Google Fonts](https://fonts.google.com/specimen/Work+Sans))
+
+:::info
+The demo components in this documentation uses the `Hanken Grotesk` font.
+:::
+
+You can also stick to one of Discords fallback fonts:
+
+- `gg sans`
+- `Noto Sans`
+- `Helvetica Neue`
+- `Helvetica`
+- `Arial`
+- `sans-serif`
+- `Apple Symbols`
+
+
+## Include your font
+
+### With CSS
+You can set your font by either changing the `--dc-base-font` variable in the discord.css file or by overwriting it in
+your own css file.
+```css
+:root {
+    --dc-base-font: 'My custom font', sans-serif;
+}
+```
+
+### With SASS
+If you use SASS you can specify the font when importing the package.
+
+```scss
+@use '/node_modules/discord.css/scss' with ($font: '"Hanken Grotesk Variable", sans-serif');
+
+// or for component-based usage:
+@use '/node_modules/discord.css/scss/variables' with ($font: '"Hanken Grotesk Variable", sans-serif');
+```

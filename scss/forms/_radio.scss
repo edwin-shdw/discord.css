@@ -1,5 +1,6 @@
 @use '../variables' as vars;
 @use '../focus-ring';
+@use '../mixins/fonts' as font;
 
 .#{vars.$prefix}radio {
     --#{vars.$prefix}radio-bg: var(--#{vars.$prefix}grey);
@@ -7,6 +8,8 @@
     --#{vars.$prefix}radio-bg-selected: hsl(228deg 6% 32.5% / 60%);
     --#{vars.$prefix}radio-bg-active: hsl(228deg 6% 32.5% / 48%);
     --#{vars.$prefix}radio-color: #b5bac1;
+
+    @include font.base;
 
     align-items: center;
     background: var(--#{vars.$prefix}radio-bg);

@@ -3,12 +3,15 @@
 @use 'link';
 @use 'mixins/active-states';
 @use 'mixins/breakpoints' as bp;
+@use 'mixins/fonts' as font;
 
 $msg-breakpoint: 992px;
 
 .#{vars.$prefix}msg {
     --#{vars.$prefix}msg-bg: inherit;
     --#{vars.$prefix}msg-bg-hover: #{color.mix(black, vars.$light-grey, 7%)};
+
+    @include font.base;
 
     background: var(--#{vars.$prefix}msg-bg);
     margin-block-start: 1.0625rem;

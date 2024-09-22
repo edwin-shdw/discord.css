@@ -1,0 +1,9 @@
+@use '../variables' as vars;
+
+@mixin base-css-var($value) {
+    --#{vars.$prefix}base-font: #{$value};
+}
+
+@mixin base {
+    font-family: var(--#{vars.$prefix}base-font);
+}

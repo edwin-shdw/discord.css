@@ -1,8 +1,11 @@
 @use 'variables' as vars;
+@use 'mixins/fonts' as font;
 
 .#{vars.$prefix}embed {
     --#{vars.$prefix}embed-color: #{vars.$dark-grey};
     --#{vars.$prefix}embed-span: span 1;
+
+    @include font.base;
 
     background: vars.$grey;
     border-inline-start: 0.25rem solid var(--#{vars.$prefix}embed-color);

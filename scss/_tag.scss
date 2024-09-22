@@ -1,4 +1,5 @@
 @use 'variables' as vars;
+@use 'mixins/fonts' as font;
 
 @mixin tag-verified {
     inline-size: 0.9375rem;
@@ -9,6 +10,8 @@
 .#{vars.$prefix}tag {
     --#{vars.$prefix}tag-bg: var(--#{vars.$prefix}blurple);
     --#{vars.$prefix}tag-color: var(--#{vars.$prefix}white);
+
+    @include font.base;
 
     align-items: center;
     background: var(--#{vars.$prefix}tag-bg);

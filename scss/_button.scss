@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'variables' as vars;
+@use 'mixins/fonts' as font;
 
 $default-color: #4E5058;
 $default-color-hover: #6D6F78;
@@ -10,13 +11,14 @@ $default-color-active: #80848E;
     --#{vars.$prefix}btn-background-hover: #{$default-color-hover};
     --#{vars.$prefix}btn-background-active: #{$default-color-active};
 
+    @include font.base;
+
     background: var(--#{vars.$prefix}btn-background);
     border: none;
     border-radius: 0.1875rem;
     color: var(--#{vars.$prefix}white);
     cursor: pointer;
     display: inline-block;
-    font-family: inherit;
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1rem;

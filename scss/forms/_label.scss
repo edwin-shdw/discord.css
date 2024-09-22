@@ -1,9 +1,12 @@
 @use '../variables' as vars;
+@use '../mixins/fonts' as font;
 
 $color: #B5BAC1;
 
 .#{vars.$prefix}label {
     &-header {
+        @include font.base;
+
         color: $color;
         display: inline-block;
         font-size: 0.75rem;
@@ -15,6 +18,8 @@ $color: #B5BAC1;
     }
 
     &-description {
+        @include font.base;
+
         color: $color;
         font-size: 0.875rem;
         font-weight: 400;

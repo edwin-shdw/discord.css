@@ -1,14 +1,16 @@
 @use '../variables' as vars;
 @use '../scrollbar';
+@use '../mixins/fonts' as font;
 
 %text-field {
+    @include font.base;
+
     background: var(--#{vars.$prefix}dark-grey);
     border: none;
     border-radius: 0.1875rem;
     box-sizing: border-box;
     color: var(--#{vars.$prefix}white);
     display: block;
-    font-family: inherit;
     font-size: 1rem;
     font-weight: 400;
     inline-size: 100%;

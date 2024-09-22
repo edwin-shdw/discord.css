@@ -1,5 +1,6 @@
 @use 'variables' as vars;
 @use 'mixins/active-states';
+@use 'mixins/fonts' as font;
 
 .#{vars.$prefix}guildbar {
     $transition-time: 200ms;
@@ -11,6 +12,8 @@
     --#{vars.$prefix}guildbar-pill-height: 0;
     --#{vars.$prefix}guildbar-pill-width: 0;
     --#{vars.$prefix}guildbar-pill-opacity: 0;
+
+    @include font.base;
 
     background: var(--#{vars.$prefix}dark-grey);
     box-sizing: border-box;

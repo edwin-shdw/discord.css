@@ -1,4 +1,5 @@
 @use 'variables' as vars;
+@use 'mixins/fonts' as font;
 
 .#{vars.$prefix}mention {
     --#{vars.$prefix}mention-bg: var(--#{vars.$prefix}blurple-rgb);
@@ -8,6 +9,8 @@
     --#{vars.$prefix}mention-bg-opacity-hover: 1;
     --#{vars.$prefix}mention-color-hover: var(--#{vars.$prefix}blurple-rgb);
     --#{vars.$prefix}mention-color-opacity-hover: 1;
+
+    @include font.base;
 
     background: rgba(var(--#{vars.$prefix}mention-bg), var(--#{vars.$prefix}mention-bg-opacity));
     border-radius: 0.1875rem;

@@ -1,5 +1,6 @@
 @use 'variables' as vars;
 @use 'mixins/breakpoints' as bp;
+@use 'mixins/fonts' as font;
 
 $alert-breakpoint: 782px !default;
 
@@ -9,6 +10,8 @@ $alert-breakpoint: 782px !default;
 
 .#{vars.$prefix}alert {
     --#{vars.$prefix}alert-bg: #111214;
+
+    @include font.base;
 
     inset-block-end: 0;
     inset-inline-start: 50%;

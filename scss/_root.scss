@@ -1,8 +1,11 @@
 @use 'sass:color';
 @use 'variables' as vars;
+@use './mixins/fonts' as font;
 
 :root {
     --discord-css-prefix: #{vars.$prefix};
+
+    @include font.base-css-var(#{vars.$font});
 
     @each $color, $value in vars.$discord-colors {
         --#{vars.$prefix}#{$color}: #{$value};

@@ -1,1 +1,3 @@
-@forward '../../../../scss';
+@use '../../../../scss' with (
+    $font: '"Hanken Grotesk Variable", sans-serif'
+);
