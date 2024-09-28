@@ -5,16 +5,15 @@ description: Style your ranges like discord does.
 
 import CodePreview from "@site/src/components/CodePreview";
 import Radio from "@site/src/components/Forms/Radio";
-import RadioFirefoxExample from "@site/src/examples/RadioFirefoxExample";
 
 # Radio
 
 Radios can be displayed with the `dc-radio` class.
 
 <CodePreview bordered>
-    <Radio id="radio1" name="radioExample">Radio 1</Radio>
-    <Radio id="radio2" name="radioExample">Radio 2</Radio>
-    <Radio id="radio3" name="radioExample" defaultChecked>Radio 3</Radio>
+  <Radio id="radio1" name="radioExample">Radio 1</Radio>
+  <Radio id="radio2" name="radioExample">Radio 2</Radio>
+  <Radio id="radio3" name="radioExample" defaultChecked>Radio 3</Radio>
 </CodePreview>
 
 ```html
@@ -37,9 +36,9 @@ Radios can be displayed with the `dc-radio` class.
 Add the disabled attribute to apply the grayed out style to both the `<input>` and `<label>` tag.
 
 <CodePreview bordered>
-    <Radio id="radioDisabled1" name="radioExample2">Radio 1</Radio>
-    <Radio id="radioDisabled2" name="radioExample2">Radio 2</Radio>
-    <Radio id="radioDisabled3" name="radioExample2" disabled>Radio 3</Radio>
+  <Radio id="radioDisabled1" name="radioExample2">Radio 1</Radio>
+  <Radio id="radioDisabled2" name="radioExample2">Radio 2</Radio>
+  <Radio id="radioDisabled3" name="radioExample2" disabled>Radio 3</Radio>
 </CodePreview>
 
 ```html
@@ -54,90 +53,5 @@ Add the disabled attribute to apply the grayed out style to both the `<input>` a
 <label class="dc-radio" for="radioDisabled3">
     <input type="radio" id="radioDisabled3" name="radioExampleDisabled" disabled>
     <span>Radio 3</span>
-</label>
-```
-
-## Firefox
-
-:::danger
-Discord.css uses the `:has` selector for radios. Firefox does not support this selector yet, so it won't appear as
-intended on Firefox browsers.
-:::
-
-To counteract this Discord.css ships the additional classes `dc-radio-disabled` and `dc-radio-checked` which can be used
-in combination with JavaScript to achieve the intended behaviour.
-
-<CodePreview bordered>
-    <RadioFirefoxExample />
-</CodePreview>
-
-```html
-<form>
-    <label class="dc-radio" for="radioFF1">
-        <input type="radio" id="radioFF1" name="radioFFExample">
-        <span>Radio 1</span>
-    </label>
-    <label class="dc-radio" for="radioFF2">
-        <input type="radio" id="radioFF2" name="radioFFExample">
-        <span>Radio 2</span>
-    </label>
-    <label class="dc-radio dc-radio-checked" for="radioFF3">
-        <input type="radio" id="radioFF3" name="radioFFExample">
-        <span>Radio 3</span>
-    </label>
-</form>
-```
-
-```js
-const forms = document.querySelectorAll('form');
-
-forms.forEach(form => {
-    const radios = form.querySelectorAll('.dc-radio');
-
-    // Initialize checked radios
-    radios.forEach(radio => {
-        const input = radio.querySelector('input');
-        if(input.checked) radio.classList.add('dc-radio-checked');
-    });
-
-    // Update when checked radio changes
-    form.addEventListener('click', () => {
-       radios.forEach(radio => {
-           const input = radio.querySelector('input');
-           radio.classList.toggle('dc-radio-checked', input.checked);
-       });
-    });
-});
-```
-
-### Checked
-
-In addition to the checked attribute you will need to apply the `dc-radio-checked` class on the label of the checked
-radio.
-
-<CodePreview bordered>
-    <Radio checked defaultChecked>Checked radio with dc-radio-checked class</Radio>
-</CodePreview>
-
-```html
-<label class="dc-radio dc-radio-checked">
-    <input type="radio" checked>
-    <span>Checked radio with dc-radio-checked class</span>
-</label>
-```
-
-### Disabled
-
-In addition to the disabled attribute you will need to apply the `dc-radio-disabled` class on the label of the disabled
-radio.
-
-<CodePreview bordered>
-    <Radio disabled>Disabled radio with dc-radio-disabled class</Radio>
-</CodePreview>
-
-```html
-<label class="dc-radio dc-radio-disabled">
-    <input type="radio" disabled>
-    <span>Disabled radio with dc-radio-disabled class</span>
 </label>
 ```
