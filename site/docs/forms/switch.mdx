@@ -12,13 +12,15 @@ You can build a switch by wrapping a `<input>` element with the `dc-switch` clas
 as sibling.
 
 <CodePreview>
-    <Switch />
+  <div className="dc-switch-wrapper">
+    <Switch/>
+  </div>
 </CodePreview>
 
 ```html
 <div class="dc-switch">
-    <input type="checkbox">
-    <span class="dc-switch-slider"></span>
+  <input type="checkbox">
+  <span class="dc-switch-slider"></span>
 </div>
 ```
 
@@ -26,10 +28,10 @@ Discord usually displays the label and switch with a `space-between`. For this c
 and `dc-switch-label` classes.
 
 <CodePreview>
-    <div className="dc-switch-wrapper">
-        <label className="dc-switch-label" htmlFor="switch">Activate DCS for current project</label>
-        <Switch id="switch" />
-    </div>
+  <div className="dc-switch-wrapper">
+    <label className="dc-switch-label" htmlFor="switch">Activate DCS for current project</label>
+    <Switch id="switch"/>
+  </div>
 </CodePreview>
 
 ```html
@@ -41,3 +43,8 @@ and `dc-switch-label` classes.
     </div>
 </div>
 ```
+
+:::info
+Even if you don't need the label, you should wrap your switch in an element with the `dc-switch-wrapper` class.
+Otherwise, the `:focus-visible` selector won't mark the switch as focused for keyboard users.
+:::

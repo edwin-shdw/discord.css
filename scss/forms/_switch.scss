@@ -2,11 +2,6 @@
 @use '../focus-ring';
 @use '../mixins/fonts' as font;
 
-// TODO: As soon as Firefox supports :has selector
-// move inner of slider into own element and create cross/dash/checkmark
-// with ::before & ::after and add animation to it
-// + add focus ring on label and switch
-
 .#{vars.$prefix}switch {
     --#{vars.$prefix}switch-bg: rgb(128 132 142);
     --#{vars.$prefix}switch-translate: 0;
@@ -64,16 +59,16 @@
                 inset-inline-start: 1.1875rem;
             }
         }
-
-        input:focus-visible ~ & {
-            @extend .#{vars.$prefix}focus-ring;
-        }
     }
 
     &-wrapper {
         align-items: center;
         display: flex;
         justify-content: space-between;
+
+        &:has(input:focus-visible) {
+            @extend .#{vars.$prefix}focus-ring;
+        }
     }
 
     &-label {
