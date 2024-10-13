@@ -7,7 +7,7 @@ const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Discord.css',
+  title: 'discord.css',
   tagline: 'Imagine a style',
   favicon: 'img/dcs.svg',
 
@@ -124,7 +124,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Discord.css<br>Code licensed <a href="https://github.com/edwin-shdw/discord.css/blob/main/LICENSE" target="_blank">MIT</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} discord.css<br>Code licensed <a href="https://github.com/edwin-shdw/discord.css/blob/main/LICENSE" target="_blank">MIT</a>`,
       },
       prism: {
         additionalLanguages: ['bash', 'scss'],
