@@ -18,11 +18,11 @@ Discord.css uses [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) u
 ```html
 <div class="dc-embed" style="--dc-embed-color: #a00; line-height: normal;">
     <div class="dc-embed-author">
-        <img src="/img/dcs.webp" alt="Author image">
+        <img src="/img/dcs.svg" alt="Author image">
         <span>discord.css</span>
     </div>
     <div class="dc-embed-thumbnail">
-        <img src="/img/dcs.webp" alt="Thumbnail">
+        <img src="/img/dcs.svg" alt="Thumbnail">
     </div>
     <div class="dc-embed-title">Embeds</div>
     <div class="dc-embed-description">
@@ -45,7 +45,7 @@ Discord.css uses [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) u
     </div>
     <div class="dc-embed-image"><img src="/img/shadow-logo.png" alt="Shadow"></div>
     <div class="dc-embed-footer">
-        <img src="/img/dcs.webp" alt="Author Profile Image">
+        <img src="/img/dcs.svg" alt="Author Profile Image">
         <span>
             discord.css docs
             <span class="dc-embed-footer-seperator">•</span>
@@ -86,7 +86,7 @@ Author fields contain an author image and name.
 <CodePreview bordered={true}>
   <Embed>
     <Embed.Author>
-      <img src="/img/dcs.webp" />
+      <img src="/img/dcs.svg" />
       <span>Some name</span>
     </Embed.Author>
   </Embed>
@@ -95,7 +95,7 @@ Author fields contain an author image and name.
 ```html
 <div class="dc-embed">
     <div class="dc-embed-author">
-        <img src="/img/dcs.webp">
+        <img src="/img/dcs.svg">
         <span>Some name</span>
     </div>
 </div>
@@ -106,7 +106,7 @@ Author fields can also contain links inside them.
 <CodePreview bordered={true}>
   <Embed>
     <Embed.Author>
-      <img src="/img/dcs.webp" />
+      <img src="/img/dcs.svg" />
       <a href="#author">Some name</a>
     </Embed.Author>
   </Embed>
@@ -115,7 +115,7 @@ Author fields can also contain links inside them.
 ```html
 <div class="dc-embed">
     <div class="dc-embed-author">
-        <img src="/img/dcs.webp">
+        <img src="/img/dcs.svg">
         <a href="#author">Some name</a>
     </div>
 </div>
@@ -128,7 +128,7 @@ Author fields can also contain links inside them.
   <Embed>
     <Embed.Title>Some title</Embed.Title>
     <Embed.Thumbnail>
-      <img src='/img/dcs.webp' />
+      <img src='/img/dcs.svg' />
     </Embed.Thumbnail>
   </Embed>
 </CodePreview>
@@ -137,7 +137,7 @@ Author fields can also contain links inside them.
 <div class="dc-embed">
     <div class="dc-embed-title">Some title</div>
     <div class="dc-embed-thumbnail">
-        <img src="/img/dcs.webp">
+        <img src="/img/dcs.svg">
     </div>
 </div>
 ```
@@ -191,7 +191,8 @@ Descriptions are straight forward as it is just text.
 
 <CodePreview bordered={true}>
   <Embed>
-    <Embed.Description>Description are the longest part of embeds and can contain up to 4096 characters (at least at discords API).</Embed.Description>
+    <Embed.Description>Description are the longest part of embeds and can contain up to 4096 characters (at least at
+      discords API).</Embed.Description>
   </Embed>
 </CodePreview>
 
@@ -282,7 +283,7 @@ a `<span>` with the `dc-embed-footer-seperator` class.
 <CodePreview bordered={true}>
   <Embed>
     <Embed.Footer>
-      <img src="/img/dcs.webp" />
+      <img src="/img/dcs.svg" />
       <span>DCS Docs<span className="dc-embed-footer-seperator">•</span>30.10.2023 22:13</span>
     </Embed.Footer>
   </Embed>
@@ -291,7 +292,7 @@ a `<span>` with the `dc-embed-footer-seperator` class.
 ```html
 <div class="dc-embed">
     <div class="dc-embed-footer">
-        <img src="/img/dcs.webp">
+        <img src="/img/dcs.svg">
         <span>
             DCS Docs
             <span class="dc-embed-footer-seperator">•</span>
