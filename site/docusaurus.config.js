@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const { themes } = require('prism-react-renderer');
+const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
@@ -9,7 +9,7 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: 'Discord.css',
   tagline: 'Imagine a style',
-  favicon: 'img/dcs.webp',
+  favicon: 'img/dcs.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -56,15 +56,15 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/dcs.webp',
+      image: 'img/dcs.svg',
       navbar: {
-        title: 'Discord.css',
         logo: {
-          alt: 'Discord Styles',
-          src: 'img/dcs.webp',
+          alt: 'discord.css',
+          src: 'img/discord-css.svg',
+          width: 144,
         },
         items: [
           {
