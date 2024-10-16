@@ -29,7 +29,7 @@ importers:
       '@docusaurus/preset-classic':
         specifier: ^3.5.2
         version: 3.5.2(@algolia/client-search@4.24.0)(@mdx-js/react@3.0.1(@types/react@18.3.5)(react@18.3.1))(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)(typescript@5.6.2)
-      '@fontsource-variable/hanken-grotesk':
+      '@fontsource/hanken-grotesk':
         specifier: ^5.1.0
         version: 5.1.0
       '@mdx-js/react':
@@ -990,8 +990,8 @@ packages:
   '@dual-bundle/import-meta-resolve@4.1.0':
     resolution: {integrity: sha512-+nxncfwHM5SgAtrVzgpzJOI1ol0PkumhVo469KCf9lUi21IGcY90G98VuHm9VRrUypmAzawAHO9bs6hqeADaVg==}
 
-  '@fontsource-variable/hanken-grotesk@5.1.0':
-    resolution: {integrity: sha512-QD3pm2uu/4T7hWZylys1Ja9vlG+3VQKs/j7XvpecARlqJeVXgONoxY9zsrKeVI5B/6D3+xhu/XjOZhMHfzRghg==}
+  '@fontsource/hanken-grotesk@5.1.0':
+    resolution: {integrity: sha512-k4qznnJgnFJSiAyRg/cnecH39h/bFR+5XbfuRusG2ElxZHFDHaou66HvIMKKkUTaMpJ75ZnrK1GX3x0PvN6ARg==}
 
   '@hapi/hoek@9.3.0':
     resolution: {integrity: sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ==}
@@ -6442,7 +6442,7 @@ snapshots:
 
   '@dual-bundle/import-meta-resolve@4.1.0': {}
 
-  '@fontsource-variable/hanken-grotesk@5.1.0': {}
+  '@fontsource/hanken-grotesk@5.1.0': {}
 
   '@hapi/hoek@9.3.0': {}
 
