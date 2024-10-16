@@ -12,6 +12,6 @@
     }
 
     @each $color, $value in vars.$discord-colors {
-        --#{vars.$prefix}#{$color}-rgb: #{color.red($value), color.green($value), color.blue($value)};
+        --#{vars.$prefix}#{$color}-rgb: #{color.red($value) color.green($value) color.blue($value)};
     }
 }

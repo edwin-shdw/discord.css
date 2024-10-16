@@ -156,8 +156,8 @@ $msg-breakpoint: 992px;
     }
 
     &-mentioned {
-        --#{vars.$prefix}msg-bg: rgba(var(--#{vars.$prefix}mention-rgb), 0.1);
-        --#{vars.$prefix}msg-bg-hover: rgba(var(--#{vars.$prefix}mention-rgb), 0.08);
+        --#{vars.$prefix}msg-bg: rgb(var(--#{vars.$prefix}mention-rgb) / 10%);
+        --#{vars.$prefix}msg-bg-hover: rgb(var(--#{vars.$prefix}mention-rgb) / 8%);
 
         &::before {
             background: var(--#{vars.$prefix}mention);
@@ -171,8 +171,8 @@ $msg-breakpoint: 992px;
     }
 
     &-ephemeral {
-        --#{vars.$prefix}msg-bg: rgba(var(--#{vars.$prefix}blurple-rgb), 0.07);
-        --#{vars.$prefix}msg-bg-hover: rgba(var(--#{vars.$prefix}blurple-rgb), 0.12);
+        --#{vars.$prefix}msg-bg: rgb(var(--#{vars.$prefix}blurple-rgb) / 7%);
+        --#{vars.$prefix}msg-bg-hover: rgb(var(--#{vars.$prefix}blurple-rgb) / 12%);
 
         &::before {
             background: var(--#{vars.$prefix}blurple);

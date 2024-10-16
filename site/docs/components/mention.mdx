@@ -35,17 +35,17 @@ Roles on the other hand will get the color of the mentioned role. You can provid
 `--dc-mention-color` CSS variable.
 
 <CodePreview>
-    <Mention role color='#f47fff'>@Server Booster</Mention>
+  <Mention role color='#f47fff'>@Server Booster</Mention>
 </CodePreview>
 
 ```html
-<span class="dc-mention dc-mention-role" style="--dc-mention-color: 244, 127, 255">
+<span class="dc-mention dc-mention-role" style="--dc-mention-color: 244 127 255">
     @Server Booster
 </span>
 ```
 
-Role mentions will increase their opacity on hover, that's why you will need to pass the rgb values to the
-`--dc-mention-color` variable. If you are using a frontend framework like [React](https://react.dev/) you could simply
+Role mentions will increase their opacity on hover, that's why you need to pass the RGB values to the
+`--dc-mention-color` variable, separated by a whitespace. If you are using a frontend framework like [React](https://react.dev/) you could simply
 define a function which returns the rgb values of a color.
 
 ```js
@@ -56,6 +56,6 @@ function hexToRgb(hex) {
   let g = (bigint >> 8) & 255;
   let b = bigint & 255;
 
-  return r + ", " + g + ", " + b;
+  return `${r} ${g} ${b}`;
 }
 ```

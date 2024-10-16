@@ -12,9 +12,9 @@
 
     @include font.base;
 
-    background: rgba(var(--#{vars.$prefix}mention-bg), var(--#{vars.$prefix}mention-bg-opacity));
+    background: rgb(var(--#{vars.$prefix}mention-bg) / var(--#{vars.$prefix}mention-bg-opacity));
     border-radius: 0.1875rem;
-    color: rgba(var(--#{vars.$prefix}mention-color), var(--#{vars.$prefix}mention-color-opacity));
+    color: rgb(var(--#{vars.$prefix}mention-color) / var(--#{vars.$prefix}mention-color-opacity));
     cursor: pointer;
     font-weight: 500;
     padding-inline: 0.125rem;
@@ -22,8 +22,8 @@
     transition: color 50ms ease-out, background-color 50ms ease-out;
 
     &:hover {
-        background: rgba(var(--#{vars.$prefix}mention-bg), var(--#{vars.$prefix}mention-bg-opacity-hover));
-        color: rgba(var(--#{vars.$prefix}mention-color), var(--#{vars.$prefix}mention-color-opacity-hover));
+        background: rgb(var(--#{vars.$prefix}mention-bg) / var(--#{vars.$prefix}mention-bg-opacity-hover));
+        color: rgb(var(--#{vars.$prefix}mention-color) / var(--#{vars.$prefix}mention-color-opacity-hover));
     }
 
     &-role {
