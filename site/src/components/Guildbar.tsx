@@ -13,15 +13,20 @@ export function Guildbar({
 
 export function GuildbarItem({
   active,
+  variant,
   children,
   ...props
 }: {
   active?: boolean,
+  variant?: 'success',
   children?: React.ReactNode,
-  props?: React.ComponentPropsWithoutRef<'div'>
+  props?: React.ComponentPropsWithoutRef<'div'>,
 }) {
   return(
-    <div className={`dc-guildbar-item ${active ? 'dc-active' : ''}`} {...props} >
+    <div
+      className={`dc-guildbar-item ${active ? 'dc-active' : ''}${variant ? `dc-guildbar-item-${variant}` : ''}`}
+      {...props}
+    >
       {children}
     </div>
   )

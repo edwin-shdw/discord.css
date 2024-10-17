@@ -88,6 +88,7 @@
         }
 
         &.#{vars.$prefix}active {
+            --#{vars.$prefix}guildbar-item-bg: #{vars.$blurple};
             --#{vars.$prefix}guildbar-item-border-radius: 1rem;
             --#{vars.$prefix}guildbar-pill-height: 2.5rem;
             --#{vars.$prefix}guildbar-pill-width: 0.5rem;

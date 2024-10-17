@@ -4,7 +4,7 @@ description: Add the guildbar from discord which contains DMs and servers.
 ---
 
 import CodePreview from '@site/src/components/CodePreview';
-import GuildbarExample from '@site/src/examples/GuildbarExample';
+import { GuildbarExample, GuildbarLetterExample } from '@site/src/examples/GuildbarExample';
 
 # Guildbar
 
@@ -49,35 +49,7 @@ a container with the `dc-guildbar-item-img` class to style the letters and icons
 can be used with the `dc-guildbar-item-success` class.
 
 <CodePreview>
-  <div className="dc-guildbar dc-scrollbar-none" style={{ maxBlockSize: '16rem' }}>
-    <div className="dc-guildbar-item">
-      <div className="dc-guildbar-item-img">
-        <span className="dc-guildbar-item-letter">MS</span>
-      </div>
-    </div>
-    <div className="dc-guildbar-item">
-      <div className="dc-guildbar-item-img">
-        <span className="dc-guildbar-item-letter">MSI</span>
-      </div>
-    </div>
-    <div className="dc-guildbar-item">
-      <div className="dc-guildbar-item-img">
-        <span className="dc-guildbar-item-letter" style={{ fontSize: 16 }}>MSIT</span>
-      </div>
-    </div>
-    <div className="dc-guildbar-item">
-      <div className="dc-guildbar-item-img">
-        <span className="dc-guildbar-item-letter" style={{ fontSize: 14 }}>MSITL</span>
-      </div>
-    </div>
-    <div className="dc-guildbar-item dc-guildbar-item-success">
-      <div className="dc-guildbar-item-img">
-        <svg className="dc-guildbar-item-letter" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M13 5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5Z" />
-        </svg>
-      </div>
-    </div>
-  </div>
+  <GuildbarLetterExample />
 </CodePreview>
 
 ```html
