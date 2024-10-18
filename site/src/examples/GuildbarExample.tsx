@@ -17,6 +17,15 @@ const guildLetters = [
   'MSITL',
 ];
 
+function getGuildbarFontSize(acronym: string) {
+  const length = acronym.length;
+
+  if (length <= 2) return null;
+  else if (length <= 4) return 16;
+  else if (length <= 7) return 16 - (length - 4) * 2;
+  else return 10;
+}
+
 export function GuildbarExample(): React.ReactElement {
   const [activeItem, setActiveItem] = React.useState(0);
 
@@ -43,7 +52,7 @@ export function GuildbarLetterExample(): React.ReactElement {
             <div className="dc-guildbar-item-img" onClick={() => setActiveItem(index)}>
               <span
                 className="dc-guildbar-item-letter"
-                style={{ fontSize: (text.length >= 4 ? (16 - text.length % 2 * 2) : null) }}
+                style={{ fontSize: getGuildbarFontSize(text) }}
               >
                 {text}
               </span>

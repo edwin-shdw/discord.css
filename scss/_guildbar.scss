@@ -52,6 +52,7 @@
             display: grid;
             inline-size: 3rem;
             object-fit: cover;
+            overflow: hidden;
             transition: border-radius $transition-time $transition-curve, background-color $transition-time $transition-curve;
         }
 
@@ -59,6 +60,7 @@
             color: var(--#{vars.$prefix}guildbar-item-color);
             font-size: 1.125rem;
             font-weight: 500;
+            overflow: hidden;
             place-self: center;
             white-space: nowrap;
         }
