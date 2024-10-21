@@ -48,3 +48,26 @@ and `dc-switch-label` classes.
 Even if you don't need the label, you should wrap your switch in an element with the `dc-switch-wrapper` class.
 Otherwise, the `:focus-visible` selector won't mark the switch as focused for keyboard users.
 :::
+
+
+## Disabled
+
+Add the disabled boolean attribute on the `<input>` to give the switch a grayed out appearance, remove pointer events
+and prevent focusing.
+
+<CodePreview>
+  <div className="dc-switch-wrapper">
+    <label className="dc-switch-label" htmlFor="disabledSwitch">Activate DCS for current project</label>
+    <Switch id="disabledSwitch" disabled />
+  </div>
+</CodePreview>
+
+```html
+<div class="dc-switch-wrapper">
+    <label class="dc-switch-label" for="disabledSwitch">Activate DCS for current project</label>
+    <div class="dc-switch">
+        <input type="checkbox" id="disabledSwitch" disabled>
+        <span class="dc-switch-slider"></span>
+    </div>
+</div>
+```

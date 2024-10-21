@@ -69,6 +69,15 @@
         &:has(input:focus-visible) {
             @extend .#{vars.$prefix}focus-ring;
         }
+
+        &:has(input:disabled) {
+            cursor: not-allowed;
+
+            .#{vars.$prefix}switch-label {
+                opacity: 0.6;
+                pointer-events: none;
+            }
+        }
     }
 
     &-label {
@@ -83,5 +92,14 @@
         inline-size: 100%;
         margin: 0;
         opacity: 0;
+    }
+
+    &:has(input:disabled) {
+        opacity: 0.3;
+        cursor: not-allowed;
+
+        input {
+            pointer-events: none;
+        }
     }
 }
