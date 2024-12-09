@@ -1,6 +1,6 @@
 @use 'variables' as vars;
 
-$box-shadow: 0 0 0 0.25rem var(--dc-link);
+$box-shadow: 0 0 0 0.25rem var(--#{vars.$prefix}focus-ring-color);
 
 .#{vars.$prefix}focus-ring {
     border-radius: 0.25rem;

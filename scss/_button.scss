@@ -45,6 +45,7 @@ $default-color-active: #80848E;
         border-color: $default-color;
         border-style: solid;
         border-width: 0.0625rem;
+        color: var(--#{vars.$prefix}color);
         padding: 0.4375rem 0.9375rem;
     }
 
@@ -79,9 +80,12 @@ $default-color-active: #80848E;
     &-cancel {
         --#{vars.$prefix}btn-background: transparent;
 
+        color: var(--#{vars.$prefix}color);
+
         &:hover {
             --#{vars.$prefix}btn-background-hover: transparent;
 
+            color: var(--#{vars.$prefix}color);
             text-decoration: underline;
         }
     }

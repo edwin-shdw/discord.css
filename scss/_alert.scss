@@ -9,10 +9,9 @@ $alert-breakpoint: 782px !default;
 }
 
 .#{vars.$prefix}alert {
-    --#{vars.$prefix}alert-bg: #111214;
-
     @include font.base;
 
+    color: var(--#{vars.$prefix}color);
     inset-block-end: 0;
     inset-inline-start: 50%;
     max-inline-size: 100%;
@@ -38,6 +37,7 @@ $alert-breakpoint: 782px !default;
         padding-block: 0.625rem;
         padding-inline: 1rem 0.625rem;
         transition: background-color 500ms;
+        box-shadow: rgb(0 0 0 / 10%) 0 2px 10px 0;
 
         @include bp.media-breakpoint-down($alert-breakpoint) {
             flex-direction: column;
@@ -70,5 +70,6 @@ $alert-breakpoint: 782px !default;
 
     &-warn {
         --#{vars.$prefix}alert-bg: var(--#{vars.$prefix}red);
+        --#{vars.$prefix}color: var(--#{vars.$prefix}white);
     }
 }

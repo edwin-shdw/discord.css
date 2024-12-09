@@ -2,7 +2,7 @@
 @use 'variables' as vars;
 @use './mixins/fonts' as font;
 
-:root {
+:root, #{vars.$dark-theme-selector} {
     --discord-css-prefix: #{vars.$prefix};
 
     @include font.base-css-var(#{vars.$font});
@@ -13,5 +13,17 @@
 
     @each $color, $value in vars.$discord-colors {
         --#{vars.$prefix}#{$color}-rgb: #{color.red($value) color.green($value) color.blue($value)};
+    }
+
+    @each $color, $value in vars.$dark-theme-colors {
+        --#{vars.$prefix}#{$color}: #{$value};
+    }
+}
+
+#{vars.$light-theme-selector} {
+    color-scheme: light;
+
+    @each $color, $value in vars.$light-theme-colors {
+        --#{vars.$prefix}#{$color}: #{$value};
     }
 }

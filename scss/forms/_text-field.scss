@@ -5,11 +5,11 @@
 %text-field {
     @include font.base;
 
-    background: var(--#{vars.$prefix}dark-grey);
+    background: var(--#{vars.$prefix}input-bg);
     border: none;
     border-radius: 0.1875rem;
     box-sizing: border-box;
-    color: var(--#{vars.$prefix}white);
+    color: var(--#{vars.$prefix}text-color);
     display: block;
     font-size: 1rem;
     font-weight: 400;
