@@ -1,15 +1,15 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const { themes } = require('prism-react-renderer');
+const {themes} = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Discord.css',
+  title: 'discord.css',
   tagline: 'Imagine a style',
-  favicon: 'img/dcs.webp',
+  favicon: 'img/dcs.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -56,15 +56,15 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/dcs.webp',
+      image: 'img/dcs.svg',
       navbar: {
-        title: 'Discord.css',
         logo: {
-          alt: 'Discord Styles',
-          src: 'img/dcs.webp',
+          alt: 'discord.css',
+          src: 'img/discord-css.svg',
+          width: 144,
         },
         items: [
           {
@@ -72,11 +72,6 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Docs',
-          },
-          {
-            to: '/preview',
-            label: 'Preview',
-            position: 'left',
           },
           {
             href: 'https://github.com/edwin-shdw/discord.css',
@@ -104,10 +99,6 @@ const config = {
                 label: 'Changelog',
                 to: 'https://github.com/edwin-shdw/discord.css/releases',
               },
-              {
-                label: 'Preview',
-                to: '/preview',
-              },
             ],
           },
           {
@@ -124,7 +115,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Discord.css<br>Code licensed <a href="https://github.com/edwin-shdw/discord.css/blob/main/LICENSE" target="_blank">MIT</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} discord.css<br>Code licensed <a href="https://github.com/edwin-shdw/discord.css/blob/main/LICENSE" target="_blank">MIT</a>`,
       },
       prism: {
         additionalLanguages: ['bash', 'scss'],

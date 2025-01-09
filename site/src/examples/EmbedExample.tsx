@@ -2,14 +2,14 @@ import * as React from 'react';
 import Embed from '@site/src/components/Embed';
 
 export default function EmbedExample(): React.ReactElement {
-  return(
+  return (
     <Embed color='#a00'>
       <Embed.Author>
-        <img src="/img/dcs.webp" alt="Author image"/>
+        <img src="/img/dcs.svg" alt="Author image" />
         <span>discord.css</span>
       </Embed.Author>
       <Embed.Thumbnail>
-        <img src="/img/dcs.webp" alt="Thumbnail"/>
+        <img src="/img/dcs.svg" alt="Thumbnail" />
       </Embed.Thumbnail>
       <Embed.Title>Embeds</Embed.Title>
       <Embed.Description>
@@ -31,10 +31,10 @@ export default function EmbedExample(): React.ReactElement {
         </Embed.Field>
       </Embed.Fields>
       <Embed.Image>
-        <img src="/img/shadow-logo.png" alt="Shadow" />
+        <img src="/img/discord-css.svg" alt="Shadow" />
       </Embed.Image>
       <Embed.Footer>
-        <img src="/img/dcs.webp" alt="Author Profile Image" />
+        <img src="/img/dcs.svg" alt="Author Profile Image" />
         <span>discord.css docs<span className="dc-embed-footer-seperator">•</span>30.10.2023 22:13</span>
       </Embed.Footer>
     </Embed>

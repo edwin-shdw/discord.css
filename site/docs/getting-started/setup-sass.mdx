@@ -1,20 +1,19 @@
 ---
 title: Setup SASS
-description: Learn how to use Discord.css with SASS.
+description: Learn how to use discord.css with SASS.
 sidebar_position: 2
 ---
 
-import { version } from '../../../package.json';
 
 # Setup SASS
 
-You have two options for importing Discord.css's:
+You have two options for importing discord.css's:
 
-- [Import all of Discord.css](#import-all-of-discord.css)
+- [Import all of discord.css](#import-all-of-discordcss)
 - [Import only the components you need](#import-components)
 
 
-## Import all of Discord.css
+## Import all of discord.css
 
 ```scss
 @use "/node_modules/discord.css/scss";
@@ -44,7 +43,7 @@ variables generated in this file.
 
 ## Prefix
 
-To avoid collision with your own codebase Discord.css uses a prefix. This prefix will be applied to all css variables as
+To avoid collision with your own codebase discord.css uses a prefix. This prefix will be applied to all css variables as
 well as all class names.
 
 By default, the prefix is set to `dc-` (note the trailing dash). You can change it by loading the module with a
@@ -53,11 +52,11 @@ configuration. Here's an example using `fn-` as prefix:
 @use "/node_modules/discord.css/scss" with ($prefix: "fn-");
 ```
 
-If you are loading parts of Discord.css you will need to load the `variables` module instead.
+If you are loading parts of discord.css you will need to load the `variables` module instead.
 ```scss
 @use "/node_modules/discord.css/scss/variables" with ($prefix: "fn-");
 ```
 
 :::warning
-You must load the `variables` module **before** any other Discord.css module.
+You must load the `variables` module **before** any other discord.css module.
 :::
