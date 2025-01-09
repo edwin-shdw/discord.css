@@ -31,7 +31,7 @@ export default function EmbedExample(): React.ReactElement {
         </Embed.Field>
       </Embed.Fields>
       <Embed.Image>
-        <img src="/img/shadow-logo.png" alt="Shadow" />
+        <img src="/img/discord-css.svg" alt="Shadow" />
       </Embed.Image>
       <Embed.Footer>
         <img src="/img/dcs.svg" alt="Author Profile Image" />
