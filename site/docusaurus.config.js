@@ -74,11 +74,6 @@ const config = {
             label: 'Docs',
           },
           {
-            to: '/preview',
-            label: 'Preview',
-            position: 'left',
-          },
-          {
             href: 'https://github.com/edwin-shdw/discord.css',
             className: 'icon-link icon-link--github',
             title: 'GitHub',
@@ -103,10 +98,6 @@ const config = {
               {
                 label: 'Changelog',
                 to: 'https://github.com/edwin-shdw/discord.css/releases',
-              },
-              {
-                label: 'Preview',
-                to: '/preview',
               },
             ],
           },
