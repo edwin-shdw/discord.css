@@ -125,8 +125,6 @@ const config = {
       // disable light theme until discord.css supports it
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: true,
-        respectPrefersColorScheme: false,
       },
     }),
 };
