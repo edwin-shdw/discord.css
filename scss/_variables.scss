@@ -35,6 +35,9 @@ $input-background: $dark-grey;
 $header-primary: $white-secondary;
 $header-secondary: #b5bac1;
 
+// range
+$range-thumb-box-shadow: rgb(255 255 255 / 8%) 0 0 0 1px, rgb(0 0 0 / 5%) 0 2px 0 0, rgb(0 0 0 / 5%) 0 1.5px 0 0, rgb(0 0 0 / 16%) 0 1px 0 0, rgb(0 0 0 / 14%) 0 1px 4px 0;
+
 $blurple-darken: #4752c4;
 
 $button-colors: (
@@ -89,6 +92,7 @@ $dark-theme-colors: (
     'msg-bg-hover-opacity': 6%,
     'focus-ring-color': $link,
     'input-bg': $input-background,
+    'range-thumb-box-shadow': $range-thumb-box-shadow,
 );
 
 $light-theme-colors: (
@@ -109,4 +113,5 @@ $light-theme-colors: (
     'msg-bg-hover-opacity': 3%,
     'focus-ring-color': #0095f2,
     'input-bg': light-vars.$input-background,
+    'range-thumb-box-shadow': light-vars.$range-thumb-box-shadow,
 );
