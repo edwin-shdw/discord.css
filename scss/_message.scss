@@ -9,7 +9,7 @@ $msg-breakpoint: 992px;
 
 .#{vars.$prefix}msg {
     --#{vars.$prefix}msg-bg: inherit;
-    --#{vars.$prefix}msg-bg-hover: #{color.mix(black, vars.$light-grey, 7%)};
+    --#{vars.$prefix}msg-bg-hover: rgb(0 0 0 / var(--#{vars.$prefix}msg-bg-hover-opacity));
 
     @include font.base;
 
@@ -29,7 +29,7 @@ $msg-breakpoint: 992px;
 
     &-reply {
         align-items: center;
-        color: #b5bac1;
+        color: var(--#{vars.$prefix}header-secondary);
         display: flex;
         flex-wrap: wrap;
         font-size: 0.875rem;
@@ -41,8 +41,8 @@ $msg-breakpoint: 992px;
 
         &::before {
             block-size: calc(100% - 0.5rem);
-            border-block-start: 0.125rem solid #4e5058;
-            border-inline-start: 0.125rem solid #4e5058;
+            border-block-start: 0.125rem solid var(--#{vars.$prefix}interactive-muted);
+            border-inline-start: 0.125rem solid var(--#{vars.$prefix}interactive-muted);
             border-start-start-radius: 0.375rem;
             box-sizing: border-box;
             content: "";
@@ -63,9 +63,10 @@ $msg-breakpoint: 992px;
         }
 
         &-name {
-            color: #acaeb1;
+            color: var(--#{vars.$prefix}header-primary);
             cursor: pointer;
             font-weight: 500;
+            opacity: 0.64;
 
             &:hover {
                 text-decoration: underline;
@@ -108,7 +109,7 @@ $msg-breakpoint: 992px;
         }
 
         &-name {
-            color: var(--#{vars.$prefix}author-color);
+            color: var(--#{vars.$prefix}header-primary);
             cursor: pointer;
             font-weight: 500;
             line-height: 1.375rem;

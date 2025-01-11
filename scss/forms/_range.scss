@@ -17,7 +17,7 @@
     --#{vars.$prefix}range-bg-fill: 0%;
 
     appearance: none;
-    background: linear-gradient(90deg, var(--#{vars.$prefix}blurple) var(--#{vars.$prefix}range-bg-fill), #4e5058 0%);
+    background: linear-gradient(90deg, var(--#{vars.$prefix}blurple) var(--#{vars.$prefix}range-bg-fill), var(--#{vars.$prefix}interactive-muted) 0%);
     block-size: 0.5rem;
     border-radius: 0.25rem;
     inline-size: 100%;

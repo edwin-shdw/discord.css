@@ -2,20 +2,29 @@
 @use 'mixins/active-states';
 @use 'mixins/fonts' as font;
 
+%-item-active-hover {
+    --#{vars.$prefix}guildbar-item-bg: #{vars.$blurple};
+    --#{vars.$prefix}guildbar-item-border-radius: 1rem;
+    --#{vars.$prefix}guildbar-item-color: #{vars.$white};
+    --#{vars.$prefix}guildbar-pill-height: 2.5rem;
+    --#{vars.$prefix}guildbar-pill-width: 0.5rem;
+    --#{vars.$prefix}guildbar-pill-opacity: 1;
+}
+
 .#{vars.$prefix}guildbar {
     $transition-time: 200ms;
     $transition-curve: ease-out;
 
-    --#{vars.$prefix}guildbar-item-bg: #{vars.$light-grey};
+    --#{vars.$prefix}guildbar-item-bg: var(--#{vars.$prefix}bg-primary);
     --#{vars.$prefix}guildbar-item-border-radius: 50%;
-    --#{vars.$prefix}guildbar-item-color: #dbdee1;
+    --#{vars.$prefix}guildbar-item-color: var(--#{vars.$prefix}color);
     --#{vars.$prefix}guildbar-pill-height: 0;
     --#{vars.$prefix}guildbar-pill-width: 0;
     --#{vars.$prefix}guildbar-pill-opacity: 0;
 
     @include font.base;
 
-    background: var(--#{vars.$prefix}dark-grey);
+    background: var(--#{vars.$prefix}bg-tertiary);
     box-sizing: border-box;
     block-size: 100%;
     inline-size: 4.5rem;
@@ -29,12 +38,9 @@
         position: relative;
 
         &:hover {
-            --#{vars.$prefix}guildbar-item-bg: #{vars.$blurple};
-            --#{vars.$prefix}guildbar-item-border-radius: 1rem;
-            --#{vars.$prefix}guildbar-item-color: #{vars.$white};
+            @extend %-item-active-hover;
+
             --#{vars.$prefix}guildbar-pill-height: 1.25rem;
-            --#{vars.$prefix}guildbar-pill-width: 0.5rem;
-            --#{vars.$prefix}guildbar-pill-opacity: 1;
         }
 
         &-success {
@@ -67,7 +73,7 @@
 
         &::before {
             align-self: center;
-            background: var(--#{vars.$prefix}white);
+            background: var(--#{vars.$prefix}guildbar-pill-bg);
             block-size: var(--#{vars.$prefix}guildbar-pill-height);
             border-radius: 0.25rem;
             content: '';
@@ -90,16 +96,14 @@
         }
 
         &.#{vars.$prefix}active {
-            --#{vars.$prefix}guildbar-item-bg: #{vars.$blurple};
-            --#{vars.$prefix}guildbar-item-border-radius: 1rem;
+            @extend %-item-active-hover;
+
             --#{vars.$prefix}guildbar-pill-height: 2.5rem;
-            --#{vars.$prefix}guildbar-pill-width: 0.5rem;
-            --#{vars.$prefix}guildbar-pill-opacity: 1;
         }
     }
 
     &-separator {
-        background: var(--#{vars.$prefix}light-grey);
+        background: var(--#{vars.$prefix}guildbar-separator-bg);
         border-radius: 0.0625rem;
         block-size: 0.125rem;
         margin-block: 0.5rem;

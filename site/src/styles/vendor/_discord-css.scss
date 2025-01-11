@@ -1,3 +1,4 @@
 @use '../../../../scss' with (
     $font: '"Hanken Grotesk", sans-serif',
+    $light-theme-selector: '[data-theme="light"]',
 );

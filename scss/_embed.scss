@@ -2,15 +2,15 @@
 @use 'mixins/fonts' as font;
 
 .#{vars.$prefix}embed {
-    --#{vars.$prefix}embed-color: #{vars.$dark-grey};
+    --#{vars.$prefix}embed-color: var(--#{vars.$prefix}bg-tertiary);
     --#{vars.$prefix}embed-span: span 1;
 
     @include font.base;
 
-    background: vars.$grey;
+    background: var(--#{vars.$prefix}bg-secondary);
     border-inline-start: 0.25rem solid var(--#{vars.$prefix}embed-color);
     border-radius: 0.25rem;
-    color: var(--dc-white);
+    color: var(--#{vars.$prefix}color);
     display: grid;
     grid-template-columns: auto min-content;
     inline-size: fit-content;
@@ -43,7 +43,7 @@
         }
 
         > a {
-            color: var(--dc-white);
+            color: var(--#{vars.$prefix}color);
             text-decoration: none;
 
             &:hover {
@@ -77,7 +77,7 @@
         margin-block-start: 0.5rem;
 
         > a {
-            color: vars.$link;
+            color: var(--#{vars.$prefix}link);
             text-decoration: none;
 
             &:hover {

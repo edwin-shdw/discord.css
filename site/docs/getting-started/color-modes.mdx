@@ -1,0 +1,53 @@
+---
+title: Color modes
+description: Learn how to configure and use color modes in discord.css.
+sidebar_position: 4
+---
+
+# Color modes
+
+discord.css provides seamless support for both **dark mode** and **light mode**, with dark mode enabled by default. You can customize the color mode of your components or your entire website using simple attributes and selectors.
+
+## Setting the Color Mode
+
+To switch color modes, apply the `data-dc-theme` attribute to an element. Use either `light` or `dark` as the value. All discord.css components within that element will adopt the specified color mode.
+
+For example, applying `data-dc-theme` to the `<html>` or `<body>` element will set the color mode for the entire website:
+
+```html
+<html lang="en" data-dc-theme="light">
+  <!-- The entire page will use the light theme -->
+</html>
+```
+
+If a nested element also has a `data-dc-theme` attribute, it will overwrite the color mode of its parent. This allows for granular control of color modes within specific sections of your page:
+
+```html
+<body data-dc-theme="dark">
+  <div>
+    <!-- This section uses dark mode -->
+    <section data-dc-theme="light">
+      <!-- This nested section uses light mode -->
+    </section>
+  </div>
+</body>
+```
+
+## Customizing Theme Selector
+discord.css allows you to integrate with your own theme selectors. You can define custom selectors for light and dark modes by configuring them in your SCSS setup:
+
+```scss
+@use '/node_modules/discord.css/scss' with (
+    $light-theme-selector: '[data-theme="light"]',
+    $dark-theme-selector: '[data-theme="dark"]',
+);
+```
+
+## Using Multiple Selectors
+If you have multiple theme selectors, you can combine them using commas. For example:
+
+```scss
+@use '/node_modules/discord.css/scss' with (
+    $light-theme-selector: '[data-theme="light"], [data-color-scheme="bright"]',
+);
+```

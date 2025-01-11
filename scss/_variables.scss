@@ -1,5 +1,13 @@
+@use 'sass:color';
+@use 'variables-light' as light-vars;
+
 $prefix: 'dc-' !default;
 $font: inherit, sans-serif !default;
+$light-theme-selector: null !default;
+$dark-theme-selector: null !default;
+
+$light-theme-selector: '[data-#{$prefix}theme="light"]', $light-theme-selector;
+$dark-theme-selector: "[data-#{$prefix}theme="dark"]", $dark-theme-selector;
 
 // Colors
 $blurple: #5865F2;
@@ -9,6 +17,8 @@ $yellow: #FEE75C;
 $red: #ED4245;
 $fuchsia: #EB459E;
 $white: #FFFFFF;
+$white-secondary: #f2f3f5;
+$white-tertiary: #e3e5e8;
 $black: #23272A;
 $greyple: #99AAB5;
 $light-grey: #313338;
@@ -16,12 +26,29 @@ $grey: #2b2d31;
 $dark-grey: #1e1f22;
 $link: #00a8fc;
 $muted: #949BA4;
+$interactive-muted: #4e5058;
 $mention: #F0B132;
+$text-color: #dbdee1;
+$input-background: $dark-grey;
+
+// guildbar-pills & msg-author-names
+$header-primary: $white-secondary;
+$header-secondary: #b5bac1;
+
+// range
+$range-thumb-box-shadow: rgb(255 255 255 / 8%) 0 0 0 0.0625rem, rgb(0 0 0 / 5%) 0 0.125rem 0 0, rgb(0 0 0 / 5%) 0 0.125rem 0 0, rgb(0 0 0 / 16%) 0 0.0625rem 0 0, rgb(0 0 0 / 14%) 0 0.0625rem 0.25rem 0;
+
+// radio
+$radio-bg-hover: #393c41;
+$radio-bg-selected: #43444b;
+$radio-bg-active: #3f4147;
+
+$blurple-darken: #4752c4;
 
 $button-colors: (
     'blurple': (
         'default': $blurple,
-        'hover': #4752c4,
+        'hover': $blurple-darken,
         'active': #3c45a5,
     ),
     'danger': (
@@ -49,7 +76,53 @@ $discord-colors: (
     'light-grey': $light-grey,
     'grey': $grey,
     'dark-grey': $dark-grey,
+    'mention': $mention,
+);
+
+$dark-theme-colors: (
+    'color': $text-color,
+    'bg-primary': $light-grey,
+    'bg-secondary': $grey,
+    'bg-tertiary': $dark-grey,
     'link': $link,
     'muted': $muted,
-    'mention': $mention,
+    'interactive-muted': $interactive-muted,
+    'header-primary': $header-primary,
+    'header-secondary': $header-secondary,
+    'alert-bg': #111214,
+    'guildbar-pill-bg': $white,
+    'guildbar-separator-bg': rgb(78 80 88 / 48%),
+    'mention-color-rgb': 201 205 251,
+    'mention-bg-opacity': 30%,
+    'msg-bg-hover-opacity': 6%,
+    'focus-ring-color': $link,
+    'input-bg': $input-background,
+    'range-thumb-box-shadow': $range-thumb-box-shadow,
+    'radio-bg-hover': $radio-bg-hover,
+    'radio-bg-selected': $radio-bg-selected,
+    'radio-bg-active': $radio-bg-active,
+);
+
+$light-theme-colors: (
+    'color': light-vars.$text-color,
+    'bg-primary': $white,
+    'bg-secondary': $white-secondary,
+    'bg-tertiary': $white-tertiary,
+    'link': light-vars.$link,
+    'muted': light-vars.$muted,
+    'interactive-muted': light-vars.$interactive-muted,
+    'header-primary': light-vars.$header-primary,
+    'header-secondary': light-vars.$header-secondary,
+    'alert-bg': $white,
+    'guildbar-pill-bg': light-vars.$header-primary,
+    'guildbar-separator-bg': rgb(128 132 142 / 24%),
+    'mention-color-rgb': 71 82 196,
+    'mention-bg-opacity': 15%,
+    'msg-bg-hover-opacity': 3%,
+    'focus-ring-color': #0095f2,
+    'input-bg': light-vars.$input-background,
+    'range-thumb-box-shadow': light-vars.$range-thumb-box-shadow,
+    'radio-bg-hover': light-vars.$radio-bg-hover,
+    'radio-bg-selected': light-vars.$radio-bg-selected,
+    'radio-bg-active': light-vars.$radio-bg-active,
 );

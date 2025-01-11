@@ -20,7 +20,7 @@ export default function Mention({
   color?: string,
 }): React.ReactElement {
   const colorValue = (role && color) ? hexToRgb(color) : 'var(--dc-blurple-rgb)';
-  const colorStyle = {'--dc-mention-color': colorValue} as React.CSSProperties;
+  const colorStyle = {'--dc-mention-color-rgb': colorValue} as React.CSSProperties;
   const mentionClass = role ? 'dc-mention dc-mention-role' : 'dc-mention';
 
   return (
