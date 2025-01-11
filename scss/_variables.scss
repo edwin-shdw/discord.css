@@ -7,7 +7,7 @@ $light-theme-selector: null !default;
 $dark-theme-selector: null !default;
 
 $light-theme-selector: '[data-#{$prefix}theme="light"]', $light-theme-selector;
-$dark-theme-selector: "[data-#{$prefix}theme=" dark "]", $dark-theme-selector;
+$dark-theme-selector: "[data-#{$prefix}theme="dark"]", $dark-theme-selector;
 
 // Colors
 $blurple: #5865F2;
