@@ -37,7 +37,7 @@ $alert-breakpoint: 782px !default;
         padding-block: 0.625rem;
         padding-inline: 1rem 0.625rem;
         transition: background-color 500ms;
-        box-shadow: rgb(0 0 0 / 10%) 0 2px 10px 0;
+        box-shadow: rgb(0 0 0 / 10%) 0 0.125rem 0.625rem 0;
 
         @include bp.media-breakpoint-down($alert-breakpoint) {
             flex-direction: column;
@@ -58,7 +58,7 @@ $alert-breakpoint: 782px !default;
     &-actions {
         align-items: center;
         display: flex;
-        font-size: 14px;
+        font-size: 0.875rem;
         gap: 0.625rem;
         min-inline-size: fit-content;
 
