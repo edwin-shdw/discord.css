@@ -38,6 +38,11 @@ $header-secondary: #b5bac1;
 // range
 $range-thumb-box-shadow: rgb(255 255 255 / 8%) 0 0 0 1px, rgb(0 0 0 / 5%) 0 2px 0 0, rgb(0 0 0 / 5%) 0 1.5px 0 0, rgb(0 0 0 / 16%) 0 1px 0 0, rgb(0 0 0 / 14%) 0 1px 4px 0;
 
+// radio
+$radio-bg-hover: #393c41;
+$radio-bg-selected: #43444b;
+$radio-bg-active: #3f4147;
+
 $blurple-darken: #4752c4;
 
 $button-colors: (
@@ -93,6 +98,9 @@ $dark-theme-colors: (
     'focus-ring-color': $link,
     'input-bg': $input-background,
     'range-thumb-box-shadow': $range-thumb-box-shadow,
+    'radio-bg-hover': $radio-bg-hover,
+    'radio-bg-selected': $radio-bg-selected,
+    'radio-bg-active': $radio-bg-active,
 );
 
 $light-theme-colors: (
@@ -114,4 +122,7 @@ $light-theme-colors: (
     'focus-ring-color': #0095f2,
     'input-bg': light-vars.$input-background,
     'range-thumb-box-shadow': light-vars.$range-thumb-box-shadow,
+    'radio-bg-hover': light-vars.$radio-bg-hover,
+    'radio-bg-selected': light-vars.$radio-bg-selected,
+    'radio-bg-active': light-vars.$radio-bg-active,
 );

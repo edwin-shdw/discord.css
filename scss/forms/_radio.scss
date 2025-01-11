@@ -3,11 +3,8 @@
 @use '../mixins/fonts' as font;
 
 .#{vars.$prefix}radio {
-    --#{vars.$prefix}radio-bg: var(--#{vars.$prefix}grey);
-    --#{vars.$prefix}radio-bg-hover: hsl(228deg 6% 32.5% / 30%);
-    --#{vars.$prefix}radio-bg-selected: hsl(228deg 6% 32.5% / 60%);
-    --#{vars.$prefix}radio-bg-active: hsl(228deg 6% 32.5% / 48%);
-    --#{vars.$prefix}radio-color: #b5bac1;
+    --#{vars.$prefix}radio-bg: var(--#{vars.$prefix}bg-secondary);
+    --#{vars.$prefix}radio-color: var(--#{vars.$prefix}header-secondary);
 
     @include font.base;
 
@@ -30,7 +27,7 @@
         }
 
         &:active {
-            color: var(--#{vars.$prefix}white);
+            color: var(--#{vars.$prefix}color);
             background: var(--#{vars.$prefix}radio-bg-active);
         }
     }
@@ -38,7 +35,7 @@
     &:has(input:checked) {
         --#{vars.$prefix}radio-bg: var(--#{vars.$prefix}radio-bg-selected);
 
-        color: var(--#{vars.$prefix}white);
+        color: var(--#{vars.$prefix}color);
     }
 
     &:has(input:disabled) {
@@ -53,23 +50,26 @@
     }
 
     input {
-        --#{vars.$prefix}radio-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='%23b5bac1'%3E%3C/path%3E%3C/svg%3E");
-        --#{vars.$prefix}radio-icon-active: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+        --#{vars.$prefix}radio-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='currentColor' %3E%3C/path%3E%3C/svg%3E");
         --#{vars.$prefix}radio-icon-checked: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' fill='white'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='5' fill='white'%3E%3C/circle%3E%3C/svg%3E");
+        --#{vars.$prefix}radio-icon-color: var(--#{vars.$prefix}header-secondary);
 
         appearance: none;
         margin: 0;
 
         &::before {
-            content: var(--#{vars.$prefix}radio-icon);
+            content: '';
+            mask: var(--#{vars.$prefix}radio-icon);
+            mask-size: cover;
+            inline-size: 1.5rem;
+            display: inline-block;
+            block-size: 1.5rem;
+            background-color: var(--#{vars.$prefix}radio-icon-color);
         }
 
         &:checked {
             --#{vars.$prefix}radio-icon: var(--#{vars.$prefix}radio-icon-checked);
-        }
-
-        &:enabled:active:not(&:checked) {
-            --#{vars.$prefix}radio-icon: var(--#{vars.$prefix}radio-icon-active);
+            --#{vars.$prefix}radio-icon-color: var(--#{vars.$prefix}color);
         }
 
         &:focus {
