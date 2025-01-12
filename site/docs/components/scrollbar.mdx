@@ -7,6 +7,13 @@ import ScrollbarExample from '@site/src/examples/ScrollbarExample';
 import CodePreview from '@site/src/components/CodePreview';
 
 
+:::danger
+Due to the current state of browser support, it's difficult to style a consistent scrollbar that renders the same across
+all browsers using only CSS. Therefore, the scrollbar won't be updated for now. However, the invisible scrollbar
+(`dc-scrollbar-none`) will work in any case.
+:::
+
+
 There are three variants of scrollbars used by Discord. discord.css uses `::-webkit-scrollbar` for the styling of
 scrollbars as it is currently the only way to achieve this styling. Firefox does
 [not support](https://caniuse.com/mdn-css_selectors_-webkit-scrollbar) `::-webkit-scrollbar` so it won't appear as
