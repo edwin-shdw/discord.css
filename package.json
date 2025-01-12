@@ -1,6 +1,6 @@
 {
   "name": "discord.css",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "A stylesheet library containing the styling for Discord components",
   "main": "dist/css/discord.min.css",
   "scripts": {
