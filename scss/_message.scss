@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use 'variables' as vars;
-@use 'link';
+@use 'mention';
 @use 'mixins/active-states';
 @use 'mixins/breakpoints' as bp;
 @use 'mixins/fonts' as font;
@@ -79,10 +79,28 @@ $msg-breakpoint: 992px;
         }
 
         &-cmd {
-            @extend .#{vars.$prefix}link;
+            @extend .#{vars.$prefix}mention;
 
+            --#{vars.$prefix}msg-reply-cmd-color: var(--#{vars.$prefix}link);
+
+            color: var(--#{vars.$prefix}msg-reply-cmd-color);
+            cursor: default;
             font-weight: 500;
-            opacity: 0.64;
+
+            &:hover {
+                --#{vars.$prefix}msg-reply-cmd-color: var(--#{vars.$prefix}white);
+            }
+
+            &::before {
+                content: '';
+                mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M2.06%207.61c-.25.95.31%201.92%201.26%202.18l4.3%201.15c.94.25%201.91-.31%202.17-1.26l1.15-4.3c.25-.94-.31-1.91-1.26-2.17l-4.3-1.15c-.94-.25-1.91.31-2.17%201.26l-1.15%204.3ZM12.98%207.87a2%202%200%200%200%201.75%202.95H20a2%202%200%200%200%201.76-2.95l-2.63-4.83a2%202%200%200%200-3.51%200l-2.63%204.83ZM5.86%2013.27a.89.89%200%200%201%201.28%200l.75.77a.9.9%200%200%200%20.54.26l1.06.12c.5.06.85.52.8%201.02l-.13%201.08c-.02.2.03.42.14.6l.56.92c.27.43.14%201-.28%201.26l-.9.58a.92.92%200%200%200-.37.48l-.36%201.02a.9.9%200%200%201-1.15.57l-1-.36a.89.89%200%200%200-.6%200l-1%20.36a.9.9%200%200%201-1.15-.57l-.36-1.02a.92.92%200%200%200-.37-.48l-.9-.58a.93.93%200%200%201-.28-1.26l.56-.93c.11-.17.16-.38.14-.59l-.12-1.08c-.06-.5.3-.96.8-1.02l1.05-.12a.9.9%200%200%200%20.54-.26l.75-.77ZM18.52%2013.71a1.1%201.1%200%200%200-2.04%200l-.46%201.24c-.19.5-.57.88-1.07%201.07l-1.24.46a1.1%201.1%200%200%200%200%202.04l1.24.46c.5.19.88.57%201.07%201.07l.46%201.24c.35.95%201.7.95%202.04%200l.46-1.24c.19-.5.57-.88%201.07-1.07l1.24-.46a1.1%201.1%200%200%200%200-2.04l-1.24-.46a1.8%201.8%200%200%201-1.07-1.07l-.46-1.24Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+                mask-size: cover;
+                inline-size: 0.625rem;
+                display: inline-block;
+                block-size: 0.625rem;
+                background-color: var(--#{vars.$prefix}msg-reply-cmd-color);
+                margin-inline-end: 0.1875rem;
+            }
         }
     }
 

@@ -14,7 +14,7 @@ export default function MsgExample(): React.ReactElement {
         </Msg.Reply.Name>
         <span>used</span>
         <Msg.Reply.Cmd>
-          /discord-css
+          discord-css
         </Msg.Reply.Cmd>
       </Msg.Reply>
       <Msg.AuthorImg
