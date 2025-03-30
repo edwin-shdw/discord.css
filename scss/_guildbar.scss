@@ -4,7 +4,6 @@
 
 %-item-active-hover {
     --#{vars.$prefix}guildbar-item-bg: #{vars.$blurple};
-    --#{vars.$prefix}guildbar-item-border-radius: 1rem;
     --#{vars.$prefix}guildbar-item-color: #{vars.$white};
     --#{vars.$prefix}guildbar-pill-height: 2.5rem;
     --#{vars.$prefix}guildbar-pill-width: 0.5rem;
@@ -16,7 +15,7 @@
     $transition-curve: ease-out;
 
     --#{vars.$prefix}guildbar-item-bg: var(--#{vars.$prefix}bg-primary);
-    --#{vars.$prefix}guildbar-item-border-radius: 50%;
+    --#{vars.$prefix}guildbar-item-border-radius: 0.75rem;
     --#{vars.$prefix}guildbar-item-color: var(--#{vars.$prefix}color);
     --#{vars.$prefix}guildbar-pill-height: 0;
     --#{vars.$prefix}guildbar-pill-width: 0;
@@ -53,10 +52,10 @@
 
         &-img {
             background: var(--#{vars.$prefix}guildbar-item-bg);
-            block-size: 3rem;
+            block-size: 2.5rem;
             border-radius: var(--#{vars.$prefix}guildbar-item-border-radius);
             display: grid;
-            inline-size: 3rem;
+            inline-size: 2.5rem;
             object-fit: cover;
             overflow: hidden;
             transition: border-radius $transition-time $transition-curve, background-color $transition-time $transition-curve;
@@ -87,14 +86,6 @@
             inline-size $transition-time $transition-curve;
         }
 
-        &:active {
-            @include active-states.active-translate;
-
-            &::before {
-                @include active-states.active-translate(true);
-            }
-        }
-
         &.#{vars.$prefix}active {
             @extend %-item-active-hover;
 
@@ -105,7 +96,7 @@
     &-separator {
         background: var(--#{vars.$prefix}guildbar-separator-bg);
         border-radius: 0.0625rem;
-        block-size: 0.125rem;
+        block-size: 0.0625rem;
         margin-block: 0.5rem;
         margin-inline: auto;
         inline-size: 2rem;
