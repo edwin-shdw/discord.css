@@ -16,20 +16,21 @@
   },
   "dependencies": {
     "@docusaurus/core": "^3.7.0",
+    "@docusaurus/faster": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
-    "@fontsource/hanken-grotesk": "^5.1.1",
+    "@fontsource/hanken-grotesk": "^5.2.5",
     "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
     "docusaurus-plugin-sass": "^0.2.6",
     "prism-react-renderer": "^2.4.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
     "@docusaurus/tsconfig": "^3.7.0",
-    "@types/react": "^18.3.18",
-    "typescript": "^5.7.3"
+    "@types/react": "^19.1.0",
+    "typescript": "^5.8.3"
   },
   "browserslist": {
     "production": [
