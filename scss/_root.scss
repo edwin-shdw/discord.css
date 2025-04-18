@@ -12,7 +12,11 @@
     }
 
     @each $color, $value in vars.$discord-colors {
-        --#{vars.$prefix}#{$color}-rgb: #{color.red($value) color.green($value) color.blue($value)};
+        $-red-value: color.channel($value, 'red', $space: rgb);
+        $-green-value: color.channel($value, 'green', $space: rgb);
+        $-blue-value: color.channel($value, 'blue', $space: rgb);
+
+        --#{vars.$prefix}#{$color}-rgb: #{$-red-value $-green-value $-blue-value};
     }
 
     @each $color, $value in vars.$dark-theme-colors {
