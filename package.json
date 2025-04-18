@@ -37,5 +37,15 @@
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-plugin-logical-css": "^1.2.3"
   },
-  "packageManager": "pnpm@10.7.1"
+  "packageManager": "pnpm@10.7.1",
+  "pnpm": {
+    "overrides": {
+      "prismjs@<1.30.0": ">=1.30.0",
+      "@babel/runtime-corejs3@<7.26.10": ">=7.26.10",
+      "@babel/runtime@<7.26.10": ">=7.26.10",
+      "@babel/helpers@<7.26.10": ">=7.26.10",
+      "image-size@>=1.1.0 <1.2.1": ">=1.2.1",
+      "estree-util-value-to-estree@<3.3.3": ">=3.3.3"
+    }
+  }
 }
